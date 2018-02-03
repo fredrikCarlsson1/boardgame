@@ -16,6 +16,7 @@ class StartingPage: UIViewController {
     @IBOutlet weak var playerButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var menuButton: FloatingActionButton!
     
     
     
@@ -45,14 +46,7 @@ class StartingPage: UIViewController {
         closeMenu()
         
         startButton.pulsateSlow()
-        colorArray.append((color1: c1, color2: c2))
-        colorArray.append((color1: c3, color2: c4))
-        colorArray.append((color1: c5, color2: c6))
-        colorArray.append((color1: c7, color2: c8))
-        colorArray.append((color1: c9, color2: c10))
-        colorArray.append((color1: c11, color2: c12))
-        
-        startButton.setGradientBackground(colorOne: color1 , colorTwo: color2)
+  
         
         startButton.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
         startButton.layer.shadowOffset = CGSize(width:0, height:2.75)

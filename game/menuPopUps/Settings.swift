@@ -24,4 +24,8 @@ class Settings: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func initWithOtherWords(){
+       // LocalDataBase
+    }
+    
 }

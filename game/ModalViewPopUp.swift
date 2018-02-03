@@ -40,7 +40,7 @@ class ModalViewPopUp: UIViewController {
                 LocalDataBase.teamArray[getNextTeam(teamID: team)].isUp = true
             }
         }
-        if (checkIfTeamsWin(points: 50)){
+        if (checkIfTeamsWin(points: 40)){
             performSegue(withIdentifier: "gameOverSegue", sender: self)
         }
         else{

@@ -136,11 +136,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITe-GM-tc7" customClass="UIViewX" customModule="game" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kh9-8b-JRl" customClass="UIViewX" customModule="game" customModuleProvider="target">
-                                        <rect key="frame" x="156" y="566" width="340" height="340"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kh9-8b-JRl" customClass="UIViewX" customModule="game" customModuleProvider="target">
+                                        <rect key="frame" x="146" y="556" width="340" height="340"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axd-eK-i9J">
                                                 <rect key="frame" x="59" y="67" width="44" height="44"/>
@@ -168,6 +167,10 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="340" id="BiM-bg-uSa"/>
+                                            <constraint firstAttribute="height" constant="340" id="FOK-nD-hP5"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="170"/>
@@ -180,10 +183,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyB-aW-dOS" customClass="FloatingActionButton" customModule="game" customModuleProvider="target">
-                                        <rect key="frame" x="299" y="709" width="55" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyB-aW-dOS" customClass="FloatingActionButton" customModule="game" customModuleProvider="target">
+                                        <rect key="frame" x="286" y="696" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.47843137254901957" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="gvb-wC-xcX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="n3v-hg-0AP"/>
+                                        </constraints>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -204,10 +210,12 @@
                                             <action selector="menuTapped:" destination="g0K-9s-pDL" eventType="touchUpInside" id="y1l-tG-TaM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw6-3u-xdE" customClass="UIButtonX" customModule="game" customModuleProvider="target">
-                                        <rect key="frame" x="97" y="361" width="180" height="57"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rw6-3u-xdE" customClass="UIButtonX" customModule="game" customModuleProvider="target">
+                                        <rect key="frame" x="97" y="379" width="181" height="55"/>
                                         <color key="backgroundColor" red="0.47093268059999999" green="0.020711335139999999" blue="0.1185493603" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="1Su-UR-F1Y"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="New Game">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -217,13 +225,13 @@
                                                 <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="0.0"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="0.0" height="0.0"/>
+                                                <size key="value" width="1" height="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
@@ -231,39 +239,68 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.43415740934120217" green="0.16974246965841372" blue="0.16161193575162311" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="startBut:" destination="g0K-9s-pDL" eventType="touchUpInside" id="9tf-Qd-jBs"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxp-fF-G6b">
+                                        <rect key="frame" x="49" y="181" width="276" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                        <color key="textColor" red="0.47843137250000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Rw6-3u-xdE" firstAttribute="centerX" secondItem="ITe-GM-tc7" secondAttribute="centerX" id="59h-fx-dL3"/>
+                                    <constraint firstItem="Kh9-8b-JRl" firstAttribute="centerY" secondItem="AyB-aW-dOS" secondAttribute="centerY" id="6qY-GT-zrF"/>
+                                    <constraint firstItem="Rw6-3u-xdE" firstAttribute="leading" secondItem="ITe-GM-tc7" secondAttribute="leading" constant="97" id="GYj-rZ-wCb"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="AyB-aW-dOS" secondAttribute="trailing" constant="21" id="Tqc-QV-b0c"/>
+                                    <constraint firstItem="wxp-fF-G6b" firstAttribute="centerX" secondItem="ITe-GM-tc7" secondAttribute="centerX" id="VoW-Zd-KdA"/>
+                                    <constraint firstItem="Rw6-3u-xdE" firstAttribute="top" secondItem="wxp-fF-G6b" secondAttribute="bottom" constant="150" id="f3U-Gh-ssY"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="AyB-aW-dOS" secondAttribute="bottom" constant="14" id="jHJ-80-ieb"/>
+                                    <constraint firstItem="Kh9-8b-JRl" firstAttribute="centerX" secondItem="AyB-aW-dOS" secondAttribute="centerX" id="qSf-tI-nk0"/>
+                                    <constraint firstItem="Rw6-3u-xdE" firstAttribute="centerY" secondItem="ITe-GM-tc7" secondAttribute="centerY" id="rLN-7P-LVZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                        <color key="value" red="0.29411764709999999" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                        <color key="value" red="0.29411764709999999" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ITe-GM-tc7" secondAttribute="bottom" id="0Go-hi-DY2"/>
                             <constraint firstItem="ITe-GM-tc7" firstAttribute="top" secondItem="uje-B1-NNt" secondAttribute="top" id="8aM-H7-b94"/>
                             <constraint firstItem="ITe-GM-tc7" firstAttribute="leading" secondItem="6hZ-Px-rWl" secondAttribute="leading" id="J6C-P2-E6J"/>
                             <constraint firstItem="6hZ-Px-rWl" firstAttribute="trailing" secondItem="ITe-GM-tc7" secondAttribute="trailing" id="bCT-Dv-w7X"/>
-                            <constraint firstItem="6hZ-Px-rWl" firstAttribute="bottom" secondItem="ITe-GM-tc7" secondAttribute="bottom" id="iiU-iW-MDM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6hZ-Px-rWl"/>
                     </view>
                     <connections>
                         <outlet property="helpButton" destination="Lf5-3K-ruK" id="BPn-21-Z9t"/>
+                        <outlet property="menuButton" destination="AyB-aW-dOS" id="JEN-GY-BY1"/>
                         <outlet property="menuView" destination="Kh9-8b-JRl" id="loI-td-01l"/>
                         <outlet property="playerButton" destination="cW4-VU-Nd9" id="hcX-b7-XnP"/>
                         <outlet property="settingsButton" destination="Axd-eK-i9J" id="Jxc-ui-gjl"/>
                         <outlet property="startButton" destination="Rw6-3u-xdE" id="oSz-eK-4kW"/>
                         <outlet property="uiView" destination="ITe-GM-tc7" id="Dfo-hg-Hbb"/>
                         <segue destination="Kbx-vo-fza" kind="presentation" identifier="startToAddPlayerSegue" id="cTw-Qz-OOs"/>
-                        <segue destination="rOP-di-j3X" kind="show" identifier="showPlayerListSegue" id="O50-Tg-dXJ"/>
+                        <segue destination="rOP-di-j3X" kind="presentation" identifier="showPlayerListSegue" id="O50-Tg-dXJ"/>
                         <segue destination="GGU-Ma-Q1a" kind="presentation" identifier="startToRulesSegue" id="5a9-JM-D63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fIr-vi-dDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2448.75" y="-128.87323943661971"/>
+            <point key="canvasLocation" x="-2448.8000000000002" y="-129.31034482758622"/>
         </scene>
         <!--New Game View Controller-->
         <scene sceneID="1tm-kP-BEs">
@@ -329,10 +366,10 @@
                         <viewLayoutGuide key="safeArea" id="h1H-Qw-4T4"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                <color key="value" red="0.031372549019607843" green="0.38431372549019605" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.29411764709999999" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                <color key="value" red="0.23137254901960785" green="0.2627450980392157" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.29411764709999999" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -485,7 +522,7 @@
                     <connections>
                         <outlet property="playerTableView" destination="dfI-ld-gaC" id="Fhj-82-qKb"/>
                         <segue destination="MCn-wl-1ps" kind="show" identifier="showPlayers" id="vno-uc-d3q"/>
-                        <segue destination="zWG-ix-WKL" kind="presentation" identifier="enterNewPlayerSegue" id="i4V-SM-CIn"/>
+                        <segue destination="zWG-ix-WKL" kind="modal" identifier="enterNewPlayerSegue" id="i4V-SM-CIn"/>
                         <segue destination="Kbx-vo-fza" kind="show" identifier="saveSelectedPlayersSegue" id="ESM-6l-NRY"/>
                     </connections>
                 </viewController>
@@ -2680,37 +2717,132 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fD5-eL-Dw1" customClass="UIViewX" customModule="game" customModuleProvider="target">
                                 <rect key="frame" x="25" y="124" width="325" height="574"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVK-XZ-rwm">
-                                        <rect key="frame" x="29" y="8" width="266" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVK-XZ-rwm">
+                                        <rect key="frame" x="20" y="8" width="285" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.47843137250000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-0j-I45">
-                                        <rect key="frame" x="139" y="536" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LN-0j-I45" customClass="UIButtonX" customModule="game" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="504" width="225" height="55"/>
+                                        <color key="backgroundColor" red="0.47843137250000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="GXz-UJ-wPx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="2" height="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="backToStartButton:" destination="9wq-UW-XVP" eventType="touchUpInside" id="t7s-7W-TfW"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcR-0U-rOy" customClass="UIViewX" customModule="game" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="105" width="245" height="221"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYO-n5-XnT">
+                                        <rect key="frame" x="20" y="54.000000000000007" width="285" height="31.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <color key="textColor" red="0.47843137250000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xPs-oH-FgF">
+                                        <rect key="frame" x="40" y="334" width="245" height="150"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Lz6-AQ-gPh"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="pdx-f7-vcG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="oYO-n5-XnT" firstAttribute="top" secondItem="RVK-XZ-rwm" secondAttribute="bottom" constant="10" id="2V5-T8-n9p"/>
+                                    <constraint firstItem="xPs-oH-FgF" firstAttribute="leading" secondItem="fD5-eL-Dw1" secondAttribute="leading" constant="40" id="6Fg-S1-6dC"/>
+                                    <constraint firstItem="JcR-0U-rOy" firstAttribute="top" secondItem="oYO-n5-XnT" secondAttribute="bottom" constant="20" id="6x8-Am-gOs"/>
+                                    <constraint firstAttribute="trailing" secondItem="JcR-0U-rOy" secondAttribute="trailing" constant="40" id="8Zz-cE-Sdh"/>
+                                    <constraint firstItem="RVK-XZ-rwm" firstAttribute="top" secondItem="fD5-eL-Dw1" secondAttribute="top" constant="8" id="Am7-FN-huB"/>
+                                    <constraint firstItem="RVK-XZ-rwm" firstAttribute="leading" secondItem="fD5-eL-Dw1" secondAttribute="leading" constant="20" id="BZs-oY-OOR"/>
+                                    <constraint firstItem="5LN-0j-I45" firstAttribute="leading" secondItem="fD5-eL-Dw1" secondAttribute="leading" constant="50" id="L4A-WV-vak"/>
+                                    <constraint firstItem="oYO-n5-XnT" firstAttribute="leading" secondItem="fD5-eL-Dw1" secondAttribute="leading" constant="20" id="LH3-h1-Vkr"/>
+                                    <constraint firstItem="5LN-0j-I45" firstAttribute="top" secondItem="xPs-oH-FgF" secondAttribute="bottom" constant="20" id="M1n-K7-BxY"/>
+                                    <constraint firstItem="xPs-oH-FgF" firstAttribute="top" secondItem="JcR-0U-rOy" secondAttribute="bottom" constant="8" id="M8A-ec-IWs"/>
+                                    <constraint firstAttribute="trailing" secondItem="xPs-oH-FgF" secondAttribute="trailing" constant="40" id="Wdz-tz-qgI"/>
+                                    <constraint firstItem="RVK-XZ-rwm" firstAttribute="centerX" secondItem="fD5-eL-Dw1" secondAttribute="centerX" id="Ybr-vW-d2b"/>
+                                    <constraint firstAttribute="trailing" secondItem="oYO-n5-XnT" secondAttribute="trailing" constant="20" id="Zb1-Hs-WZy"/>
+                                    <constraint firstItem="5LN-0j-I45" firstAttribute="centerX" secondItem="fD5-eL-Dw1" secondAttribute="centerX" id="c54-f6-sb0"/>
+                                    <constraint firstAttribute="bottom" secondItem="5LN-0j-I45" secondAttribute="bottom" constant="15" id="gac-09-OVi"/>
+                                    <constraint firstItem="JcR-0U-rOy" firstAttribute="leading" secondItem="fD5-eL-Dw1" secondAttribute="leading" constant="40" id="v6U-mN-CEw"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                        <color key="value" red="0.65490196079999996" green="0.2156862745" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29411764709999999" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                        <color key="value" red="0.47843137250000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.29411764709999999" green="0.47450980390000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KnF-0s-XgV" firstAttribute="trailing" secondItem="fD5-eL-Dw1" secondAttribute="trailing" constant="25" id="Fui-i0-Apr"/>
                             <constraint firstItem="KnF-0s-XgV" firstAttribute="bottom" secondItem="fD5-eL-Dw1" secondAttribute="bottom" constant="80" id="Nfk-fA-grP"/>
@@ -2721,6 +2853,9 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="RVK-XZ-rwm" id="l2C-2k-jmd"/>
+                        <outlet property="teamResultsView" destination="JcR-0U-rOy" id="qGy-O3-87h"/>
+                        <outlet property="textView" destination="xPs-oH-FgF" id="9IF-br-f1L"/>
+                        <outlet property="winningTeamLabel" destination="oYO-n5-XnT" id="GE4-NX-cje"/>
                         <segue destination="g0K-9s-pDL" kind="show" identifier="gameOverToStartSegue" id="pen-4C-oo9"/>
                     </connections>
                 </viewController>
@@ -2854,15 +2989,15 @@
         <image name="settingsIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ioc-6o-cEx"/>
+        <segue reference="YLn-0I-Tfj"/>
         <segue reference="jwY-TF-xnh"/>
         <segue reference="udK-lT-9wo"/>
-        <segue reference="C92-nK-AlK"/>
-        <segue reference="BuL-O1-t1L"/>
-        <segue reference="Mjt-FR-2MM"/>
-        <segue reference="J2q-4L-GzJ"/>
-        <segue reference="UFG-EW-Nmf"/>
-        <segue reference="ESM-6l-NRY"/>
-        <segue reference="fs5-0c-Tfl"/>
+        <segue reference="AYc-5u-aj5"/>
+        <segue reference="5a9-JM-D63"/>
+        <segue reference="nrO-2i-s1E"/>
+        <segue reference="A9a-ya-tBL"/>
+        <segue reference="O50-Tg-dXJ"/>
+        <segue reference="cTw-Qz-OOs"/>
+        <segue reference="pen-4C-oo9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+var audioPlayer = AVAudioPlayer()
 
 class ViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var exitButton: UIButton!
     
-    var audioPlayer = AVAudioPlayer()
+    
     var currentSong = 0
     var audioArray = ["sample", "gum"]
 

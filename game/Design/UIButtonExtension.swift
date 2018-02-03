@@ -53,13 +53,13 @@ extension UIButton {
     }
     func pulsateSlow(){
         let pulse = CASpringAnimation(keyPath: "transform.scale")
-        pulse.duration = 2
-        pulse.fromValue = 0.96
+        pulse.duration = 5
+        pulse.fromValue = 0.97
         pulse.toValue = 1
         pulse.autoreverses = true
         pulse.repeatCount = 200
         pulse.initialVelocity = 1
-        pulse.damping = 2.0
+        pulse.damping = 0.2
         
         layer.add(pulse, forKey: nil)
         
