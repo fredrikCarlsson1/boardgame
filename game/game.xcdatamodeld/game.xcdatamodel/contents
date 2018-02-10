@@ -9,18 +9,39 @@
         <attribute name="hint5" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="CharadesCoreData" representedClassName="CharadesCoreData" syncable="YES" codeGenerationType="class"/>
-    <entity name="HumTheSongCoreData" representedClassName="HumTheSongCoreData" syncable="YES" codeGenerationType="class"/>
+    <entity name="CharadesCoreData" representedClassName="CharadesCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word5" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="HumTheSongCoreData" representedClassName="HumTheSongCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word5" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="TeamChallengeCoreData" representedClassName="TeamChallengeCoreData" syncable="YES" codeGenerationType="class">
         <attribute name="challenge" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="WithOtherWordsCoreData" representedClassName="WithOtherWordsCoreData" syncable="YES" codeGenerationType="class"/>
+    <entity name="WithOtherWordsCoreData" representedClassName="WithOtherWordsCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word4" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word5" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="WithOtherWordsCoreData" positionX="-63" positionY="-18" width="128" height="45"/>
-        <element name="TeamChallengeCoreData" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="CharadesCoreData" positionX="-36" positionY="9" width="128" height="45"/>
-        <element name="HumTheSongCoreData" positionX="-18" positionY="27" width="128" height="45"/>
         <element name="CanYouFigureItOutCoreData" positionX="0" positionY="45" width="128" height="150"/>
+        <element name="CharadesCoreData" positionX="-36" positionY="9" width="128" height="135"/>
+        <element name="HumTheSongCoreData" positionX="-18" positionY="27" width="128" height="135"/>
+        <element name="TeamChallengeCoreData" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="WithOtherWordsCoreData" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

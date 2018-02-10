@@ -15,6 +15,7 @@ class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableVie
     var nrOfTeams: Int?
     var player: Player?
     var data = [Player]()
+    var comesFromAddPlayer = false
     
     @IBOutlet weak var playerTableView: UITableView!
     
@@ -54,9 +55,12 @@ class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        if number != nil{
+        if (number != nil){
             performSegue(withIdentifier: "saveSelectedPlayersSegue", sender: self)
-        }else{
+        }else if(comesFromAddPlayer==true){
+            performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+        }
+        else{
             dismiss(animated: true, completion: nil)
             
         }

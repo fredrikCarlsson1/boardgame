@@ -45,6 +45,8 @@ class AddPlayerPopUpViewController: UIViewController {
             if let nrOfTeams = teamsSelected{
                 destination.nrOfTeams = nrOfTeams
             }
+            destination.comesFromAddPlayer = true
+            
         }
     }
 

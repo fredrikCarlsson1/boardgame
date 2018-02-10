@@ -40,6 +40,9 @@
 		5C6B1E5D2020970C00ED3239 /* ShowCoreDataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */; };
 		5C6B1E5F2020AA9200ED3239 /* ExitPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B1E5E2020AA9200ED3239 /* ExitPopUP.swift */; };
 		5C6B1E612023ABAA00ED3239 /* boldStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B1E602023ABAA00ED3239 /* boldStringExtension.swift */; };
+		5C9644B82027500200C5FE03 /* ShowOwnQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */; };
+		5C9644BA2029BC5B00C5FE03 /* ShowOwnCardAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */; };
+		5CA36CBB202C5B7B002BA76C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CA36CBD202C5B7B002BA76C /* Localizable.strings */; };
 		5CAE93D6200F7AE400A30D5A /* ModalViewPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAE93D5200F7AE400A30D5A /* ModalViewPopUp.swift */; };
 		5CCE0D1F200517C9008654BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE0D1E200517C9008654BC /* AppDelegate.swift */; };
 		5CCE0D21200517C9008654BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCE0D20200517C9008654BC /* ViewController.swift */; };
@@ -115,6 +118,12 @@
 		5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCoreDataObjects.swift; sourceTree = "<group>"; };
 		5C6B1E5E2020AA9200ED3239 /* ExitPopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPopUP.swift; sourceTree = "<group>"; };
 		5C6B1E602023ABAA00ED3239 /* boldStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boldStringExtension.swift; sourceTree = "<group>"; };
+		5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOwnQuestions.swift; sourceTree = "<group>"; };
+		5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOwnCardAttributes.swift; sourceTree = "<group>"; };
+		5CA36CB7202C59D3002BA76C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		5CA36CB8202C59D3002BA76C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5CA36CBC202C5B7B002BA76C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5CA36CC2202C6DEA002BA76C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5CAE93D5200F7AE400A30D5A /* ModalViewPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewPopUp.swift; sourceTree = "<group>"; };
 		5CCE0D1B200517C9008654BC /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CCE0D1E200517C9008654BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -225,8 +234,6 @@
 				5CDAC46D20110E460035EF85 /* WordsCharadesHum.swift */,
 				5CDAC47120110E980035EF85 /* TeamChallengePopUp.swift */,
 				5CDAC47320110EBA0035EF85 /* CanYouFigureItOutPopUp.swift */,
-				5C0A30C5200E42B90038F309 /* showTeamsViewController.swift */,
-				5CDAC47D2012124B0035EF85 /* AlertView.swift */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				5CCE0D1E200517C9008654BC /* AppDelegate.swift */,
+				5CA36CBD202C5B7B002BA76C /* Localizable.strings */,
 				5CDAC47B20114A8F0035EF85 /* StartingPage.swift */,
 				5C0A30C1200C1DDA0038F309 /* NewGameViewController.swift */,
 				5C0A30A1200A1D750038F309 /* AddPlayerViewController.swift */,
@@ -271,6 +279,8 @@
 				5CCE0D20200517C9008654BC /* ViewController.swift */,
 				5CCE0D43200539BD008654BC /* popUpViewController.swift */,
 				5CAE93D5200F7AE400A30D5A /* ModalViewPopUp.swift */,
+				5C0A30C5200E42B90038F309 /* showTeamsViewController.swift */,
+				5CDAC47D2012124B0035EF85 /* AlertView.swift */,
 				5C6B1E4C201F2AB000ED3239 /* GameOver.swift */,
 				5C6B1E582020919B00ED3239 /* Games */,
 				5C6B1E59202091C400ED3239 /* menuPopUps */,
@@ -285,6 +295,8 @@
 				5C0A309F2008C8160038F309 /* Team.swift */,
 				5C6B1E5A2020922B00ED3239 /* CoreDataHandler.swift */,
 				5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */,
+				5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */,
+				5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */,
 				5C0A309D2008C8070038F309 /* Player.swift */,
 				5C0A30C0200BC8830038F309 /* CheckBoxHeader.h */,
 				5C6B1E562020912F00ED3239 /* GameClasses */,
@@ -404,6 +416,7 @@
 				5CCE0D29200517CA008654BC /* LaunchScreen.storyboard in Resources */,
 				5CCE0D26200517CA008654BC /* Assets.xcassets in Resources */,
 				5CCE0D46200603A2008654BC /* sms.mp3 in Resources */,
+				5CA36CBB202C5B7B002BA76C /* Localizable.strings in Resources */,
 				5CCE0D24200517C9008654BC /* Main.storyboard in Resources */,
 				5CCE0D422005370C008654BC /* sample.mp3 in Resources */,
 			);
@@ -452,6 +465,8 @@
 				5C39CC30201E0BC3008E52DA /* game.xcdatamodeld in Sources */,
 				5C6B1E5B2020922B00ED3239 /* CoreDataHandler.swift in Sources */,
 				5C39CC0A2019D591008E52DA /* AddPlayerPopUpViewController.swift in Sources */,
+				5C9644BA2029BC5B00C5FE03 /* ShowOwnCardAttributes.swift in Sources */,
+				5C9644B82027500200C5FE03 /* ShowOwnQuestions.swift in Sources */,
 				5CCE0D21200517C9008654BC /* ViewController.swift in Sources */,
 				5C0A30DA200E59200038F309 /* UIImageViewX.swift in Sources */,
 				5CCE0D542007A597008654BC /* HumTheSong.swift in Sources */,
@@ -494,10 +509,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5CA36CBD202C5B7B002BA76C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CA36CBC202C5B7B002BA76C /* sv */,
+				5CA36CC2202C6DEA002BA76C /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		5CCE0D22200517C9008654BC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5CCE0D23200517C9008654BC /* Base */,
+				5CA36CB7202C59D3002BA76C /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -506,6 +531,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5CCE0D28200517CA008654BC /* Base */,
+				5CA36CB8202C59D3002BA76C /* sv */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -517,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -574,6 +601,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

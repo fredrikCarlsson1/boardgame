@@ -12,9 +12,10 @@ class TeamChallengePopUp: UIViewController {
     @IBOutlet weak var scoreButton: UIButton!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var menuButton: FloatingActionButton!
     
     
-    
+    var tapGesture = UITapGestureRecognizer()
     var teamID: Int?
     var game: Int?
     var titleNumber: Int?
@@ -43,14 +44,26 @@ class TeamChallengePopUp: UIViewController {
     @IBAction func exitButton(_ sender: UIButton) {
     }
     
+    func pausTimer(){
+        timer.invalidate()
+    }
+    func continueTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(WordsCharadesHum.startTimer), userInfo: nil, repeats: true)
+    }
     
     @IBAction func pauseButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, animations: {
             if(self.menuView.transform == .identity){
                 self.closeMenu()
+                self.continueTimer()
             }
             else {
-                
+                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
+                self.tapGesture.numberOfTapsRequired = 1
+                self.tapGesture.numberOfTouchesRequired = 1
+                self.view.addGestureRecognizer(self.tapGesture)
+                self.view.isUserInteractionEnabled = true
+                self.pausTimer()
                 self.menuView.transform = .identity
             }
         })
@@ -70,6 +83,17 @@ class TeamChallengePopUp: UIViewController {
         self.helpButton.transform = CGAffineTransform(translationX: 15, y: -8)
         self.exitButton.transform = CGAffineTransform(translationX: 0, y: -15)
         self.scoreButton.transform = CGAffineTransform(translationX: 8, y: -9)
+        
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if(self.menuButton.transform != .identity){
+                self.menuButton.transform = .identity
+                self.closeMenu()
+                self.continueTimer()
+            }
+        })
         
     }
     

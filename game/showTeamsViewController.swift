@@ -117,6 +117,18 @@ class showTeamsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func doneButton(_ sender: UIButton) {
+        if let team = teamID{
+            if let textView = teamNameTextView.text{
+                if(textView != ""){
+                    LocalDataBase.teamArray[team].name = textView
+                }
+            }
+            if let points = scoreTextView.text {
+                if(points != ""){
+                    LocalDataBase.teamArray[team].points = Int(points)!
+                }
+            }
+        }
         self.dismiss(animated: true, completion: nil)
 
     }

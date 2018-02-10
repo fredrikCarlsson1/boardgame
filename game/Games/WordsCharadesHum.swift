@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 class WordsCharadesHum: UIViewController {
-    @IBOutlet weak var gameLabel: UILabel!
+  
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var checkBox1: BEMCheckBox!
     @IBOutlet weak var checkBox2: BEMCheckBox!
@@ -20,6 +20,10 @@ class WordsCharadesHum: UIViewController {
     @IBOutlet weak var gameView: UIView!
     @IBOutlet weak var startingView: UIViewX!
     @IBOutlet weak var timeLabel: UILabel!
+      @IBOutlet weak var gameLabel: UILabel!
+    @IBOutlet weak var doneOutlet: UIButtonX!
+    
+ 
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -30,10 +34,11 @@ class WordsCharadesHum: UIViewController {
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var scoreButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var menuButton: FloatingActionButton!
     
     
     
-    
+    var tapGesture = UITapGestureRecognizer()
     var timer = Timer()
     var seconds = 45
     var soundPlayer = AVAudioPlayer()
@@ -43,6 +48,7 @@ class WordsCharadesHum: UIViewController {
     var teamID: Int?
     var game: Int?
     var titleNumber: Int?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +72,13 @@ class WordsCharadesHum: UIViewController {
                     titleLabel.text = LocalDataBase().getRandomSubjectFrom(list: game, index: title)
                 }
                 if (game == 0){
+                    seconds = 30
+                    timeLabel.backgroundColor = UIColor(hexString: "#dbd16d")
+                    menuView.backgroundColor = UIColor(hexString: "#dbd16d")
+                     menuButton.backgroundColor = UIColor(hexString: "#dbd16d")
+                    doneOutlet.backgroundColor = UIColor(hexString: "#dbd16d")
+                    gameLabel.textColor = UIColor(hexString: "#dbd16d")
+                    
                     titleLabel.text = LocalDataBase().withOtherWordsList[gameNumber].title
                     label1.text = LocalDataBase().withOtherWordsList[gameNumber].word1
                     label2.text = LocalDataBase().withOtherWordsList[gameNumber].word2
@@ -76,6 +89,12 @@ class WordsCharadesHum: UIViewController {
                     
                 }
                 else if(game == 1){
+                    seconds = 45
+                    timeLabel.backgroundColor = UIColor(hexString: "#cc7297")
+                    menuView.backgroundColor = UIColor(hexString: "#cc7297")
+                    menuButton.backgroundColor = UIColor(hexString: "#cc7297")
+                    doneOutlet.backgroundColor = UIColor(hexString: "#cc7297")
+                    gameLabel.textColor = UIColor(hexString: "#cc7297")
                     titleLabel.text = LocalDataBase().charadeList[gameNumber].title
                     label1.text = LocalDataBase().charadeList[gameNumber].word1
                     label2.text = LocalDataBase().charadeList[gameNumber].word2
@@ -85,6 +104,12 @@ class WordsCharadesHum: UIViewController {
                     
                 }
                 else if(game == 4){
+                    seconds = 60
+                    timeLabel.backgroundColor = UIColor(hexString: "#b4b75f")
+                    menuView.backgroundColor = UIColor(hexString: "#b4b75f")
+                    menuButton.backgroundColor = UIColor(hexString: "#b4b75f")
+                    doneOutlet.backgroundColor = UIColor(hexString: "#b4b75f")
+                    gameLabel.textColor = UIColor(hexString: "#b4b75f")
                     titleLabel.text = LocalDataBase().humTheSongList[gameNumber].title
                     label1.text = LocalDataBase().humTheSongList[gameNumber].word1
                     label2.text = LocalDataBase().humTheSongList[gameNumber].word2
@@ -111,14 +136,31 @@ class WordsCharadesHum: UIViewController {
         
     }
     
-    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            if(self.menuButton.transform != .identity){
+                self.menuButton.transform = .identity
+                self.closeMenu()
+                self.continueTimer()
+            }
+        })
+        
+    }
     
     @IBAction func pauseButton(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, animations: {
             if(self.menuView.transform == .identity){
                 self.closeMenu()
+                self.continueTimer()
             }
             else {
+                self.pausTimer()
+                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
+                self.tapGesture.numberOfTapsRequired = 1
+                self.tapGesture.numberOfTouchesRequired = 1
+                self.view.addGestureRecognizer(self.tapGesture)
+                self.view.isUserInteractionEnabled = true
                 self.menuView.transform = .identity
             }
             
@@ -243,6 +285,13 @@ class WordsCharadesHum: UIViewController {
             print(error)
         }
         soundPlayer.play()
+    }
+    
+    func pausTimer(){
+        timer.invalidate()
+    }
+    func continueTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(WordsCharadesHum.startTimer), userInfo: nil, repeats: true)
     }
     
     

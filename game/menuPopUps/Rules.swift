@@ -44,7 +44,10 @@ class Rules: UIViewController {
 //        return attributedString
 //    }
     
-
+    @IBAction func dismissBackgroundButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func doneButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

@@ -20,6 +20,9 @@ class ExitPopUP: UIViewController {
         LocalDataBase.teamArray.removeAll()
         performSegue(withIdentifier: "exitToStartSegue", sender: self)
     }
+    @IBAction func dismissBackgroundButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func noButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

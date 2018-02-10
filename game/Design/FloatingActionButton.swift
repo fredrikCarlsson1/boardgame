@@ -25,7 +25,5 @@ class FloatingActionButton: UIButtonX {
         
         return super.beginTracking(touch, with: event)
     }
-    
-    
-    
+ 
 }

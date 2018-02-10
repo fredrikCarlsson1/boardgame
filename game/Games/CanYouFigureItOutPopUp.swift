@@ -19,6 +19,7 @@ class CanYouFigureItOutPopUp: UIViewController {
     var seconds = 46
     var soundPlayer = AVAudioPlayer()
     var audioArray = ["airHorn"]
+    var tapGesture = UITapGestureRecognizer()
     
     
     @IBOutlet weak var pointsLabel: UILabel!
@@ -31,6 +32,7 @@ class CanYouFigureItOutPopUp: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var fatTextView: UITextView!
+    @IBOutlet weak var menuButton: FloatingActionButton!
     
     
     
@@ -92,6 +94,11 @@ class CanYouFigureItOutPopUp: UIViewController {
                 self.closeMenu()
             }
             else {
+                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
+                self.tapGesture.numberOfTapsRequired = 1
+                self.tapGesture.numberOfTouchesRequired = 1
+                self.view.addGestureRecognizer(self.tapGesture)
+                self.view.isUserInteractionEnabled = true
                 self.menuView.transform = .identity
             }
             
@@ -114,6 +121,15 @@ class CanYouFigureItOutPopUp: UIViewController {
         self.exitButton.transform = CGAffineTransform(translationX: 0, y: -15)
         self.scoreButton.transform = CGAffineTransform(translationX: 8, y: -9)
         
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if(self.menuButton.transform != .identity){
+                self.menuButton.transform = .identity
+                self.closeMenu()
+            }
+        })
         
     }
     

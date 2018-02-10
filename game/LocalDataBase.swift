@@ -19,10 +19,14 @@ public class LocalDataBase {
         
     }
     
+    
     static var keysOfGamesArray = [Keys.withOtherWords, Keys.charades, Keys.teamChallenge, Keys.canYouFigureItOut, Keys.humTheSong]
     
     static var teamArray = [Team]()
     static var nrOfRounds = 1
+    
+    static var cardDeck:[Int] = [1]
+    
     
     
     public var withOtherWordsList = [withOtherWords]()
@@ -36,6 +40,7 @@ public class LocalDataBase {
     
     public var arrayOfSubjects = [Any]()
     
+    
     init() {
         self.arrayOfSubjects.append(withOtherWordsList)
         self.arrayOfSubjects.append(charadeList)
@@ -43,58 +48,160 @@ public class LocalDataBase {
         self.arrayOfSubjects.append(canYouFigureItOutList)
         self.arrayOfSubjects.append(humTheSongList)
         
+        
+        if(LocalDataBase.cardDeck.contains(1)){
+            //(20)
+            self.charadeList.append(animales1Swe)
+            self.charadeList.append(animales2Swe)
+            self.charadeList.append(kitchenSwe)
+            self.charadeList.append(sports2Swe)
+            self.charadeList.append(clothesSwe)
+            self.charadeList.append(drinksSwe)
+            self.charadeList.append(vehiclesSwe)
+            self.charadeList.append(electronicsSwe)
+            self.charadeList.append(natureSwe)
+            self.charadeList.append(moviesSwe)
+            self.charadeList.append(fruitsSwe)
+            self.charadeList.append(furnituresSwe)
+            self.charadeList.append(commicsSwe)
+            self.charadeList.append(foodsSwe)
+            self.charadeList.append(sports3Swe)
+            self.charadeList.append(musicSwe)
+            self.charadeList.append(nationalitiesSwe)
+            self.charadeList.append(professions1Swe)
+            self.charadeList.append(professions2Swe)
+            self.charadeList.append(movieCharactersSwe)
+            
+            //(20)
+            self.teamChallengeList.append(cities1Swe)
+            self.teamChallengeList.append(physicalExercise1Swe)
+            self.teamChallengeList.append(physicalExercise2Swe)
+            self.teamChallengeList.append(physicalExercise3Swe)
+            self.teamChallengeList.append(physicalExercise4Swe)
+            self.teamChallengeList.append(physicalExercise5Swe)
+            self.teamChallengeList.append(foodSwe)
+            self.teamChallengeList.append(carsSwe)
+            self.teamChallengeList.append(famousPersonsSwe)
+            self.teamChallengeList.append(music2Swe)
+            self.teamChallengeList.append(seriousSwe)
+            self.teamChallengeList.append(fishSwe)
+            self.teamChallengeList.append(choirSwe)
+            self.teamChallengeList.append(wordsSwe)
+            self.teamChallengeList.append(languageSwe)
+            self.teamChallengeList.append(namesSwe)
+            self.teamChallengeList.append(names2Swe)
+            self.teamChallengeList.append(sportsSwe)
+            self.teamChallengeList.append(worldSwe)
+            self.teamChallengeList.append(usaSwe)
+            
+            //(15)
+            self.withOtherWordsList.append(capitalCitiesSwe)
+            self.withOtherWordsList.append(beersSwe)
+            self.withOtherWordsList.append(fastFoodRestauransSwe)
+            self.withOtherWordsList.append(inTheGroceryStoreSwe)
+            self.withOtherWordsList.append(inYourHomeSwe)
+            self.withOtherWordsList.append(iSverigeSwe)
+            self.withOtherWordsList.append(famousWomenOver50Swe)
+            self.withOtherWordsList.append(legendaryWomensSwe)
+            self.withOtherWordsList.append(historicalPersonsSwe)
+            self.withOtherWordsList.append(menOver50Swe)
+            self.withOtherWordsList.append(clothes2Swe)
+            self.withOtherWordsList.append(fictitiousPersonsSwe)
+            self.withOtherWordsList.append(proffesions3Swe)
+            self.withOtherWordsList.append(criminalsSwe)
+            self.withOtherWordsList.append(inTheBathRoomSwe)
+            
+            
+            //(18)
+            self.canYouFigureItOutList.append(federerSwe)
+            self.canYouFigureItOutList.append(stockholmSwe)
+            self.canYouFigureItOutList.append(obamaSwe)
+            self.canYouFigureItOutList.append(nyckelnTillFrihetSwe)
+            self.canYouFigureItOutList.append(friendsSwe)
+            self.canYouFigureItOutList.append(uranusSwe)
+            self.canYouFigureItOutList.append(varldsdelSwe)
+            self.canYouFigureItOutList.append(indonesienSwe)
+            self.canYouFigureItOutList.append(bornInTheUSASWe)
+            self.canYouFigureItOutList.append(cocaColaSwe)
+            self.canYouFigureItOutList.append(colosseumSwe)
+            self.canYouFigureItOutList.append(palmSwe)
+            self.canYouFigureItOutList.append(niagaraSwe)
+            self.canYouFigureItOutList.append(cangaruSwe)
+            self.canYouFigureItOutList.append(fotbollSwe)
+            self.canYouFigureItOutList.append(massling)
+            self.canYouFigureItOutList.append(tiger)
+            self.canYouFigureItOutList.append(gt)
+            
+            //Hum the song (8)
+            self.humTheSongList.append(svenskSchlager)
+            self.humTheSongList.append(boyBand1)
+            self.humTheSongList.append(first80)
+            self.humTheSongList.append(second80)
+            self.humTheSongList.append(hipHopRnB1)
+            self.humTheSongList.append(hipHopRnB1)
+            self.humTheSongList.append(house)
+            self.humTheSongList.append(disco)
+        
+    
+        }
+        if(LocalDataBase.cardDeck.contains(2)){
+            self.teamChallengeList.append(dogsSwe)
+            
+        }
+        if(LocalDataBase.cardDeck.contains(3)){
+            addCoreDataToWithOtherWordsList()
+            
+        }
+        
+        
+     
         // With other Words append
-        self.withOtherWordsList.append(capitalCities)
-        self.withOtherWordsList.append(beers)
-        self.withOtherWordsList.append(fastFoodRestaurans)
+        
         
         //Can you figure it out?
         self.canYouFigureItOutList.append(city1)
         self.canYouFigureItOutList.append(federer)
         
         
-        //Hum the song
-        //self.humTheSongList.append(swedishSchlager)
-        self.humTheSongList.append(boyBand1)
-        self.humTheSongList.append(beatles)
         
         
         //Team Challenge (20 st)
-        self.teamChallengeList.append(cities1)
-        self.teamChallengeList.append(physicalExercise1)
-        self.teamChallengeList.append(physicalExercise2)
-        self.teamChallengeList.append(physicalExercise3)
-        self.teamChallengeList.append(physicalExercise4)
-        self.teamChallengeList.append(physicalExercise5)
-        self.teamChallengeList.append(food)
-        self.teamChallengeList.append(cars)
-        self.teamChallengeList.append(famousPersons)
-        self.teamChallengeList.append(music)
-        self.teamChallengeList.append(serious)
-        self.teamChallengeList.append(fish)
-        self.teamChallengeList.append(choir)
-        self.teamChallengeList.append(words)
-        self.teamChallengeList.append(language)
-        self.teamChallengeList.append(names)
-        self.teamChallengeList.append(names2)
-        self.teamChallengeList.append(sports)
-        self.teamChallengeList.append(world)
-        self.teamChallengeList.append(usa)
-        self.teamChallengeList.append(dogs)
+//        self.teamChallengeList.append(cities1)
+//        self.teamChallengeList.append(physicalExercise1)
+//        self.teamChallengeList.append(physicalExercise2)
+//        self.teamChallengeList.append(physicalExercise3)
+//        self.teamChallengeList.append(physicalExercise4)
+//        self.teamChallengeList.append(physicalExercise5)
+//        self.teamChallengeList.append(food)
+//        self.teamChallengeList.append(cars)
+//        self.teamChallengeList.append(famousPersons)
+//        self.teamChallengeList.append(music2)
+//        self.teamChallengeList.append(serious)
+//        self.teamChallengeList.append(fish)
+//        self.teamChallengeList.append(choir)
+//        self.teamChallengeList.append(words)
+//        self.teamChallengeList.append(language)
+//        self.teamChallengeList.append(names)
+//        self.teamChallengeList.append(names2)
+//        self.teamChallengeList.append(sports)
+//        self.teamChallengeList.append(world)
+//        self.teamChallengeList.append(usa)
+//        self.teamChallengeList.append(dogs)
         
         
         //Charades ENG
-        self.charadeList.append(animales1)
-        self.charadeList.append(animales2)
-        self.charadeList.append(sports2)
-        self.charadeList.append(kitchen)
-        self.charadeList.append(fruits)
-        self.charadeList.append(movies)
-        self.charadeList.append(vehicles)
-        self.charadeList.append(electronics)
-        self.charadeList.append(clothes)
-        self.charadeList.append(nature)
-        self.charadeList.append(drinks)
+        self.charadesArrayEng1.append(animales1)
+        self.charadesArrayEng1.append(animales2)
+        self.charadesArrayEng1.append(sports2)
+        self.charadesArrayEng1.append(kitchen)
+        self.charadesArrayEng1.append(fruits)
+        self.charadesArrayEng1.append(movies)
+        self.charadesArrayEng1.append(vehicles)
+        self.charadesArrayEng1.append(electronics)
+        self.charadesArrayEng1.append(clothes)
+        self.charadesArrayEng1.append(nature)
+        self.charadesArrayEng1.append(drinks)
+        
         //Charades SWE
         self.charadesArraySwe1.append(animales1Swe)
         self.charadesArraySwe1.append(animales2Swe)
@@ -122,9 +229,42 @@ public class LocalDataBase {
     }
     
     
+    func addCoreDataToWithOtherWordsList(){
+        if let words = CoreDataHandler.fetchWithOtherWords(){
+            for word in words{
+                let title = word.title
+                let word1 = word.word1
+                let word2 = word.word2
+                let word3 = word.word3
+                let word4 = word.word4
+                let word5 = word.word5
+                let newWord = withOtherWords(title: title!, firstWord: word1!, secondWord: word2!, thirdWord: word3!, fourthWord: word4!, fifthWord: word5!)
+                withOtherWordsList.append(newWord)
+            }
+        }
+    }
     
     
-    // WithOtherWords
+    
+    // WithOtherWords Swe (15 + 3)
+    let capitalCitiesSwe = withOtherWords(title: "Huvudstäder i Europa", firstWord: "Madrid", secondWord: "Warzava", thirdWord: "Lisabon", fourthWord: "Sofia", fifthWord: "Bucarest")
+    let beersSwe = withOtherWords(title: "Ölmärken", firstWord: "Carlsberg", secondWord: "Heiniken", thirdWord: "Guiness", fourthWord: "Singha", fifthWord: "Red Label")
+    let fastFoodRestauransSwe = withOtherWords(title: "Snabbmatsrestauranger", firstWord: "McDonalds", secondWord: "Burger King", thirdWord: "Subway", fourthWord: "KFC", fifthWord: "Pizza Hut")
+    
+    let inTheGroceryStoreSwe = withOtherWords(title: "I mataffären", firstWord: "Växelpengar", secondWord: "Kundvagn", thirdWord: "Flintastek", fourthWord: "Keso", fifthWord: "Mjölkförpackning")
+    let inYourHomeSwe = withOtherWords(title: "I hemmet", firstWord: "Dörrklocka", secondWord: "Skohorn", thirdWord: "Sovrumslampa", fourthWord: "Disktrasa", fifthWord: "Parkettgolv")
+    let iSverigeSwe = withOtherWords(title: "I Sverige", firstWord: "Gävlebocken", secondWord: "Statshuset", thirdWord: "Öresundsbron", fourthWord: "Kaknästornet", fifthWord: "Liseberg")
+    let famousWomenOver50Swe = withOtherWords(title: "Kända kvinnor över 50", firstWord: "Madonna", secondWord: "Michelle Pfeiffer", thirdWord: "Lill-Babs", fourthWord: "Oprah Winfrey", fifthWord: "Janet Jackson")
+    let legendaryWomensSwe = withOtherWords(title: "Legendariska kvinnor", firstWord: "Marie Curie", secondWord: "Rosa Parks", thirdWord: "Anne Frank", fourthWord: "Marlyn Monroe", fifthWord: "Mother Theresa")
+    let historicalPersonsSwe = withOtherWords(title: "Historiska personer", firstWord: "Cleopatra", secondWord: "Judas", thirdWord: "Joan of Arc", fourthWord: "Alexander den store", fifthWord: "Napoleon")
+    let menOver50Swe = withOtherWords(title: "Kända män över 50", firstWord: "Richard Gere", secondWord: "Bruce Springsteen", thirdWord: "Michael Jordan", fourthWord: "George Bush", fifthWord: "Bill Gates")
+    let clothes2Swe = withOtherWords(title: "Klädmärken", firstWord: "Henry Lloyd", secondWord: "Peak Performance ", thirdWord: "Gucci ", fourthWord: "HM", fifthWord: "Nike")
+    let fictitiousPersonsSwe = withOtherWords(title: "Fiktiva personer", firstWord: "Harry Potter", secondWord: "Alice i underlandet", thirdWord: "Rödluvan", fourthWord: "Tintin", fifthWord: "Sherlock Holmes")
+    let proffesions3Swe = withOtherWords(title: "Yrken", firstWord: "Kassörska", secondWord: "Fönsterputsare", thirdWord: "Sömmerska", fourthWord: "Barberare", fifthWord: "Takläggare")
+    let criminalsSwe = withOtherWords(title: "Brottslingar", firstWord: "Bonnie Parker", secondWord: "Pablo Escobar", thirdWord: "Clark Olofsson", fourthWord: "Joseph Fritzl", fifthWord: "Al Capone")
+    let inTheBathRoomSwe = withOtherWords(title: "I badrummet", firstWord: "Shampoflaska", secondWord: "Toalettrulle", thirdWord: "Tandkrämstub", fourthWord: "Tvålkopp", fifthWord: "Deodorant")
+    
+    
     
     
     var capitalCities = withOtherWords(title: "Capitals in Europe", firstWord: "Madrid", secondWord: "Warzava", thirdWord: "Lisabon", fourthWord: "Sofia", fifthWord: "Bucarest")
@@ -132,13 +272,16 @@ public class LocalDataBase {
     var fastFoodRestaurans = withOtherWords(title: "Fast Food Restaurants", firstWord: "McDonalds", secondWord: "Burger King", thirdWord: "Subway", fourthWord: "KFC", fifthWord: "Pizza Hut")
     
     
-    // Can you figure it out? (20)
+    
+    
+    // Can you figure it out? (2 + 18 Swe)
     var city1 = CanYouFigureItOut(title: "City", answer: "Stockholm", firstWord: "Was founded 1252", secondWord:"Also goes by the name: Venice of the North" , thirdWord: "Home of Karl XVI Gustav", fourthWord: "Globen, Kaknästornet, and Vasa Museum are famous places in this city", fifthWord: "The Capital of Sweden")
     var federer = CanYouFigureItOut(title: "Athlete", answer: "Roger Federer", firstWord: "Was born 8 August, 1981", secondWord:"Says he has three idols; Boris Becker, Stefan Edberg and Pete Sampras" , thirdWord: "Has had a Swiss Post stamp issued in his honour ", fourthWord: "Has won all four Major Tennis Tournament", fifthWord: "Is the most successful tennis player in Switzerland history")
     
+    
     var federerSwe = CanYouFigureItOut(title: "Idrottare", answer: "Roger Federer", firstWord: "Föddes 8 Augusti, 1981", secondWord:"Säger att han har tre idoler; Boris Becker, Stefan Edberg och Pete Sampras" , thirdWord: "Har fått ett schweiziskt frimärke tryckt i sin ära", fourthWord: "Har vunnit alla de stora Grand Slam turneringarna", fifthWord: "Är den mest framgångsrika tennisspelaren i Schweiz historia")
     var stockholmSwe = CanYouFigureItOut(title: "Stad", answer: "Stockholm", firstWord: "Grundades 1252", secondWord:"Går också under namnet Nordens Venedig" , thirdWord: "Hem för Karl XVI Gustav", fourthWord: "Globen, Kaknästornet, och Vasa Museumet är kända platser i denna stad", fifthWord: "Sveriges huvudstad")
-    var obamaSwe = CanYouFigureItOut(title: "Känd person", answer: "Barack Obama", firstWord: "Har gett ut en självbiografi med titeln; 'Min far hade en dröm'", secondWord: "Har tilldelats Nobels fredspris", thirdWord: "Föddes 4 augusti 1961 på Havaii ", fourthWord: "Är gift med Michelle och har döttrarna Malia och Sasha ", fifthWord: "Valdes 2008 in som USAs 44e president.")
+    var obamaSwe = CanYouFigureItOut(title: "Känd person", answer: "Barack Obama", firstWord: "Har gett ut en självbiografi med titeln; 'Min far hade en dröm'", secondWord: "Har tilldelats Nobels fredspris", thirdWord: "Föddes 4 augusti 1961 på Hawaii ", fourthWord: "Är gift med Michelle och har döttrarna Malia och Sasha ", fifthWord: "Valdes 2008 in som USAs 44e president.")
     var nyckelnTillFrihetSwe = CanYouFigureItOut(title: "Film", answer: "Nyckeln till frihet", firstWord: "Filmmusiken gjordes av Thomas Newman", secondWord: "Var inledningsvis ingen ekonomisk succé. Mycket på grund av konkurrens från filmer som Pulp Fiction och Forrest Gump.", thirdWord: " Baserad på en roman av Stephan King", fourthWord: "Filmens huvudkaraktärer spelas av Tim Robbins och Morgan Freeman", fifthWord: "Berättar historien om Andy Dufrense, som döms mot sitt nekande till livstids fängelse för mordet på sin fru och hennes älskare.")
     var friendsSwe = CanYouFigureItOut(title: "TV-serie", answer: "Friends", firstWord: "Serien kallades från början Insomnia Cafe, innan namnet byttes", secondWord: "Serien har haft gästskådespelare som exempelvis George Clooney and Christina Applegate", thirdWord: "Serien är skapad av David Crane och Marta Kauffman", fourthWord: "En stor del av handlingen utspelar sig på cafét Central Perk", fifthWord: "Serien handlar om 6 vänner som bor i new york")
     var uranusSwe = CanYouFigureItOut(title: "Planet", answer: "Uranus", firstWord: "Upptäcktes 1781 av William Herschel", secondWord: "Planetens diameter är ca 4 gånger större än Jordens", thirdWord: "Det tar 84 år för planeten att fullborda ett varv runt solen", fourthWord: "Planeten har i dagsläget tjugosju bekräftade månar, varav de fem största heter Miranda, Ariel, Umbriel, Titania och Oberon", fifthWord: "Är den sjunde planeten från solen och har ungefär samma storlek som Neptunus ")
@@ -152,14 +295,16 @@ public class LocalDataBase {
     var cangaruSwe = CanYouFigureItOut(title: "Djur", answer: "Kängru", firstWord: "Djuret är växtätare och är vanligen aktiva på natten eller skymningen.", secondWord: "Pälsens färg är ofta enhetligt grå- eller brunaktig. Svansen är lång, stark och huvudsakligen hårbeklädd.", thirdWord: "Djuret förekommer i Australien och på Nya Guinea samt på kringliggande öar som Tasmanien.", fourthWord: "Deras baktassar är betydligt större än de främre. Djuret är kanske som mest känd för sitt skuttande och hoppande när de ska ta sig framåt.", fifthWord: "Är ett pungdjur. Honan föder och förvarar sina ungar i sin pung tills ungen blir ungefär ett halvår gammal")
     var fotbollSwe = CanYouFigureItOut(title: "Sport", answer: "Fotboll", firstWord: "En känd legend inom denna idrott är Carlos Alberto", secondWord: "En känd aktiv spelare är Carli Lloyd", thirdWord: "En annan är målvakten Hugo Lloris", fourthWord: "Marta har dominerat denna sport på damsidan under många år.", fifthWord: "På herrsidan är Messi och Ronaldo de starkast lysande stjärnorna")
     var massling = CanYouFigureItOut(title: "Sjukdom", answer: "Mässling", firstWord: "Sjukdomen orsakas av ett virus i morbillisläktet. Viruset sprids främst i droppform via luften", secondWord: "Hos vuxna är det en farlig sjukdom som obehandlad kan leda till döden", thirdWord: "Sjukdomen är den med vaccin förebyggbara sjukdom som orsakar mest dödsfall i världen. Främst i fattiga länder i Afrika. År 1980 dog 2,6 miljoner människor och 2014 dog 73 00", fourthWord: "Sjukdomen är ovanlig i Sverige tack vare den allmänna vaccinationen  som sker med en första dos vid 1,5 års ålder och en andra dos i samband med skolstarten", fifthWord: "Sjukdomen är en virussjukdom som orsakar infektioner i luftvägarna och röda hudutslag")
-    var tiger = CanYouFigureItOut(title: "Djur", answer: "Tiger", firstWord: "Djuret lever endast i Asien ", secondWord: "Den jagar ensam och äter främst medelstora djur ur familjerna svindjur och hjortdjur", thirdWord: "Tigern är det största nu levande kattdjuret.", fourthWord: "De flesta lever i fuktig tropisk och subtropisk lövskog, men finns även i tempererade löv- och barrskogar. I denna miljö utgör pälsens mönster bra kamouflage", fifthWord: "Namnet på djuret härstammar från det grekiska ordet tigris")
+    var tiger = CanYouFigureItOut(title: "Djur", answer: "Tiger", firstWord: "Djuret lever endast i Asien ", secondWord: "Den jagar ensam och äter främst medelstora djur ur familjerna svindjur och hjortdjur", thirdWord: "Djuret är det största nu levande kattdjuret.", fourthWord: "De flesta lever i fuktig tropisk och subtropisk lövskog, men finns även i tempererade löv- och barrskogar. I denna miljö utgör pälsens mönster bra kamouflage", fifthWord: "Namnet på djuret härstammar från det grekiska ordet tigris")
     var gt = CanYouFigureItOut(title: "Drink", answer: "Gin and tonic", firstWord: "Ursprunget till drinken sägs vara att brittiska soldater i Indien fick idén att ta den mycket beskt smakande malariamedicinen utspädd med sockervatten och denna dryck i syfte att göra intaget mer njutbart", secondWord: "Mycket populärt i Spanien, där det i storstäderna inte är ovanligt med barlokaler som enbart serverar olika varianter av denna dryck.", thirdWord: "Serveras traditionellt i ett highballglas med isbitar och en skiva citron eller lime", fourthWord: "Innehåller endast två huvudingredienser som tillsammans skapar en friskt och syrlig smakförnimmelse", fifthWord: "Varianter förekommer, exempelvis Turbo G&T (eller Cold Brew G&T)")
     
     
     
     // Hum The song challenge(8 + 1 swe)
-    var boyBand1 = HumTheSong(title: "Boy Bands", firstWord: "I Want It That Way", secondWord: "Bye Bye Bye", thirdWord: "MMMBop", fourthWord: "As long as you love me", fifthWord: "Mandy")
+    var boyBand1 = HumTheSong(title: "Boy Bands", firstWord: "Backstreet Boys - I Want It That Way", secondWord: "NSYNC - Bye Bye Bye", thirdWord: "Hanson - MMMBop", fourthWord: "Backstreet Boys - As long as you love me", fifthWord: "Mandy")
+    
     var beatles = HumTheSong(title: "Beatles", firstWord: "Hey Jude", secondWord: "Twist and shout", thirdWord: "Let it be", fourthWord: "Come together", fifthWord: "Here comes the sun")
+    
     var first80 = HumTheSong(title: "80´s", firstWord: "Toto-Africa", secondWord: "Journey - Don't stop belivin'", thirdWord: "The Police - Every breath you take.", fourthWord: "Michael Jackson - Billie Jean", fifthWord: "Dolly Parton - 9-5")
     var second80 = HumTheSong(title: "80´s", firstWord: "Paul Simon - You can call me Al", secondWord: "Men at work - Down under", thirdWord: "Michael Jackson - Beat it", fourthWord: "Wham! - Wake me up before you go-go", fifthWord: "Scorpions - Rock you like a hurricane")
     var disco = HumTheSong(title: "Disco-songs", firstWord: "Diana Summer - Hot stuff", secondWord: "Boney M. - Daddy Cool", thirdWord: "Sister Sledge - We Are Family", fourthWord: "Bee Gees - Stayin' Alive", fifthWord: "Pointer Sisters - I'm So Excited")
@@ -167,8 +312,36 @@ public class LocalDataBase {
     var hipHopRnB2 = HumTheSong(title: "Hip hop/RnB", firstWord: "Beyonce - Single Ladies", secondWord: "Diddy - Last Night", thirdWord: "Snoop Dogg - Young, Wild & Free", fourthWord: "Will Smith - Gettin’ Jiggy Wit It", fifthWord: "MC Hammer - U Can’t Touch This")
     var house = HumTheSong(title: "House", firstWord: "Avicii- Wake me up", secondWord: "Swedish House  Mafia - One", thirdWord: "Kygo - Stole the show", fourthWord: "David guetta - Titanium", fifthWord: "Axwell/Ingrosso - More then you know")
     
+    let classicRockSwe = HumTheSong(title: "Klassisk rock", firstWord: "The Clash - London Calling", secondWord: "Nirvana - Smells Like Teen Spirit", thirdWord: "The Rolling Stones - Satisfaction", fourthWord: "Bruce Springsteen - Born to Run", fifthWord: "Deep Purple - Smoke on the water")
+    //let rockAfter2000Swe = HumTheSong(title: <#T##String#>, firstWord: <#T##String#>, secondWord: <#T##String#>, thirdWord: <#T##String#>, fourthWord: <#T##String#>, fifthWord: <#T##String#>)
     
-    var svenskSchlager = HumTheSong(title: "Swedish Schlager", firstWord: "Satelit", secondWord: "Waterloo", thirdWord: "Listen to your heartbeat", fourthWord: "Genom eld och vatten", fifthWord: "I cant go on")
+    let svenskSchlager = HumTheSong(title: "Svensk Schlager", firstWord: "Satelit", secondWord: "Waterloo", thirdWord: "Listen to your heartbeat", fourthWord: "Genom eld och vatten", fifthWord: "I cant go on")
+    let melodifestivalenSwe = HumTheSong(title: "Melodifestivalsvinnare", firstWord: "Roger Pontare-Vindarna viskar mitt namn", secondWord: "Abba-Waterloo", thirdWord: "Loreen - Euphoria", fourthWord: "Måns Zelmerlöv - Heroes", fifthWord: "Charlotte Nilsson (Perrelli) - Tusen och en natt")
+    
+    
+    
+    //Team Challenge Swe
+    var cities1Swe  = TeamChallenge(title: "Geografi", challenge: "Nämn minst sex huvudstäder i Afrika innan tiden runnit ut")
+    var physicalExercise1Swe  = TeamChallenge(title: "Fysisk aktivitet", challenge: "Stå upp på raka ben. Om alla i laget kan nudda golvet med sina fingertoppar har ni klarat utmaningen.")
+    var physicalExercise2Swe  = TeamChallenge(title: "Fysisk aktivitet", challenge: "Alla i laget måste göra 15 armhävningar innan tiden har runnit ut för att ni ska lyckas med utmaningen.")
+    var physicalExercise3Swe  = TeamChallenge(title: "Balans", challenge: "Stå på tå på ett ben i minst 20 sekunder innan tiden runnit ut. Om någon i laget klarar det får ni full poäng. S")
+    var foodSwe  = TeamChallenge(title: "Mat", challenge: "Nämn totalt 6 maträtter som börjar med alfabetets sex första bokstäver(A-F). En maträtt för varje bokstav.")
+    var carsSwe = TeamChallenge(title: "Fordon", challenge: "Kan ni som lag komma på 10 bilmärken innan tiden är ute?")
+    var physicalExercise4Swe  = TeamChallenge(title: "Smidighet", challenge: "Om någon i laget kan kyssa sin egen fot har ni lyckats med utmaningen")
+    var physicalExercise5Swe  = TeamChallenge(title: "Fysisk utmaning", challenge: "Alla spelare i laget ska lägga sig på rygg på golvet. Om alla därfrån lyckas ställa sig upp utan att använda armarna eller händerna har ni klarat utmaningen")
+    var famousPersonsSwe = TeamChallenge(title: "Kända personer", challenge: "Can the team come up with 3 famous persons with the first name Kim")
+    var music2Swe = TeamChallenge(title: "Musik", challenge: "Kan laget sjunga den försa delen av låten 'We are the world'? Om ni klarar de första 20 orden får ni full poäng")
+    var seriousSwe = TeamChallenge(title: "Seriositet", challenge: "Ingen i laget får skratta under 45 sekunder. Resterande lag får göra allt för att få er att misslyckas med utmaningen")
+    var fishSwe = TeamChallenge(title: "I havet", challenge: "Kan laget tillsammans nämna 8 olika sorters fiskar innan tiden runnit ut")
+    var choirSwe = TeamChallenge(title: "Kör", challenge: "Om alla i laget samstämmigt kan vissla 'Jingle Bells', då har ni lyckats med utmaningen")
+    var namesSwe = TeamChallenge(title: "Namn", challenge: "Kan laget nämna 10 flicknamn som börjar med bokstaven 'S' innan tiden runnit ut")
+    var names2Swe = TeamChallenge(title: "Namn", challenge: "Kan laget nämna 10 pojknamn som börjar med bokstaven 'M' innan tiden runnit ut")
+    var wordsSwe = TeamChallenge(title: "Ord", challenge: "Kan laget komma på fem synonymer till ordet 'näsa'")
+    var languageSwe = TeamChallenge(title: "Språk", challenge: "Kan laget säga 'tack' på minst 6 olika språk")
+    var sportsSwe = TeamChallenge(title: "Sporter", challenge: "Kan laget nämna 10 sporter där man INTE använder sig av en boll")
+    var dogsSwe = TeamChallenge(title: "Djur", challenge: "Kan laget nämna minst 10 hundraser innan tiden runnit ut ")
+    var worldSwe = TeamChallenge(title: "Världen", challenge: "Kan laget nämna minst 8 länder där man talar spanska innan tiden runnit ut?")
+    var usaSwe = TeamChallenge(title: "USA", challenge: "Kan laget nämna minst fyra stater i USA som börjar på bokstaven 'A'")
     
     
     //Team Challenge (21 ENG)
@@ -177,12 +350,11 @@ public class LocalDataBase {
     var physicalExercise2  = TeamChallenge(title: "Physical Exercise", challenge: "All team members must make 15 push ups before the time runs out to succeed in the challenge")
     var physicalExercise3  = TeamChallenge(title: "Balance", challenge: "Stand on your toes on one leg for at least 20 seconds before the time runs out. If one in the team can do it, you have succeeded in the challenge")
     var food  = TeamChallenge(title: "Food", challenge: "Mention a total of 6 dishes starting with the alphabet's first six letters (A-F). One dish for each letter")
-    
     var cars = TeamChallenge(title: "Vehicles", challenge: "Can you, as a team, get ten car brands before the time has expired")
     var physicalExercise4  = TeamChallenge(title: "Flexibility", challenge: "If someone in the team can kiss their own foot, you have comepleted the task")
     var physicalExercise5  = TeamChallenge(title: "Physical Exercies", challenge: "Can all players in the team rise from laying on their backs without using their arms and hands")
     var famousPersons = TeamChallenge(title: "Famous persons", challenge: "Can the team come up with 3 famous persons with the first name Kim")
-    var music = TeamChallenge(title: "Music", challenge: "Can the team sing the first part in: 'We are the world'. At least the 20 first words.")
+    var music2 = TeamChallenge(title: "Music", challenge: "Can the team sing the first part in: 'We are the world'. At least the 20 first words.")
     var serious = TeamChallenge(title: "Seriousness", challenge: "No one in the team gets to laugh for one minute. Remaining players may do anything to make you fail")
     var fish = TeamChallenge(title: "In the sea", challenge: "Can you as a team name 8 diffrent fishes")
     var choir = TeamChallenge(title: "Choir", challenge: "If everyone in the team can whistle 'Jingle Bells' in a choir, then you've succeeded")
@@ -237,19 +409,7 @@ public class LocalDataBase {
     
     
     
-    func initCharades(language: String, firstCardDeck: Int, lastCardDeck: Int){
-        self.charadeList.removeAll()
-        if(language == "swe"){
-            for charadeCard in charadesArraySwe1{
-                self.charadeList.append(charadeCard)
-            }
-            if(language == "eng"){
-                for charadeCard in charadesArrayEng1 {
-                    self.charadeList.append(charadeCard)
-                }
-            }
-        }
-    }
+
     
     
     
@@ -314,7 +474,10 @@ public class LocalDataBase {
         }
         
         if (nrOfRounds == 1){
-            string = "OK, \(team.name)! You get to go first! Press Start or shake the screen to begin playing!"
+            let tmpString = NSLocalizedString("first_team_to_play", comment: "")
+            
+            string = String(format: tmpString, team.name)
+            //"OK, \(team.name)! You get to go first! Press Start or shake the screen to begin playing!"
         }
         else if(currentPosition == 1){
             string = "\(team.name), you are doing great! Let's keep up the good work!"

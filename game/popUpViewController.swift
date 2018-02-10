@@ -16,6 +16,7 @@ class popUpViewController: UIViewController {
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var popUpLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    
     @IBOutlet weak var popUpTitleLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var buttonPressedView: UIView!
@@ -23,10 +24,10 @@ class popUpViewController: UIViewController {
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var menuButton: FloatingActionButton!
     
-    @IBOutlet weak var x2Outlet: FloatingActionButton!
-    @IBOutlet weak var switchOutlet: FloatingActionButton!
-    @IBOutlet weak var removePoints: FloatingActionButton!
+    
+
     
     var dataBase = LocalDataBase()
     var gameNumber: Int?
@@ -34,7 +35,7 @@ class popUpViewController: UIViewController {
     var score = 0
     let random = 0
     var subjectNumber = 0
-    
+    var tapGesture = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,25 +48,44 @@ class popUpViewController: UIViewController {
         popUpView.layer.shadowOffset = CGSize(width:0, height:2.75)
         popUpView.layer.shadowRadius = 1.75
         popUpView.layer.shadowOpacity = 0.45
-        
-        
-        
-        
-        let path = UIBezierPath(roundedRect: popUpLabel.bounds,
-                                byRoundingCorners:[.topRight, .topLeft],
-                                cornerRadii: CGSize(width: 15, height:  15))
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = path.cgPath
-        popUpLabel.layer.mask = maskLayer
-        popUpLabel.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
-        popUpLabel.layer.shadowOffset = CGSize(width:0, height:2.75)
-        popUpLabel.layer.shadowRadius = 1.75
-        popUpLabel.layer.shadowOpacity = 0.45
+    
        
         closeMenu()
         buttonPressedView.layer.cornerRadius = 150
         
         if let gameNumber = gameNumber {
+            if (gameNumber == 0){
+                buttonPressedView.backgroundColor = UIColor(hexString: "#dbd16d")
+                menuButton.backgroundColor = UIColor(hexString: "#dbd16d")
+                startButton.backgroundColor = UIColor(hexString: "#dbd16d")
+                popUpLabel.textColor = UIColor(hexString: "#dbd16d")
+            }
+            else if(gameNumber == 1){
+                buttonPressedView.backgroundColor = UIColor(hexString: "#cc7297")
+                menuButton.backgroundColor = UIColor(hexString: "#cc7297")
+                startButton.backgroundColor = UIColor(hexString: "#cc7297")
+                popUpLabel.textColor = UIColor(hexString: "#cc7297")
+                
+            }
+            else if(gameNumber == 2){
+                buttonPressedView.backgroundColor = UIColor(hexString: "#568da0")
+                menuButton.backgroundColor = UIColor(hexString: "#568da0")
+                startButton.backgroundColor = UIColor(hexString: "#568da0")
+                popUpLabel.textColor = UIColor(hexString: "#568da0")
+                
+            }
+            else if(gameNumber == 3){
+                buttonPressedView.backgroundColor = UIColor(hexString: "#8f6886")
+                menuButton.backgroundColor = UIColor(hexString: "#8f6886")
+                startButton.backgroundColor = UIColor(hexString: "#8f6886")
+                popUpLabel.textColor = UIColor(hexString: "#8f6886")
+            }
+            else if(gameNumber == 4){
+                buttonPressedView.backgroundColor = UIColor(hexString: "#b4b75f")
+                menuButton.backgroundColor = UIColor(hexString: "#b4b75f")
+                startButton.backgroundColor = UIColor(hexString: "#b4b75f")
+                popUpLabel.textColor = UIColor(hexString: "#b4b75f")
+            }
             popUpLabel.text = LocalDataBase.keysOfGamesArray[gameNumber]
             subjectNumber = LocalDataBase().getRandomNumberForEachList(index: gameNumber)
             popUpTitleLabel.text = LocalDataBase().getRandomSubjectFrom(list: gameNumber, index: subjectNumber)
@@ -77,29 +97,7 @@ class popUpViewController: UIViewController {
         }
     }
     
-    @IBAction func x2pointsButton(_ sender: UIButton) {
-        if let team = teamID {
-        if(LocalDataBase.teamArray[team].x2 == true){
-        LocalDataBase.teamArray[team].x2Available = false
-        LocalDataBase.teamArray[team].x2 = false
-            print(LocalDataBase.teamArray[team].x2Available)
-            switchOutlet.isEnabled = false
-            removePoints.isEnabled = false
-        }
-        else if(LocalDataBase.teamArray[team].x2 == false){
-                LocalDataBase.teamArray[team].x2Available = true
-                LocalDataBase.teamArray[team].x2 = true
-                print(LocalDataBase.teamArray[team].x2Available)
-                switchOutlet.isEnabled = true
-                removePoints.isEnabled = true
-            }
-        }
-    }
-    
-    @IBAction func switchButton(_ sender: UIButton) {
-    }
-    @IBAction func stealPointsButton(_ sender: UIButton) {
-    }
+   
     
     @IBAction func startGameButton(_ sender: UIButton) {
         if let number = gameNumber{
@@ -124,6 +122,11 @@ class popUpViewController: UIViewController {
                 self.closeMenu()
             }
             else {
+                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
+                self.tapGesture.numberOfTapsRequired = 1
+                self.tapGesture.numberOfTouchesRequired = 1
+                self.view.addGestureRecognizer(self.tapGesture)
+                self.view.isUserInteractionEnabled = true
                 self.buttonPressedView.transform = .identity
             }
             
@@ -146,7 +149,15 @@ class popUpViewController: UIViewController {
         self.exitButton.transform = CGAffineTransform(translationX: 0, y: -15)
         self.scoreButton.transform = CGAffineTransform(translationX: 8, y: -9)
         
-        
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if(self.menuButton.transform != .identity){
+                self.menuButton.transform = .identity
+                self.closeMenu()
+            }
+        })
     }
     
     

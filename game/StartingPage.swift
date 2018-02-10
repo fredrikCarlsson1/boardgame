@@ -19,21 +19,10 @@ class StartingPage: UIViewController {
     @IBOutlet weak var menuButton: FloatingActionButton!
     
     
-    
+    var tapGesture = UITapGestureRecognizer()
     var colorArray: [(color1: UIColor, color2: UIColor)] = []
     
-    let c1 = UIColor.init(hexString: "#cb356b")
-    let c2 = UIColor.init(hexString: "#bd3f32")
-    let c3 = UIColor.init(hexString: "#f3904f")
-    let c4 = UIColor.init(hexString: "#3b4371")
-    let c5 = UIColor.init(hexString: "#642b73")
-    let c6 = UIColor.init(hexString: "#c6426e")
-    let c7 = UIColor.init(hexString: "#283c86")
-    let c8 = UIColor.init(hexString: "#45a247")
-    let c9 = UIColor.init(hexString: "#000000")
-    let c10 = UIColor.init(hexString: "#0f9b0f")
-    let c11 = UIColor.init(hexString: "#EF3B36")
-    let c12 = UIColor.init(hexString: "#EF3B36")
+
     
     let color1 = UIColor(hexString: "#A73737")
     let color2 = UIColor(hexString: "#7A2828")
@@ -44,22 +33,21 @@ class StartingPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         closeMenu()
-        
         startButton.pulsateSlow()
-  
+        
         
         startButton.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
         startButton.layer.shadowOffset = CGSize(width:0, height:2.75)
         startButton.layer.shadowRadius = 1.75
         startButton.layer.shadowOpacity = 0.45
-        
-        //animateBackGroundColor()
+    
         
     }
     
     @IBAction func startBut(_ sender: UIButton) {
         performSegue(withIdentifier: "startToAddPlayerSegue", sender: self)
     }
+    
     
     
     func animateBackGroundColor(){
@@ -73,15 +61,32 @@ class StartingPage: UIViewController {
         }){ (success) in
             self.animateBackGroundColor()
         }
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if(self.menuButton.transform != .identity){
+                self.menuButton.transform = .identity
+                self.closeMenu()
+            }
+        })
         
     }
     
+    
     @IBAction func menuTapped(_ sender: FloatingActionButton) {
+        
         UIView.animate(withDuration: 0.3, animations: {
             if (self.menuView.transform == .identity){
                 self.closeMenu()
+               
             }
             else {
+                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
+                self.tapGesture.numberOfTapsRequired = 1
+                self.tapGesture.numberOfTouchesRequired = 1
+                self.view.addGestureRecognizer(self.tapGesture)
+                self.view.isUserInteractionEnabled = true
                 self.menuView.transform = .identity
             }
         })
