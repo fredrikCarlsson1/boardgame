@@ -10,6 +10,9 @@ import UIKit
 
 
 class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var playerTableView: UITableView!
+    @IBOutlet weak var newPlayerOutlet: UIButton!
+    @IBOutlet weak var selectPlayersToTeamLabel: UILabel!
     
     var number: Int?
     var nrOfTeams: Int?
@@ -17,18 +20,14 @@ class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableVie
     var data = [Player]()
     var comesFromAddPlayer = false
     
-    @IBOutlet weak var playerTableView: UITableView!
     
-    
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        playerTableView.reloadData()
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        
+        if (number == nil){
+           selectPlayersToTeamLabel.isHidden = true
+        }
         playerTableView.layer.cornerRadius = 15
         
         if let newPlayer = player{
@@ -46,23 +45,10 @@ class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
             }
         }
+        
         playerTableView.reloadData()
-        
-        
         if let teams = nrOfTeams{
             nrOfTeams = teams
-        }
-    }
-    
-    @IBAction func saveButton(_ sender: UIButton) {
-        if (number != nil){
-            performSegue(withIdentifier: "saveSelectedPlayersSegue", sender: self)
-        }else if(comesFromAddPlayer==true){
-            performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
-        }
-        else{
-            dismiss(animated: true, completion: nil)
-            
         }
     }
     
@@ -77,6 +63,10 @@ class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         return false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        newPlayerOutlet.pulsateSlow()
     }
     
     func createAlert(title: String, message: String){
@@ -192,10 +182,27 @@ class AddPlayerViewController: UIViewController, UITableViewDelegate, UITableVie
         data.append(player)
         NSKeyedArchiver.archiveRootObject(data, toFile: filePath)
     }
-
+    
     @IBAction func enterNewPlayerButton(_ sender: UIButton) {
         performSegue(withIdentifier: "enterNewPlayerSegue", sender: self)
     }
- 
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        if (number != nil){
+            performSegue(withIdentifier: "saveSelectedPlayersSegue", sender: self)
+        }else if(comesFromAddPlayer==true){
+            performSegue(withIdentifier: "unwindSegueToVC1", sender: self)
+        }
+        else{
+            dismiss(animated: true, completion: nil)
+            
+        }
+    }
+    
+    @IBAction func dismissBackground(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     
 }

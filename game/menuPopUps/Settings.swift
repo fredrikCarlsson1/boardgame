@@ -9,6 +9,7 @@
 import UIKit
 
 class Settings: UIViewController {
+    @IBOutlet weak var soundSwitchOutlet: UISwitch!
     @IBOutlet weak var checkBox1: BEMCheckBox!
     
     @IBOutlet weak var checkBox2: BEMCheckBox!
@@ -17,84 +18,111 @@ class Settings: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(LocalDataBase().charadeList.count)
-        
         
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        if (LocalDataBase.cardDeck.contains(1)){
-            checkBox1.on = true
+        if(LocalDataBase.soundOn){
+            soundSwitchOutlet.isOn = true
         }
-        if (LocalDataBase.cardDeck.contains(2)){
-            checkBox2.on = true
-        }
-        if (LocalDataBase.cardDeck.contains(3)){
-            checkBox3.on = true
-            
+        else if(LocalDataBase.soundOn == false){
+            soundSwitchOutlet.isOn = false
         }
         
+        if (LocalDataBase.tempCardDeck.contains(1)){
+            checkBox1.on = true
+        }
+        if (LocalDataBase.tempCardDeck.contains(2)){
+            checkBox2.on = true
+        }
+        if (LocalDataBase.tempCardDeck.contains(3)){
+            checkBox3.on = true            
+        }
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default); navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     
     @IBAction func soundSwitch(_ sender: UISwitch) {
         
+        if(sender.isOn){
+            LocalDataBase.soundOn = true
+        }
+        else{
+            LocalDataBase.soundOn = false
+        }
     }
     
     
     
     @IBAction func list1(_ sender: BEMCheckBox) {
         if (sender.on){
-            LocalDataBase.cardDeck.append(1)
-            print("\(LocalDataBase().withOtherWordsList.count)")
+            LocalDataBase.tempCardDeck.append(1)
+            
         }
         else{
-            if let index = LocalDataBase.cardDeck.index(where: { $0 == 1 }) {
-                LocalDataBase.cardDeck.remove(at: index)
-                
+            if(LocalDataBase.tempCardDeck.count != 1){
+                if let index = LocalDataBase.tempCardDeck.index(where: { $0 == 1 }) {
+                    LocalDataBase.tempCardDeck.remove(at: index)
+                    
+                }
             }
-            print("\(LocalDataBase().withOtherWordsList.count)")
+            else{
+                checkBox1.on = true
+                createAlert(message: "You need to select at least one deck of cards")
+            }
         }
         
     }
     
     @IBAction func list2(_ sender: BEMCheckBox) {
         if (sender.on){
-            LocalDataBase.cardDeck.append(2)
-            print("\(LocalDataBase().charadeList.count)")
+            LocalDataBase.tempCardDeck.append(2)
+            
         }
         else{
-            
-            if let index = LocalDataBase.cardDeck.index(where: { $0 == 2 }) {
-                LocalDataBase.cardDeck.remove(at: index)
-                
+            if(LocalDataBase.tempCardDeck.count != 1){
+                if let index = LocalDataBase.tempCardDeck.index(where: { $0 == 2 }) {
+                    LocalDataBase.tempCardDeck.remove(at: index)
+                }
             }
-            print("\(LocalDataBase().charadeList.count)")
+            else{
+                checkBox2.on = true
+                createAlert(message: "You need to select at least one deck of cards")
+            }
         }
     }
     
     @IBAction func list3(_ sender: BEMCheckBox) {
         if (sender.on){
-            LocalDataBase.cardDeck.append(3)
-            print("\(LocalDataBase().withOtherWordsList.count)")
+            LocalDataBase.tempCardDeck.append(3)
+            
         }
         else{
-            
-            if let index = LocalDataBase.cardDeck.index(where: { $0 == 3 }) {
-                LocalDataBase.cardDeck.remove(at: index)
-                
+            checkBox3.on = true
+            if(LocalDataBase.tempCardDeck.count != 1){
+                if let index = LocalDataBase.tempCardDeck.index(where: { $0 == 3 }) {
+                    LocalDataBase.tempCardDeck.remove(at: index)
+                }
             }
-            print("\(LocalDataBase().withOtherWordsList.count)")
+            else{
+                createAlert(message: "You need to select at least one deck of cards")
+            }
         }
     }
     
+    func createAlert(message: String){
+        let alert = UIAlertController(title: NSLocalizedString("missing_info_in_alert", comment: ""), message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     
@@ -120,6 +148,6 @@ class Settings: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-   
+    
     
 }

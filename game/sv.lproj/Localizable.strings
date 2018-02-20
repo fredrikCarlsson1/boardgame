@@ -1,4 +1,128 @@
+"missing_info_in_alert" = "Information saknas";
+
+"team_names" = "Lag %d";
+
+"team" = "Lag";
+
+"select_at_least_2_teams" = "Välj två lag eller fler";
+
+"select_at_least_2_players" = "Välj minst två spelare till varje lag för att börja spela";
+
+//Game titles
+"withOtherWords" = "Med andra ord";
+"charades" = "Charader";
+"teamChallenge" = "Lagutmaning";
+"canYouFigureItOut" = "Kan ni lista ut svaret?";
+"humTheSong" = "Nynna låten";
+
+//Labeltexts under startbutton
 
 "first_team_to_play" = "OK, %@. Ni får börja! Tryck på Startknappen eller skaka på skärmen för att spela!";
+"if_team_is_first" = "%@, ni spelar bra! Fortsätt såhär!";
+"if_team_is_last" = "%@, kom igen nu! Ni behöver de här poängen";
+"if_position_unknown" = "%@, det är eran tur!";
 
-"missing_info_in_alert" = "Information saknas";
+//TextView in popUpView
+"if_game_is_withOtherWords" = "%@, det är din tur att glänsa! \n\nEfter att ha tryckt på Start-knappen kommer du ha 30 sekunder på dig att att beskriva fem ord för ditt lag. Ni får en poäng för varje svar som är rätt. Se till att inte visa skärmen för dina medspelare. Lycka till!";
+"if_game_is_charades" =  "%@, det är din tur!\n\nDölj skärmen för dina lagkamrater och förklara följande ord endast genom att använda gester...";
+"if_game_is_teamChallenge" = "%@, hoppas ni är redo för en lagutmaning! \n\nEfter att ha tryckt på startknappen har ni 45 sekunder på er att utföra utmaningen. Kom igen nu!";
+"if_game_is_canYouFigureItOut" = "%@, samlas runt skärmen! \n\nNär ni har tryckt på startknappen ska ni försöka lista ut svaret vi söker. Om ni inte vet svaret kan ni begära en till ledtråd. Desto tidigare ni gissar, desto fler poäng har ni möjlighet att få. Men var försiktiga, ifall ni svarar fel får ni inga poäng alls...";
+"if_game_is_humTheSong" = "%@, låt oss testa dina musikkunskaper! \n\nMålet är att få dina lagkamrater att gissa rätt låttitel, endast genom att nynna låten. Se till att inte visa skärmen för dina medspelare innan du trycker på Start-knappen. Lycka till!";
+
+
+//TextView in modalView
+"if_wordPoints_is_5" = "Otroligt! Det där var en perfekt omgång. Ni kan verkligen era ord!";
+"if_wordPoints_is_4" = "Inte dåligt... Inte dåligt alls";
+"if_wordPoints_is_3" = "Såja. Bra jobbat!";
+"if_wordPoints_is_2" = "2 poäng är hyfsat. Nästa gång är ni ännu bättre";
+"if_wordPoints_is_1" = "Nah, det där är inte okej";
+"if_wordPoints_is_0"= "Ajajaj... Vi vet alla att ni är bättre än sådär!";
+
+"if_charades_is_5" = "Wow! Det där är imponerande! Fem poäng till er!";
+"if_charades_is_4" = "Fyra poäng på 45 sekunder. Bra gestikulerat";
+"if_charades_is_3" = "Ni kan ju!";
+"if_charades_is_2" = "Vi har sett bättre framträdanden om man säger så...";
+"if_charades_is_1" = "Erkänn. Det där var en besvikelse. Kom igen nu!";
+"if_charades_is_0" = "Nej nej nej!";
+
+"if_tc_is_5" = "Fantastiskt! Ni har grymt lagsamarbete. Fortsätt så!";
+"if_tc_is_0" = "Okej, ni kan inte lyckas varje gång. Det är bara att fortsätta försöka!";
+
+"if_cyfio_is_5" = "Super! Vilken kunskap ni besitter!";
+"if_cyfio_is_4" = "Woh! Imponerande!";
+"if_cyfio_is_3" = "Tre poäng är inte dåligt. Kul för er!";
+"if_cyfio_is_2" = "Bra gjort, laget";
+"if_cyfio_is_1" = "Hmm...";
+"if_cyfio_is_0" = "Jaha, ni försökte i alla fall. Bättre lycka nästa gång!";
+
+"if_hum_is_5" = "Makalöst! Till och med John Lennon hade blivit imponerad av det där nynnandet!";
+"if_hum_is_4" = "Ahhh, din lilla sångfågel! 4 poäng!";
+"if_hum_is_3" = "Det där var vackert!";
+"if_hum_is_2" = "Bra jobbat! 2 poäng till er...";
+"if_hum_is_1" = "Bättre lycka nästa gång!";
+"if_hum_is_0" = "Det där var inte vad vi hoppades på. Visst, det här är ett svårt spel men ni är bättre än såhär!";
+
+
+"titlePlaceholder" = "Kategorititel";
+"word1Placeholder" = "Ord 1";
+"word2Placeholder" = "Ord 2";
+"word3Placeholder" = "Ord 3";
+"word4Placeholder" = "Ord 4";
+"word5Placeholder" = "Ord 5";
+"hint1Placeholder" = "Ledtråd 1";
+"hint2Placeholder" = "Ledtråd 2";
+"hint3Placeholder" = "Ledtråd 3";
+"hint4Placeholder" = "Ledtråd 4";
+"hint5Placeholder" = "Ledtråd 5";
+"song1Placeholder" = "Låt 1";
+"song2Placeholder" = "Låt 2";
+"song3Placeholder" = "Låt 3";
+"song4Placeholder" = "Låt 4";
+"song5Placeholder" = "Låt 5";
+"challengePlaceholder" = "Utmaning";
+"answePlaceholder" = "Svar";
+
+"points" = "poäng";
+
+"continueOrEdit" = "Gå tillbaka och ändra poängen eller fortsätt till nästa lags tur";
+
+"newGameHelpText" = " - Välj först önskat antal lag.  \n - Lägg därefter till minst två spelare till vardera lag genom att trycka på varje lags spelpjäs";
+
+"alertViewAnswer" = "Rätt svar är %@. Om ni gissade rätt får ni %@ poäng. \n\n Svarade ni rätt?";
+
+"alertViewQuestion" = "Klarade ni det?";
+
+
+
+"shortGameInstructions" = "SPELET I KORTHET: \nSom namnet antyder är det här fem spel i ett. Laget kommer testas i delmomenten:\n- Med andra ord\n- Charader\n- Nynna låten\n- Kan ni lista ut svaret\n- Lagutmaning\nInför varje lags tur väljs slumpmässigt ett av dessa fem spel ut. Maxpoängen per runda är 5 poäng, oavsett vilket av spelen ni får. Det lag som först kommer upp i 30 poäng vinner. \n\nOm ni är osäkra på reglerna under spelets gång är det bara att hålla utkik efter ’?’-iconen för utförligare instruktioner. \n\n";
+
+"nrOfPlayersAndTeams" = "ANTAL SPELARE:\n4 eller fler.\n\nANTAL LAG:\n2-5 lag där vardera lag behöver minst 2 spelare\n\n";
+
+"startTheGameInstructions" = "SPELETS START:\ntext \n\n";
+
+"withOtherWordsInstructions" = "MED ANDRA ORD:\nI detta spel kommer en av lagmedlemmarna slumpas fram som ”talare”. Denna person ska beskriva fem ord inom ett visst ämne för sina lagkompisar genom synonymer och beskrivningar. Det är inte tillåtet att översätta orden till ett annat språk eller att bokstavera dem. Om ’talaren’ råkar säga hela eller delar av ett ord så är det ordet dött och ni får gå vidare till nästa. Det spelar ingen roll i vilken ordning man väljer bland de fem orden.\n\nInför omgången får hela laget reda på det aktuella ämnet som orden kommer att handla om. Men då startknappen trycks ner får endast ’talaren’ från laget se skärmen.\n\nNi har 30 sekunder på er att klara så många av de fem orden som möjligt. Vid varje rätt svar kryssar ”talaren” i checkboxen bredvid ordet. \n\n";
+
+"charadesInstructions" = "CHARADER:\nDetta spel går ut på att en av lagmedlemmarna ljudlöst ska illustrera fem ord inom en viss kategori, enbart med hjälp av gester och kroppsspråk.\n\nLaget får inför omgången veta vilket tema som gäller men efter startknappen tryckts ner får endast den som gestikulerar se orden.\n\nNi har 45 sekunder på er att klara så många av de fem orden som möjligt. Vid varje rätt svar kryssar den som förklarar i checkboxen bredvid ordet. \n\n";
+
+"teamChallengeInstructions" = "LAGUTMANING:\nHär ska laget tillsammans eller enskilt utföra en utmaning på 45 sekunder. Ni får inför omgången reda på temat så att ni vet på ett ungefär vilken typ av utmaning ni kommer få. När ni trycker på startknappen börjar tiden så alla i laget måste vara beredda och snabbt läsa utmaningen på skärmen.\n\nEfter tiden gått ut får ni frågan om ni klarat spelet eller inte. Om ni lyckas får ni fem poäng. Om ni misslyckas får ni noll poäng.\n\nI dessa spel finns inget facit i och med att det finns så pass många olika korrekta svarsalternativ. Om ni är osäkra på om ni svarat rätt får ni googla fram svaren. \n\n";
+
+"canYouFigureItOutInstructions" = "KAN NI LISTA UT SVARET:\nI det här spelet får alla i laget se skärmen. Ni får veta temat och ska genom ledtrådar lista ut vilket svar som eftersöks. Ni har under spelets gång två valmöjligheter. Antingen att ta en ny ledtråd, vilket minskar den möjliga poängutdelningen med ett poäng. Eller att trycka på ”Gissa”. Då måste ni först säga svaret högt så de andra lagen hör. Om ert svar överensstämmer med det korrekta svaret får ni poäng beroende på dåvarande poängnivå. Om ni svarade fel får ni noll poäng. \n\n";
+
+"humTheSongInstructions" = "NYNNA LÅTEN:\nI det här spelet testas lagets musikkunskaper. En lagmedlem väljs ut till att nynna fem olika låtar inom en viss genre. Resten av laget vet på förhand vilken genre för att göra det en aning enklare.\n\nNär startknappen trycks ner ska personen som ska nynna vara den enda som ser skärmen. Nu ska den personen göra sitt bästa för att få resten av laget att höra vilka låtarna är. Det är inte tillåtet att uttala ord varken talandes eller sjungandes. \nOBS: Det räcker med att gissa rätt på låtens titel. Ni behöver alltså inte kunna artisten.\n\nDet är inget krav på vilken ordning som låtarna nynnas i. Tidsfristen är en minut. \n\n";
+
+
+"edit" = "Ändra";
+"done" = "Klar";
+
+"firstClue" = "Första ledtråden:";
+"secondClue" = "Andra ledtråden:";
+"thirdClue" = "Tredje ledtråden:";
+"fourthClue" = "Fjärde ledtråden:";
+"fifthClue" = "Femte ledtråden:";
+
+"gameOver1" = "Bra jobbat ";
+
+"gameOver2" = "och %@! Ni var helt enkelt bäst idag! Låt oss hoppas att era motståndare bjuder på bättre motstånd nästa gång!";
+
+
+

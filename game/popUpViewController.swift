@@ -87,8 +87,13 @@ class popUpViewController: UIViewController {
                 popUpLabel.textColor = UIColor(hexString: "#b4b75f")
             }
             popUpLabel.text = LocalDataBase.keysOfGamesArray[gameNumber]
-            subjectNumber = LocalDataBase().getRandomNumberForEachList(index: gameNumber)
-            popUpTitleLabel.text = LocalDataBase().getRandomSubjectFrom(list: gameNumber, index: subjectNumber)
+            
+            //*********************************
+            
+
+            popUpTitleLabel.text = LocalDataBase().getSubjectFrom(list: gameNumber)
+            
+            //******************************
             
             if let teamID = teamID{
                 textView.text = LocalDataBase().setTextViewInPopUp(team: LocalDataBase.teamArray[teamID], gameNumber: gameNumber, title: popUpTitleLabel.text!)
@@ -166,18 +171,40 @@ class popUpViewController: UIViewController {
         if let destination = segue.destination as? WordsCharadesHum{
             destination.teamID = teamID
             destination.game = gameNumber
-            destination.titleNumber = subjectNumber
         }
         if let destination = segue.destination as? TeamChallengePopUp{
             destination.teamID = teamID
             destination.game = gameNumber
-            destination.titleNumber = subjectNumber
+           
         }
         if let destination = segue.destination as? CanYouFigureItOutPopUp{
             destination.teamID = teamID
             destination.game = gameNumber
-            destination.titleNumber = subjectNumber
+            
         }
+        if let destination = segue.destination as? Rules{
+            if let gameNr = gameNumber{
+                if (gameNr == 0){
+                    destination.firstViewString = "withOtherWords"
+                }
+                    
+                else if (gameNr == 1){
+                    destination.firstViewString = "charades"
+                }
+                else if (gameNr == 2){
+                    destination.firstViewString = "teamChallenge"
+                }
+                else if (gameNr == 3){
+                    destination.firstViewString = "canYouFigureItOut"
+                }
+                else if (gameNr == 4){
+                    destination.firstViewString = "humTheSong"
+                }
+                
+            }
+            
+        }
+        
     }
 }
 

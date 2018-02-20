@@ -1,30 +1,32 @@
 
+"5c7-Jk-wvj.text" = "Det ultimata sällskapsspelet";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "00Y-wz-h7v"; */
 "00Y-wz-h7v.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "0LS-BJ-ySj"; */
-"0LS-BJ-ySj.normalTitle" = "Save";
+"0LS-BJ-ySj.normalTitle" = "Spara";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "1eq-CU-9UE"; */
-"1eq-CU-9UE.normalTitle" = "Save";
+"1eq-CU-9UE.normalTitle" = "Klar";
 
 /* Class = "UITextField"; placeholder = "Enter name:"; ObjectID = "24S-By-nCJ"; */
-"24S-By-nCJ.placeholder" = "Enter name:";
+"24S-By-nCJ.placeholder" = "Skriv in namn:";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "2Oh-yf-TIW"; */
 "2Oh-yf-TIW.text" = "Label";
 
 /* Class = "UILabel"; text = "Add players to teams"; ObjectID = "2hq-Cm-N02"; */
-"2hq-Cm-N02.text" = "Add players to teams";
+"2hq-Cm-N02.text" = "Välj spelare till lagen:";
 
 /* Class = "UILabel"; text = "Select players to team:"; ObjectID = "4FE-Mh-DCa"; */
-"4FE-Mh-DCa.text" = "Select players to team:";
+"4FE-Mh-DCa.text" = "Välj minst två spelare till varje lag:";
 
 /* Class = "UIButton"; normalTitle = "Play Game"; ObjectID = "4NF-F4-2lY"; */
-"4NF-F4-2lY.normalTitle" = "Play Game";
+"4NF-F4-2lY.normalTitle" = "Starta spelet";
 
 /* Class = "UITextView"; text = "Go back and edit your score or proceed to the next team"; ObjectID = "4ZH-34-wgQ"; */
-"4ZH-34-wgQ.text" = "Go back and edit your score or proceed to the next team";
+"4ZH-34-wgQ.text" = "Gå tillbaka och ändra poängen eller fortsätt till nästa lags tur...";
 
 /* Class = "UIButton"; normalTitle = "Next Hint"; ObjectID = "4pA-Qo-CfY"; */
 "4pA-Qo-CfY.normalTitle" = "Nästa ledtråd";
@@ -45,7 +47,7 @@
 "8vp-Xn-Usa.normalTitle" = "Avsluta";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "9By-KD-Ook"; */
-"9By-KD-Ook.normalTitle" = "Spara";
+"9By-KD-Ook.normalTitle" = "Klar";
 
 /* Class = "UIButton"; normalTitle = "?"; ObjectID = "9mE-Xy-pE5"; */
 "9mE-Xy-pE5.normalTitle" = "?";
@@ -54,7 +56,7 @@
 "A7d-wt-k0R.normalTitle" = "X";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AyB-aW-dOS"; */
-"AyB-aW-dOS.normalTitle" = "Button";
+"AyB-aW-dOS.normalTitle" = "?";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "BYC-wj-9XK"; */
 "BYC-wj-9XK.text" = "Label";
@@ -210,7 +212,7 @@
 "cyQ-3W-sqJ.text" = "Lägg till egna kort";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "d6W-7u-AAK"; */
-"d6W-7u-AAK.normalTitle" = "Button";
+"d6W-7u-AAK.normalTitle" = "Klar";
 
 /* Class = "UIButton"; normalTitle = "Back"; ObjectID = "dlA-9b-SQE"; */
 "dlA-9b-SQE.normalTitle" = "Bakåt";
@@ -219,7 +221,7 @@
 "fDW-PH-aDo.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hSK-1J-w1V"; */
-"hSK-1J-w1V.normalTitle" = "Button";
+"hSK-1J-w1V.normalTitle" = "Klar";
 
 /* Class = "UILabel"; text = "Settings"; ObjectID = "i9j-n4-EIQ"; */
 "i9j-n4-EIQ.text" = "Inställningar";
@@ -243,10 +245,10 @@
 "lcl-5Q-1cF.normalTitle" = "Lägg till i lista";
 
 /* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "mhF-yw-zrf"; */
-"mhF-yw-zrf.normalTitle" = "Edit";
+"mhF-yw-zrf.normalTitle" = "Ändra";
 
 /* Class = "UILabel"; text = "Can you figure it out?"; ObjectID = "nJQ-9U-44v"; */
-"nJQ-9U-44v.text" = "Can you figure it out?";
+"nJQ-9U-44v.text" = "Kan ni lista ut svaret?";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "oYO-n5-XnT"; */
 "oYO-n5-XnT.text" = "Label";
@@ -276,4 +278,16 @@
 "vBl-f8-CUg.text" = "Lagnamn";
 
 /* Class = "UILabel"; text = "Name of game"; ObjectID = "wxp-fF-G6b"; */
-"wxp-fF-G6b.text" = "Namn på spel";
+"wxp-fF-G6b.text" = "FEM I ETT";
+
+"roS-PT-zKJ.normalTitle" = "Instruktioner";
+
+"UGM-PH-JOq.text" = "Ny spelare";
+
+"z7B-g2-OTF.title" = "Lägg till kort";
+"1rp-hs-9XA.title"  = "Mina kort";
+"jAM-3P-ptE.title" = "Mina kort";
+"s1g-dT-lWz.title" = "Lägg till kort";
+"yRF-nU-Mzn.title" = "Ändra kort";
+"3Cr-mC-d7O.text" = "Spelade matcher:";
+"fpj-3h-jlb.text" = "Vinster:";

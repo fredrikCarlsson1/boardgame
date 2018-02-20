@@ -40,6 +40,17 @@
 		5C6B1E5D2020970C00ED3239 /* ShowCoreDataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */; };
 		5C6B1E5F2020AA9200ED3239 /* ExitPopUP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B1E5E2020AA9200ED3239 /* ExitPopUP.swift */; };
 		5C6B1E612023ABAA00ED3239 /* boldStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6B1E602023ABAA00ED3239 /* boldStringExtension.swift */; };
+		5C771CFF2030D90000DA237D /* end_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771CFE2030D90000DA237D /* end_bell.mp3 */; };
+		5C771D012030DAB800DA237D /* 1point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771D002030DAB800DA237D /* 1point.mp3 */; };
+		5C771D032030DAC000DA237D /* 0points.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771D022030DAC000DA237D /* 0points.mp3 */; };
+		5C771D052030DAC600DA237D /* 5points.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771D042030DAC600DA237D /* 5points.mp3 */; };
+		5C771D072030DBAF00DA237D /* 3points.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771D062030DBAF00DA237D /* 3points.mp3 */; };
+		5C771D092030DD4200DA237D /* 2points.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771D082030DD4200DA237D /* 2points.mp3 */; };
+		5C771D0B2030DE1800DA237D /* 4points.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C771D0A2030DE1800DA237D /* 4points.mp3 */; };
+		5C80911520343B12003867F4 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C80911420343B12003867F4 /* TextFieldExtension.swift */; };
+		5C809118203B57BB003867F4 /* LillyMae-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5C809116203B576B003867F4 /* LillyMae-Regular.otf */; };
+		5C80911B203B695D003867F4 /* Ahhh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C809119203B695D003867F4 /* Ahhh.mp3 */; };
+		5C80911C203B695D003867F4 /* Fireworks.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C80911A203B695D003867F4 /* Fireworks.mp3 */; };
 		5C9644B82027500200C5FE03 /* ShowOwnQuestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */; };
 		5C9644BA2029BC5B00C5FE03 /* ShowOwnCardAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */; };
 		5CA36CBB202C5B7B002BA76C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5CA36CBD202C5B7B002BA76C /* Localizable.strings */; };
@@ -118,6 +129,17 @@
 		5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCoreDataObjects.swift; sourceTree = "<group>"; };
 		5C6B1E5E2020AA9200ED3239 /* ExitPopUP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPopUP.swift; sourceTree = "<group>"; };
 		5C6B1E602023ABAA00ED3239 /* boldStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boldStringExtension.swift; sourceTree = "<group>"; };
+		5C771CFE2030D90000DA237D /* end_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end_bell.mp3; sourceTree = "<group>"; };
+		5C771D002030DAB800DA237D /* 1point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1point.mp3; sourceTree = "<group>"; };
+		5C771D022030DAC000DA237D /* 0points.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0points.mp3; sourceTree = "<group>"; };
+		5C771D042030DAC600DA237D /* 5points.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 5points.mp3; sourceTree = "<group>"; };
+		5C771D062030DBAF00DA237D /* 3points.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 3points.mp3; sourceTree = "<group>"; };
+		5C771D082030DD4200DA237D /* 2points.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 2points.mp3; sourceTree = "<group>"; };
+		5C771D0A2030DE1800DA237D /* 4points.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 4points.mp3; sourceTree = "<group>"; };
+		5C80911420343B12003867F4 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		5C809116203B576B003867F4 /* LillyMae-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LillyMae-Regular.otf"; sourceTree = "<group>"; };
+		5C809119203B695D003867F4 /* Ahhh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ahhh.mp3; sourceTree = "<group>"; };
+		5C80911A203B695D003867F4 /* Fireworks.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireworks.mp3; sourceTree = "<group>"; };
 		5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOwnQuestions.swift; sourceTree = "<group>"; };
 		5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOwnCardAttributes.swift; sourceTree = "<group>"; };
 		5CA36CB7202C59D3002BA76C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
@@ -220,6 +242,7 @@
 		5C6B1E572020915200ED3239 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				5C6B1E602023ABAA00ED3239 /* boldStringExtension.swift */,
 				5C0A30DE200E59AD0038F309 /* FloatingActionButton.swift */,
 				5CDAC4812013472F0035EF85 /* UIColorExtensiom.swift */,
 				5CCE0D3E20053371008654BC /* UIButtonExtension.swift */,
@@ -248,6 +271,25 @@
 			path = menuPopUps;
 			sourceTree = "<group>";
 		};
+		5C771CFD202F124300DA237D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				5C6B1E5A2020922B00ED3239 /* CoreDataHandler.swift */,
+				5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */,
+				5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */,
+				5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		5C809117203B5776003867F4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5C809116203B576B003867F4 /* LillyMae-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		5CCE0D12200517C9008654BC = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +314,7 @@
 				5CCE0D1E200517C9008654BC /* AppDelegate.swift */,
 				5CA36CBD202C5B7B002BA76C /* Localizable.strings */,
 				5CDAC47B20114A8F0035EF85 /* StartingPage.swift */,
+				5C80911420343B12003867F4 /* TextFieldExtension.swift */,
 				5C0A30C1200C1DDA0038F309 /* NewGameViewController.swift */,
 				5C0A30A1200A1D750038F309 /* AddPlayerViewController.swift */,
 				5C39CC092019D591008E52DA /* AddPlayerPopUpViewController.swift */,
@@ -284,19 +327,16 @@
 				5C6B1E4C201F2AB000ED3239 /* GameOver.swift */,
 				5C6B1E582020919B00ED3239 /* Games */,
 				5C6B1E59202091C400ED3239 /* menuPopUps */,
+				5C771CFD202F124300DA237D /* CoreData */,
 				5CCE0D22200517C9008654BC /* Main.storyboard */,
-				5C6B1E602023ABAA00ED3239 /* boldStringExtension.swift */,
 				5C6B1E5E2020AA9200ED3239 /* ExitPopUP.swift */,
 				5CCE0D27200517CA008654BC /* LaunchScreen.storyboard */,
+				5C809117203B5776003867F4 /* Fonts */,
 				5C39CC2E201E0BC3008E52DA /* game.xcdatamodeld */,
 				5CCE0D25200517CA008654BC /* Assets.xcassets */,
 				5CCE0D2A200517CA008654BC /* Info.plist */,
 				5CCE0D4D20077216008654BC /* LocalDataBase.swift */,
 				5C0A309F2008C8160038F309 /* Team.swift */,
-				5C6B1E5A2020922B00ED3239 /* CoreDataHandler.swift */,
-				5C6B1E5C2020970C00ED3239 /* ShowCoreDataObjects.swift */,
-				5C9644B72027500200C5FE03 /* ShowOwnQuestions.swift */,
-				5C9644B92029BC5B00C5FE03 /* ShowOwnCardAttributes.swift */,
 				5C0A309D2008C8070038F309 /* Player.swift */,
 				5C0A30C0200BC8830038F309 /* CheckBoxHeader.h */,
 				5C6B1E562020912F00ED3239 /* GameClasses */,
@@ -320,7 +360,16 @@
 		5CCE0D40200536E7008654BC /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				5C771D042030DAC600DA237D /* 5points.mp3 */,
+				5C771D0A2030DE1800DA237D /* 4points.mp3 */,
+				5C771D062030DBAF00DA237D /* 3points.mp3 */,
+				5C771D082030DD4200DA237D /* 2points.mp3 */,
+				5C771D022030DAC000DA237D /* 0points.mp3 */,
+				5C771D002030DAB800DA237D /* 1point.mp3 */,
+				5C809119203B695D003867F4 /* Ahhh.mp3 */,
+				5C80911A203B695D003867F4 /* Fireworks.mp3 */,
 				5C0A306D2007EEB70038F309 /* airHorn.mp3 */,
+				5C771CFE2030D90000DA237D /* end_bell.mp3 */,
 				5CCE0D45200603A1008654BC /* sms.mp3 */,
 				5CCE0D412005370C008654BC /* sample.mp3 */,
 				5CCE0D4720062CBC008654BC /* gum.mp3 */,
@@ -414,11 +463,21 @@
 				5C0A306E2007EEB70038F309 /* airHorn.mp3 in Resources */,
 				5CCE0D4820062CBC008654BC /* gum.mp3 in Resources */,
 				5CCE0D29200517CA008654BC /* LaunchScreen.storyboard in Resources */,
+				5C80911B203B695D003867F4 /* Ahhh.mp3 in Resources */,
+				5C809118203B57BB003867F4 /* LillyMae-Regular.otf in Resources */,
+				5C771D072030DBAF00DA237D /* 3points.mp3 in Resources */,
 				5CCE0D26200517CA008654BC /* Assets.xcassets in Resources */,
+				5C771D052030DAC600DA237D /* 5points.mp3 in Resources */,
 				5CCE0D46200603A2008654BC /* sms.mp3 in Resources */,
 				5CA36CBB202C5B7B002BA76C /* Localizable.strings in Resources */,
+				5C771D0B2030DE1800DA237D /* 4points.mp3 in Resources */,
 				5CCE0D24200517C9008654BC /* Main.storyboard in Resources */,
+				5C80911C203B695D003867F4 /* Fireworks.mp3 in Resources */,
 				5CCE0D422005370C008654BC /* sample.mp3 in Resources */,
+				5C771D092030DD4200DA237D /* 2points.mp3 in Resources */,
+				5C771D012030DAB800DA237D /* 1point.mp3 in Resources */,
+				5C771CFF2030D90000DA237D /* end_bell.mp3 in Resources */,
+				5C771D032030DAC000DA237D /* 0points.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +504,7 @@
 				5C0A30DF200E59AD0038F309 /* FloatingActionButton.swift in Sources */,
 				5C0A30BF200BC84E0038F309 /* BEMCheckBox.m in Sources */,
 				5CDAC476201147C30035EF85 /* UIViewExtension.swift in Sources */,
+				5C80911520343B12003867F4 /* TextFieldExtension.swift in Sources */,
 				5C0A30DB200E59200038F309 /* UIViewX.swift in Sources */,
 				5C6B1E4D201F2AB000ED3239 /* GameOver.swift in Sources */,
 				5C0A30A4200BA4000038F309 /* PlayerViewController.swift in Sources */,

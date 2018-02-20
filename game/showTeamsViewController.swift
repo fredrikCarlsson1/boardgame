@@ -9,7 +9,10 @@
 import UIKit
 
 class showTeamsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    var i = 1
+    
+    @IBOutlet weak var playerTableView: UITableView!
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let team = teamID{
@@ -48,17 +51,50 @@ class showTeamsViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var teamNameTextView: UITextFieldX!
     @IBOutlet weak var scoreTextView: UITextFieldX!
     @IBOutlet weak var editButtonOutlet: UIButton!
+    var data = [Player]()
+    var player: Player?
     
     
-
+    var filePath: String {
+        let manager = FileManager.default
+        let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first
+        return url!.appendingPathComponent("Data").path
+    }
+    
+    private func loadData(){
+        if let ourData = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Player]{
+            data = ourData
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        for player in data{
+            if let team = teamID{
+             if(LocalDataBase.teamArray[team].players[indexPath.row].name == player.name){
+                self.player = player
+                performSegue(withIdentifier: "teamToPlayerSegue", sender: self)
+            }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? PlayerViewController{
+            if let selectedPlayer = player{
+                destination.player = selectedPlayer
+            }
+        }
+    }
+    
+    
     @IBAction func editTeamButton(_ sender: UIButton) {
-        if(editButtonOutlet.title(for: .normal) == "Edit"){
-            editButtonOutlet.setTitle("Done", for: .normal)
+        if(editButtonOutlet.title(for: .normal) == NSLocalizedString("edit", comment: "")){
+            editButtonOutlet.setTitle(NSLocalizedString("done", comment: ""), for: .normal)
             teamNameTextView.isHidden = false
             scoreTextView.isHidden = false
             
         }
-        else if(editButtonOutlet.title(for: .normal) == "Done"){
+        else if(editButtonOutlet.title(for: .normal) == NSLocalizedString("done", comment: "")){
             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddPlayerViewController.dismissKeyboard))
             view.addGestureRecognizer(tap)
             if let team = teamID{
@@ -71,13 +107,13 @@ class showTeamsViewController: UIViewController, UITableViewDelegate, UITableVie
                 if(scoreTextView.text != ""){
                     let newScore = processData(data: Int(scoreTextView.text!))
                     LocalDataBase.teamArray[team].points = newScore
-                    scoreLabel.text = "\(newScore) points"
+                    scoreLabel.text = "\(newScore ) " + NSLocalizedString("points", comment: "")
                     
                 }
             }
             teamNameTextView.isHidden = true
             scoreTextView.isHidden = true
-            editButtonOutlet.setTitle("Edit", for: .normal)
+            editButtonOutlet.setTitle(NSLocalizedString("edit", comment: ""), for: .normal)
         }
     }
     
@@ -90,17 +126,14 @@ class showTeamsViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
-    var i = 1
-    
-    @IBOutlet weak var playerTableView: UITableView!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadData()
         if let index = teamID {
             teamLabel.text = String(LocalDataBase.teamArray[index].name)
-            scoreLabel.text = "\(LocalDataBase.teamArray[index].points) points"
+            scoreLabel.text = "\(LocalDataBase.teamArray[index].points) " + NSLocalizedString("points", comment: "")
             teamNameTextView.placeholder = String(LocalDataBase.teamArray[index].name)
             scoreTextView.placeholder =
             String(LocalDataBase.teamArray[index].points)
@@ -131,6 +164,10 @@ class showTeamsViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         self.dismiss(animated: true, completion: nil)
 
+    }
+    
+    @IBAction func dismissBackground(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     

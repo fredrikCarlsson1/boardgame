@@ -12,7 +12,6 @@ var audioPlayer = AVAudioPlayer()
 
 class ViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
-
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var menuView: UIViewX!
@@ -20,12 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var scoreButton: UIButton!
     @IBOutlet weak var exitButton: UIButton!
-    
     @IBOutlet weak var menuButton: FloatingActionButton!
+    @IBOutlet weak var labelView: UIView!
     
     var currentSong = 0
     var audioArray = ["sample", "gum"]
-
     var imageArray = [UIImage]()
     var labelArray = [UIImage]()
     var timer = Timer()
@@ -34,7 +32,6 @@ class ViewController: UIViewController {
     var randomNr = 0
     var gameNr = 0
     var teamID = 0
-    
     var tapGesture = UITapGestureRecognizer()
     
     let team1 = UIButton()
@@ -42,73 +39,92 @@ class ViewController: UIViewController {
     let team3 = UIButton()
     let team4 = UIButton()
     let team5 = UIButton()
+
     let myLabel1 = UILabel()
     let myLabel2 = UILabel()
     let myLabel3 = UILabel()
     let myLabel4 = UILabel()
     let myLabel5 = UILabel()
     
-    
-    
-    
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        myLabel1.text = ""
-        myLabel2.text = ""
-        if (LocalDataBase.teamArray.count >= 3){
-            myLabel3.text = ""
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        LocalDataBase.cardDeck = LocalDataBase.tempCardDeck
+        closeMenu()
+        imageArray = [#imageLiteral(resourceName: "citat"),#imageLiteral(resourceName: "tumme"),#imageLiteral(resourceName: "lag"),#imageLiteral(resourceName: "stege"),#imageLiteral(resourceName: "not")]
+        labelArray = [#imageLiteral(resourceName: "yellow"),#imageLiteral(resourceName: "pink"),#imageLiteral(resourceName: "blue"),#imageLiteral(resourceName: "purple"),#imageLiteral(resourceName: "green")]
+        button.setBackgroundImage(#imageLiteral(resourceName: "startknapp"), for: .normal)
+        for team in LocalDataBase.teamArray{
+            if (team.isUp == true){
+                teamID = team.id
+            }
+            textView.text = LocalDataBase().setLabelTextUnderStartButton(team: LocalDataBase.teamArray[teamID], nrOfRounds: LocalDataBase.nrOfRounds, sortedTeamArray: LocalDataBase().getSortedTeams())
         }
-        else if (LocalDataBase.teamArray.count >= 4){
-            myLabel4.text = ""
-        }
-        else if (LocalDataBase.teamArray.count >= 5){
-            myLabel5.text = ""
-        }
-   
     }
-   
-
-
     
     override func viewDidAppear(_ animated: Bool) {
-        let sortedByPoints = LocalDataBase().getSortedTeams()
-        team1.setBackgroundImage(#imageLiteral(resourceName: "elefant"), for: .normal)
-        team1.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        team2.setBackgroundImage(#imageLiteral(resourceName: "giraff"), for: .normal)
-        team2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        team3.setBackgroundImage(#imageLiteral(resourceName: "elefant"), for: .normal)
-        team3.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        team4.setBackgroundImage(#imageLiteral(resourceName: "giraff"), for: .normal)
-        team4.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        team5.setBackgroundImage(#imageLiteral(resourceName: "mario"), for: .normal)
-        team5.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-        let stackViewWidthForEachSubview = (Int(stackView.frame.width)/LocalDataBase.teamArray.count)
-        
 
         
+        let sortedByPoints = LocalDataBase().getSortedTeams()
+        team1.setBackgroundImage(#imageLiteral(resourceName: "Team_work_icon_purple"), for: .normal)
+        team1.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        team2.setBackgroundImage(#imageLiteral(resourceName: "Team_work_yellow"), for: .normal)
+        team2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        team3.setBackgroundImage(#imageLiteral(resourceName: "Team_work_blue"), for: .normal)
+        team3.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        team4.setBackgroundImage(#imageLiteral(resourceName: "Team_work_iconpink"), for: .normal)
+        team4.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        team5.setBackgroundImage(#imageLiteral(resourceName: "Team_work_green"), for: .normal)
+        team5.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        
+        team1.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        team1.layer.shadowOffset = CGSize(width:0, height:2.75)
+        team1.layer.shadowRadius = 1.75
+        team1.layer.shadowOpacity = 0.55
+        
+        team2.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        team2.layer.shadowOffset = CGSize(width:0, height:2.75)
+        team2.layer.shadowRadius = 1.75
+        team2.layer.shadowOpacity = 0.55
+        
+        team3.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        team3.layer.shadowOffset = CGSize(width:0, height:2.75)
+        team3.layer.shadowRadius = 1.75
+        team3.layer.shadowOpacity = 0.55
+        
+        team4.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        team4.layer.shadowOffset = CGSize(width:0, height:2.75)
+        team4.layer.shadowRadius = 1.75
+        team4.layer.shadowOpacity = 0.55
+        
+        team5.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
+        team5.layer.shadowOffset = CGSize(width:0, height:2.75)
+        team5.layer.shadowRadius = 1.75
+        team5.layer.shadowOpacity = 0.55
+        
+        
+        
+        let stackViewWidthForEachSubview = (Int(stackView.frame.width)/LocalDataBase.teamArray.count)
         let myLabelView1 = UIImageView(frame: CGRect(x: 10, y: 115, width: stackViewWidthForEachSubview-20, height: 30))
         let image11 = textToImageTeamLabel(drawText: LocalDataBase.teamArray[0].name as NSString, inImage: #imageLiteral(resourceName: "purple"))
         myLabelView1.image = image11
         
         let myView1 = UIImageView(frame: CGRect(x: 5, y: 5, width: 35, height: 35))
-        let image1 = textToImage(drawText: String(LocalDataBase.teamArray[0].points), inImage: #imageLiteral(resourceName: "gold-round-button-md"), atPoint: CGPoint(x: 90, y: 25))
+        let image1 = textToImage(drawText: String(LocalDataBase.teamArray[0].points), inImage: #imageLiteral(resourceName: "purplePoints"), atPoint: CGPoint(x: 90, y: 25))
         myView1.image = image1
         myView1.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
         myView1.layer.shadowOffset = CGSize(width:0, height:2.75)
         myView1.layer.shadowRadius = 1.75
         myView1.layer.shadowOpacity = 0.55
+        
         team1.addSubview(myView1)
-       // team1.addSubview(myLabel1)
         team1.addSubview(myLabelView1)
         
-      
-
         let myLabelView2 = UIImageView(frame: CGRect(x: 10, y: 115, width: stackViewWidthForEachSubview-20, height: 30))
         let image22 = textToImageTeamLabel(drawText: LocalDataBase.teamArray[1].name as NSString, inImage: #imageLiteral(resourceName: "yellow"))
         myLabelView2.image = image22
         let myView2 = UIImageView(frame: CGRect(x: 5, y: 5, width: 35, height: 35))
-        let image2 = textToImage(drawText: String(LocalDataBase.teamArray[1].points), inImage: #imageLiteral(resourceName: "gold-round-button-md"), atPoint: CGPoint(x: 90, y: 25))
+        let image2 = textToImage(drawText: String(LocalDataBase.teamArray[1].points), inImage: #imageLiteral(resourceName: "yellowPoints"), atPoint: CGPoint(x: 90, y: 25))
         myView2.image = image2
         myView2.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
         myView2.layer.shadowOffset = CGSize(width:0, height:2.75)
@@ -123,7 +139,7 @@ class ViewController: UIViewController {
             myLabelView3.image = image33
             
             let myView3 = UIImageView(frame: CGRect(x: 5, y: 5, width: 35, height: 35))
-            let image3 = textToImage(drawText: String(LocalDataBase.teamArray[2].points), inImage: #imageLiteral(resourceName: "gold-round-button-md"), atPoint: CGPoint(x: 90, y: 25))
+            let image3 = textToImage(drawText: String(LocalDataBase.teamArray[2].points), inImage: #imageLiteral(resourceName: "bluePoints"), atPoint: CGPoint(x: 90, y: 25))
             myView3.image = image3
             myView3.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
             myView3.layer.shadowOffset = CGSize(width:0, height:2.75)
@@ -137,9 +153,8 @@ class ViewController: UIViewController {
             let image44 = textToImageTeamLabel(drawText: LocalDataBase.teamArray[2].name as NSString, inImage: #imageLiteral(resourceName: "pink"))
             myLabelView4.image = image44
       
-           
             let myView4 = UIImageView(frame: CGRect(x: 5, y: 5, width: 35, height: 35))
-            let image4 = textToImage(drawText: String(LocalDataBase.teamArray[3].points), inImage: #imageLiteral(resourceName: "gold-round-button-md"), atPoint: CGPoint(x: 90, y: 25))
+            let image4 = textToImage(drawText: String(LocalDataBase.teamArray[3].points), inImage: #imageLiteral(resourceName: "pinkPoints"), atPoint: CGPoint(x: 90, y: 25))
             myView4.image = image4
             myView4.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
             myView4.layer.shadowOffset = CGSize(width:0, height:2.75)
@@ -154,7 +169,7 @@ class ViewController: UIViewController {
             myLabelView5.image = image55
             
             let myView5 = UIImageView(frame: CGRect(x: 5, y: 5, width: 35, height: 35))
-            let image5 = textToImage(drawText: String(LocalDataBase.teamArray[4].points), inImage: #imageLiteral(resourceName: "gold-round-button-md"), atPoint: CGPoint(x: 90, y: 25))
+            let image5 = textToImage(drawText: String(LocalDataBase.teamArray[4].points), inImage: #imageLiteral(resourceName: "greenPoints"), atPoint: CGPoint(x: 90, y: 25))
             myView5.image = image5
             myView5.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
             myView5.layer.shadowOffset = CGSize(width:0, height:2.75)
@@ -175,16 +190,14 @@ class ViewController: UIViewController {
         team4.layer.cornerRadius = 50
         team5.layer.cornerRadius = 50
         
-        
         var buttonArray = [team1, team2, team3, team4, team5]
         let teams = LocalDataBase.teamArray.count
-        let color1 = UIColor(hexString: "#b31217")
-        
-        
+       // let color1 = UIColor(hexString: "#b31217")
+
         for team in LocalDataBase().getSortedTeams(){
             if (team.isUp){
                 teamID = team.id
-                buttonArray[team.id].backgroundColor = color1
+               // buttonArray[team.id].backgroundColor = color1
                 buttonArray[team.id].pulsateTeam()
             }
         }
@@ -192,8 +205,7 @@ class ViewController: UIViewController {
         //Place teamImages on screen in order by points
         
         if(teams == 2){
-           
-           
+ 
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[0].id], at: 0)
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[1].id], at: 1)
             myLabelView1.frame = CGRect(x: 5, y: 115, width: stackViewWidthForEachSubview-40, height: 30)
@@ -205,15 +217,11 @@ class ViewController: UIViewController {
             } else {
                 // Fallback on earlier versions
             }
-            
-            
         }
-        
         if(teams == 3){
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[0].id], at: 0)
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[1].id], at: 1)
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[2].id], at: 2)
-           
         }
         if(teams == 4){
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[0].id], at: 0)
@@ -229,49 +237,22 @@ class ViewController: UIViewController {
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[4].id], at: 4)
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        closeMenu()
-        
-        
-      
-        imageArray = [#imageLiteral(resourceName: "citat"),#imageLiteral(resourceName: "tumme"),#imageLiteral(resourceName: "lag"),#imageLiteral(resourceName: "stege"),#imageLiteral(resourceName: "not")]
-        labelArray = [#imageLiteral(resourceName: "yellow"),#imageLiteral(resourceName: "pink"),#imageLiteral(resourceName: "blue"),#imageLiteral(resourceName: "purple"),#imageLiteral(resourceName: "green")]
-        button.setBackgroundImage(#imageLiteral(resourceName: "startknapp"), for: .normal)
-        for team in LocalDataBase.teamArray{
-            if (team.isUp == true){
-                teamID = team.id
-            }
-        textView.text = LocalDataBase().setLabelTextUnderStartButton(team: LocalDataBase.teamArray[teamID], nrOfRounds: LocalDataBase.nrOfRounds, sortedTeamArray: LocalDataBase().getSortedTeams())
+    override func viewWillDisappear(_ animated: Bool) {
+        myLabel1.text = ""
+        myLabel2.text = ""
+        if (LocalDataBase.teamArray.count >= 3){
+            myLabel3.text = ""
         }
-        
+        else if (LocalDataBase.teamArray.count >= 4){
+            myLabel4.text = ""
+        }
+        else if (LocalDataBase.teamArray.count >= 5){
+            myLabel5.text = ""
+        }
     }
     
-    @IBAction func menuTapped(_ sender: FloatingActionButton) {
-        UIView.animate(withDuration: 0.3, animations: {
-            if (self.menuView.transform == .identity){
-                self.closeMenu()
-            }
-            else {
-                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
-                self.tapGesture.numberOfTapsRequired = 1
-                self.tapGesture.numberOfTouchesRequired = 1
-                self.view.addGestureRecognizer(self.tapGesture)
-                self.view.isUserInteractionEnabled = true
-                self.menuView.transform = .identity
-            }
-        })
-        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
-            if (self.menuView.transform == .identity){
-                self.exitButton.transform = .identity
-                self.settingsButton.transform = .identity
-                self.scoreButton.transform = .identity
-                self.helpButton.transform = .identity
-                
-            }
-        })
-    }
+    
+
     
    func closeMenu(){
         menuView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -303,37 +284,22 @@ class ViewController: UIViewController {
             timer.fire()
         }
     }
-    
-    @IBAction func startButton(_ sender: UIButton) {
-        textView.isHidden = true
-        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(ViewController.clock), userInfo: nil, repeats: true)
-        timer.fire()
-    }
-    
-    
+   
     func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
-        let textColor = UIColor.black
-        let textFont = UIFont(name: "Helvetica Bold", size: 150)!
-        
-        
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(image.size, false, scale)
-        
-        let textFontAttributes = [
-            NSAttributedStringKey.font: textFont,
-            NSAttributedStringKey.foregroundColor: textColor,
-            ] as [NSAttributedStringKey : Any]
-        
-        image.draw(in: CGRect(origin: .zero, size: image.size))
-        
-        let rect = CGRect(origin: point, size: image.size)
-        text.draw(in: rect, withAttributes: textFontAttributes)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsBeginImageContext(image.size)
+        image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
+        let font=UIFont.boldSystemFont(ofSize: 350)
+        let text_style=NSMutableParagraphStyle()
+        text_style.alignment=NSTextAlignment.center
+        let text_color=UIColor.black
+        let attributes=[NSAttributedStringKey.font:font, NSAttributedStringKey.paragraphStyle:text_style, NSAttributedStringKey.foregroundColor:text_color]
+        let text_h=font.lineHeight
+        let text_y=(image.size.height-text_h)/2
+        let text_rect=CGRect(x: 0, y: text_y-18, width: image.size.width, height: text_h)
+        text.draw(in: text_rect.integral, withAttributes: attributes)
+        let result=UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        
-        return newImage!
+        return result!
     }
     
     func textToImageLabel(drawText text: NSString, inImage image: UIImage) -> UIImage {
@@ -356,7 +322,7 @@ class ViewController: UIViewController {
     func textToImageTeamLabel(drawText text: NSString, inImage image: UIImage) -> UIImage {
         UIGraphicsBeginImageContext(image.size)
         image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
-        let font=UIFont(name: "Helvetica", size: 100)!
+        let font=UIFont(name: "Helvetica", size: 140)!
         let text_style=NSMutableParagraphStyle()
         text_style.alignment=NSTextAlignment.center
         let text_color=UIColor.black
@@ -402,7 +368,9 @@ class ViewController: UIViewController {
         
         if (seconds == 0){
             button.pulsateSelected()
+            if(LocalDataBase.soundOn == true){
             audioPlayer.stop()
+            }
             gameNr = randomNr
             
             let labelImageView = UIImageView(frame: CGRect(x: -10, y: 10, width: 220, height: 54))
@@ -434,11 +402,14 @@ class ViewController: UIViewController {
         time2 = time2-1
         
         if(time2 == 0){
-            audioPlayer.stop()
+            if(LocalDataBase.soundOn == true){
+                audioPlayer.stop()
+            }
             performSegue(withIdentifier: "popUpSegue", sender: self)
         }
     }
     func playMusic(){
+        if(LocalDataBase.soundOn == true){
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[currentSong], ofType: "mp3")!))
             audioPlayer.prepareToPlay()
@@ -447,8 +418,8 @@ class ViewController: UIViewController {
             print(error)
         }
         audioPlayer.play()
+        }
     }
-    @IBOutlet weak var labelView: UIView!
     
     @objc func buttonAction(sender: UIButton!) {
         let btnTag: UIButton = sender
@@ -460,14 +431,49 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? popUpViewController {
             destination.gameNumber = gameNr
-            
             destination.teamID = teamID
         }
         
         if let destination = segue.destination as? showTeamsViewController {
             destination.teamID = teamID
         }
+        if let destination = segue.destination as? Rules{
+            destination.firstViewString = "startGameInstructions"
+        }
         
     }
+    
+    @IBAction func menuTapped(_ sender: FloatingActionButton) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if (self.menuView.transform == .identity){
+                self.closeMenu()
+            }
+            else {
+                self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(StartingPage.handleTap))
+                self.tapGesture.numberOfTapsRequired = 1
+                self.tapGesture.numberOfTouchesRequired = 1
+                self.view.addGestureRecognizer(self.tapGesture)
+                self.view.isUserInteractionEnabled = true
+                self.menuView.transform = .identity
+            }
+        })
+        UIView.animate(withDuration: 0.5, delay: 0.2, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
+            if (self.menuView.transform == .identity){
+                self.exitButton.transform = .identity
+                self.settingsButton.transform = .identity
+                self.scoreButton.transform = .identity
+                self.helpButton.transform = .identity
+                
+            }
+        })
+    }
+    
+    @IBAction func startButton(_ sender: UIButton) {
+        textView.isHidden = true
+        closeMenu()
+        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(ViewController.clock), userInfo: nil, repeats: true)
+        timer.fire()
+    }
+    
 }
 

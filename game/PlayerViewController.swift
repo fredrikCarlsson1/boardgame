@@ -30,6 +30,12 @@ class PlayerViewController: UIViewController {
         }
     }
     
+    @IBAction func exitBackground(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    @IBAction func exitButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func doneButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }

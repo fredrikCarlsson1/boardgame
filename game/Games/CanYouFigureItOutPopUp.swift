@@ -7,18 +7,15 @@
 //
 
 import UIKit
-import AVFoundation
+
 
 class CanYouFigureItOutPopUp: UIViewController {
     var teamID: Int?
     var game: Int?
-    var titleNumber: Int?
+    var titleNr = LocalDataBase.canYouFigureItOutCount
     var answer: String?
     var hintNumber = 5
     var timer = Timer()
-    var seconds = 46
-    var soundPlayer = AVAudioPlayer()
-    var audioArray = ["airHorn"]
     var tapGesture = UITapGestureRecognizer()
     
     
@@ -34,55 +31,49 @@ class CanYouFigureItOutPopUp: UIViewController {
     @IBOutlet weak var fatTextView: UITextView!
     @IBOutlet weak var menuButton: FloatingActionButton!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         closeMenu()
-        pointsLabel.text = String("\(hintNumber) points")
-        if let titleNr = titleNumber{
-            subjectLabel.text = LocalDataBase().canYouFigureItOutList[titleNr].subject
-            fatTextView.text = ("First clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue1) ")
-        }
+        pointsLabel.text = String("\(hintNumber) \(NSLocalizedString("points", comment: ""))")
+        subjectLabel.text = LocalDataBase().canYouFigureItOutList[titleNr].subject
+        fatTextView.text = ("\(NSLocalizedString("firstClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue1) ")
+        
     }
         
 
     @IBAction func nextHintButton(_ sender: UIButton) {
         hintNumber=hintNumber-1
-        pointsLabel.text=String("\(hintNumber) points")
-        if let titleNr = titleNumber{
+        pointsLabel.text=String("\(hintNumber) \(NSLocalizedString("points", comment: ""))")
         if(hintNumber == 4){
-            fatTextView.text = ("Second clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2)")
-            textView.text = ("First Clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
+            fatTextView.text = ("\(NSLocalizedString("secondClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2)")
+            textView.text = ("\(NSLocalizedString("firstClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
         }
         else if(hintNumber == 3){
-            fatTextView.text = ("Third clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue3) ")
+            fatTextView.text = ("\(NSLocalizedString("thirdClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue3) ")
             
-            textView.text = ("Second Clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2)\n---\n First Clue: \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
+            textView.text = ("\(NSLocalizedString("secondClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2)\n---\n\(NSLocalizedString("firstClue", comment: "")) \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
         }
         else if(hintNumber == 2){
-            fatTextView.text = ("Fourth clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue4)")
+            fatTextView.text = ("\(NSLocalizedString("fourthClue", comment: ""))\n\(LocalDataBase().canYouFigureItOutList[titleNr].clue4)")
             
-            textView.text = ("Third Clue: \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue3) \n---\n Second Clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2) \n---\nFirst Clue: \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
+            textView.text = ("\(NSLocalizedString("thirdClue", comment: "")) \(LocalDataBase().canYouFigureItOutList[titleNr].clue3) \n---\n \(NSLocalizedString("secondClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2) \n---\n\(NSLocalizedString("firstClue", comment: "")) \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
         }
         else if(hintNumber == 1){
             hintButton.isEnabled = false
             hintButton.backgroundColor = .gray
             hintButton.titleLabel?.textColor = .gray
-                fatTextView.text = ("Fifth clue: \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue5)")
+                fatTextView.text = ("\(NSLocalizedString("fifthClue", comment: ""))\n \(LocalDataBase().canYouFigureItOutList[titleNr].clue5)")
             
-                textView.text = ("Fourth Clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue4)\n---\n Third Clue: \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue3) \n---\n Second Clue: \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2) \n---\nFirst Clue: \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
+                textView.text = ("\(NSLocalizedString("fourthClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue4)\n---\n \(NSLocalizedString("thirdClue", comment: "")) \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue3) \n---\n \(NSLocalizedString("secondClue", comment: "")) \n\(LocalDataBase().canYouFigureItOutList[titleNr].clue2) \n---\n\(NSLocalizedString("firstClue", comment: "")) \n \(LocalDataBase().canYouFigureItOutList[titleNr].clue1)")
             
             
-            }
+            
         }
         
     }
     
     @IBAction func guessButton(_ sender: UIButton) {
-        if let titleNr = titleNumber{
-            answer = LocalDataBase().canYouFigureItOutList[titleNr].answer
-        }
+        answer = LocalDataBase().canYouFigureItOutList[titleNr].answer
         timer.invalidate()
         performSegue(withIdentifier: "figureToAlertSegue", sender: self)
       
@@ -101,7 +92,6 @@ class CanYouFigureItOutPopUp: UIViewController {
                 self.view.isUserInteractionEnabled = true
                 self.menuView.transform = .identity
             }
-            
         })
         
         UIView.animate(withDuration: 0.6, delay: 0.2, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: [], animations: {
@@ -142,8 +132,11 @@ class CanYouFigureItOutPopUp: UIViewController {
             if let answer = answer{
                 destination.answer = answer
             }
-            destination.score = hintNumber
             destination.gameNumber = 3
+            destination.score = hintNumber
+        }
+        if let destination = segue.destination as? Rules{
+            destination.firstViewString = "canYouFigureItOut"
         }
     }
 }

@@ -10,39 +10,73 @@ import UIKit
 
 class Rules: UIViewController {
     
-    @IBOutlet weak var textView1: UITextView!
+
+    @IBOutlet weak var textView2: UITextView!
+    @IBOutlet weak var buttonOutlet: UIButtonX!
+    @IBOutlet weak var instructionView: UIViewX!
+    var firstViewString: String?
     
+    var stringTupleArray = [(key: String, value: String)]()
+ 
+    let shortInstructions = NSLocalizedString("shortGameInstructions", comment: "")
+    let nrOfTeamsAndPlayers = NSLocalizedString("nrOfPlayersAndTeams", comment: "")
+    let startGameInstructions = NSLocalizedString("startTheGameInstructions", comment: "")
+    
+    let withOtherWords = NSLocalizedString("withOtherWordsInstructions", comment: "")
+    let charades = NSLocalizedString("charadesInstructions", comment: "")
+    let teamChallenge = NSLocalizedString("teamChallengeInstructions", comment: "")
+    let canYouFigureItOut = NSLocalizedString("canYouFigureItOutInstructions", comment: "")
+    let humTheSong = NSLocalizedString("humTheSongInstructions", comment: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //textView1.attributedText = attributedText()
-        
+        stringTupleArray = [("shortGameInstructions", shortInstructions), ("nrOfTeamsAndPlayers",nrOfTeamsAndPlayers),("startGameInstructions",startGameInstructions),  ("withOtherWords",self.withOtherWords), ("charades",self.charades), ("teamChallenge",self.teamChallenge), ("canYouFigureItOut", self.canYouFigureItOut), ("humTheSong", self.humTheSong)]
+
+        setSecondTextView()
+      
     }
-//    func attributedText(string: String) -> NSAttributedString {
-//        
-//        let speletIKorthet = "Spelet i korthet:\nSom namnet antyder är det här det ultimata sällskapsspelet. I spelet gömmer det sig nämligen fem delmoment:\n- Med andra ord\n- Charader\n- Nynna låten\n- Kan ni lista ut svaret\n- Lagutmaning\n\nInför varje lags tur slumpas ett av dessa fem spel fram. Maxpoängen per runda är 5 poäng, oavsett vilket av spelen som slumpas fram.\nDet lag som först kommer upp i 40 poäng vinner.\n\n" as NSString
-//        
-//        let antalSpelare = "Antal spelare:\n4 eller fler\n\n" as NSString
-//        
-//        let antalLag = "Antal lag:\n2-5 lag, där vardera lag behöver minst 2 spelare\n\n" as NSString
-//        
-//        let speletsGång = "Spelets gång:\nEfter ni delat upp er i lag kommer spelet slumpa fram startande lag. Det laget " as NSString
-//        
-//        let attributedString = NSMutableAttributedString(string: string as String, attributes: [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 15.0)])
-//        
-//        let boldFontAttribute = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 15.0)]
-//        
-//        // Part of string to be bold
-//        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Spelet i korthet:"))
-//        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Antal spelare:"))
-//        
-//        attributedString.addAttributes(boldFontAttribute, range: string.range(of: "Antal lag:"))
-//        
-//        // 4
-//        return attributedString
-//    }
+    
+    override func viewDidLayoutSubviews() {
+        textView2.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
+    }
+    
+    
+    
+    func setFirstTextView()->String{
+        var tmpString = shortInstructions
+        for string in stringTupleArray{
+            if let firstString = firstViewString{
+                if(string.key == firstString){
+                    tmpString = string.value
+                }
+            }
+        }
+        return tmpString
+    }
+    
+    func setSecondTextView(){
+        
+        var tmpString = ""
+        for string in stringTupleArray {
+            print (string.key)
+            if let secondString = firstViewString{
+               
+                if(string.key != secondString){
+                    
+                    tmpString = tmpString + "*****\n\n" + string.value
+                }
+            }
+            else{
+                for string in stringTupleArray{
+                    tmpString =  tmpString + string.value
+                }
+            }
+        }
+        textView2.text = setFirstTextView() + tmpString
+        }
+        
+    
+    
     
     @IBAction func dismissBackgroundButton(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

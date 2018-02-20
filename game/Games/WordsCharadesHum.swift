@@ -18,9 +18,8 @@ class WordsCharadesHum: UIViewController {
     @IBOutlet weak var checkBox4: BEMCheckBox!
     @IBOutlet weak var checkBox5: BEMCheckBox!
     @IBOutlet weak var gameView: UIView!
-    @IBOutlet weak var startingView: UIViewX!
     @IBOutlet weak var timeLabel: UILabel!
-      @IBOutlet weak var gameLabel: UILabel!
+    @IBOutlet weak var gameLabel: UILabel!
     @IBOutlet weak var doneOutlet: UIButtonX!
     
  
@@ -36,41 +35,33 @@ class WordsCharadesHum: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var menuButton: FloatingActionButton!
     
-    
-    
     var tapGesture = UITapGestureRecognizer()
     var timer = Timer()
     var seconds = 45
     var soundPlayer = AVAudioPlayer()
-    var audioArray = ["airHorn"]
+    var audioArray = ["end_bell"]
     
     var score = 0
     var teamID: Int?
     var game: Int?
-    var titleNumber: Int?
-    
-    
+
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         closeMenu()
-        timeLabel.text = String(seconds)
-        if let typeOfGame = game{
-            if (typeOfGame == 0){
-                
-            }
-        }
         
+    
         timeLabel.layer.masksToBounds = true
         timeLabel.layer.cornerRadius = 25
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(WordsCharadesHum.startTimer), userInfo: nil, repeats: true)
         
+        
+        
         if let game = game {
-            if let gameNumber = titleNumber{
+            let gameNumber = LocalDataBase().getIndexForEachList(index: game)
                 gameLabel.text = LocalDataBase.keysOfGamesArray[game]
-                
-                if let title = titleNumber {
-                    titleLabel.text = LocalDataBase().getRandomSubjectFrom(list: game, index: title)
-                }
+                    titleLabel.text = LocalDataBase().getSubjectFrom(list: game)
+            
                 if (game == 0){
                     seconds = 30
                     timeLabel.backgroundColor = UIColor(hexString: "#dbd16d")
@@ -116,9 +107,11 @@ class WordsCharadesHum: UIViewController {
                     label3.text = LocalDataBase().humTheSongList[gameNumber].word3
                     label4.text = LocalDataBase().humTheSongList[gameNumber].word4
                     label5.text = LocalDataBase().humTheSongList[gameNumber].word5
-                }
+                
             }
         }
+        
+        timeLabel.text = String(seconds)
         
         //UI ------------
         gameView.layer.cornerRadius = 20
@@ -131,10 +124,7 @@ class WordsCharadesHum: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        UIView.transition(from: startingView, to: gameView, duration: 0.4, options: [.transitionFlipFromLeft, .showHideTransitionViews])
-        
-    }
+
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
@@ -277,6 +267,7 @@ class WordsCharadesHum: UIViewController {
     
     
     func playMusic(){
+        if(LocalDataBase.soundOn == true){
         do{
             soundPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[0], ofType: "mp3")!))
             soundPlayer.prepareToPlay()
@@ -285,6 +276,7 @@ class WordsCharadesHum: UIViewController {
             print(error)
         }
         soundPlayer.play()
+        }
     }
     
     func pausTimer(){
@@ -317,8 +309,21 @@ class WordsCharadesHum: UIViewController {
             if let gameNr = game{
                 destination.game = gameNr
             }
-            
-            // destination.time = timeLabel.text
+
+        }
+        if let destination = segue.destination as? Rules{
+            if let gameNr = game{
+                if (gameNr == 0){
+                    destination.firstViewString = "withOtherWords"
+                }
+                else if (gameNr == 1){
+                    destination.firstViewString = "charades"
+                }
+                else if (gameNr == 4){
+                    destination.firstViewString = "humTheSong"
+                }
+                
+            }
             
         }
         

@@ -11,11 +11,11 @@ import Foundation
 public class LocalDataBase {
     
     struct Keys{
-        static let withOtherWords = "With other Words"
-        static let charades = "Charades"
-        static let teamChallenge  = "Team Challenge"
-        static let canYouFigureItOut = "Can you figure it out?"
-        static let humTheSong = "Hum the Song"
+        static let withOtherWords = NSLocalizedString("withOtherWords", comment: "")
+        static let charades = NSLocalizedString("charades", comment: "")
+        static let teamChallenge  = NSLocalizedString("teamChallenge", comment: "")
+        static let canYouFigureItOut = NSLocalizedString("canYouFigureItOut", comment: "")
+        static let humTheSong = NSLocalizedString("humTheSong", comment: "")
         
     }
     
@@ -24,11 +24,15 @@ public class LocalDataBase {
     
     static var teamArray = [Team]()
     static var nrOfRounds = 1
+    static var withOtherWordsCount = 0
+    static var charadesCount = 0
+    static var canYouFigureItOutCount = 0
+    static var teamChallengeCount = 0
+    static var humTheSongCount = 0
     
-    static var cardDeck:[Int] = [1]
-    
-    
-    
+    static var tempCardDeck:[Int] = [1]
+    static var cardDeck = [1]
+    static var soundOn = true
     public var withOtherWordsList = [withOtherWords]()
     public var charadeList = [Charades]()
     public var teamChallengeList = [TeamChallenge]()
@@ -112,7 +116,7 @@ public class LocalDataBase {
             self.withOtherWordsList.append(inTheBathRoomSwe)
             
             
-            //(18)
+            //(20)
             self.canYouFigureItOutList.append(federerSwe)
             self.canYouFigureItOutList.append(stockholmSwe)
             self.canYouFigureItOutList.append(obamaSwe)
@@ -131,21 +135,55 @@ public class LocalDataBase {
             self.canYouFigureItOutList.append(massling)
             self.canYouFigureItOutList.append(tiger)
             self.canYouFigureItOutList.append(gt)
+            self.canYouFigureItOutList.append(bach)
+            self.canYouFigureItOutList.append(beiber)
             
-            //Hum the song (8)
+            
+            
+            //Hum the song (20)
             self.humTheSongList.append(svenskSchlager)
             self.humTheSongList.append(boyBand1)
             self.humTheSongList.append(first80)
             self.humTheSongList.append(second80)
             self.humTheSongList.append(hipHopRnB1)
-            self.humTheSongList.append(hipHopRnB1)
+            self.humTheSongList.append(beatles)
             self.humTheSongList.append(house)
             self.humTheSongList.append(disco)
-        
-    
+            self.humTheSongList.append(classicRock)
+            self.humTheSongList.append(loveballads)
+            self.humTheSongList.append(loveSongs)
+            self.humTheSongList.append(first70)
+            self.humTheSongList.append(movieMusic)
+            self.humTheSongList.append(chilldrensSongs)
+            self.humTheSongList.append(country)
+            self.humTheSongList.append(oneHitWonders)
+            self.humTheSongList.append(first90s)
+            self.humTheSongList.append(latinSongs)
+            self.humTheSongList.append(summerSongs)
+            self.humTheSongList.append(after2010)
+            
+            
+       
+            
+            
+            
         }
         if(LocalDataBase.cardDeck.contains(2)){
+            self.withOtherWordsList.append(capitalCitiesSwe)
+            
             self.teamChallengeList.append(dogsSwe)
+            
+            self.humTheSongList.append(rap)
+            self.humTheSongList.append(second70)
+            self.humTheSongList.append(hardRock)
+            self.humTheSongList.append(rockOf90s)
+            self.humTheSongList.append(melodifestivalenSwe)
+            self.humTheSongList.append(hipHopRnB2)
+            
+            self.canYouFigureItOutList.append(merkel)
+            self.canYouFigureItOutList.append(eight)
+            self.canYouFigureItOutList.append(koranen)
+            
             
         }
         if(LocalDataBase.cardDeck.contains(3)){
@@ -154,39 +192,38 @@ public class LocalDataBase {
         }
         
         
-     
+        
         // With other Words append
         
         
         //Can you figure it out?
-        self.canYouFigureItOutList.append(city1)
-        self.canYouFigureItOutList.append(federer)
+      
         
         
         
         
         //Team Challenge (20 st)
-//        self.teamChallengeList.append(cities1)
-//        self.teamChallengeList.append(physicalExercise1)
-//        self.teamChallengeList.append(physicalExercise2)
-//        self.teamChallengeList.append(physicalExercise3)
-//        self.teamChallengeList.append(physicalExercise4)
-//        self.teamChallengeList.append(physicalExercise5)
-//        self.teamChallengeList.append(food)
-//        self.teamChallengeList.append(cars)
-//        self.teamChallengeList.append(famousPersons)
-//        self.teamChallengeList.append(music2)
-//        self.teamChallengeList.append(serious)
-//        self.teamChallengeList.append(fish)
-//        self.teamChallengeList.append(choir)
-//        self.teamChallengeList.append(words)
-//        self.teamChallengeList.append(language)
-//        self.teamChallengeList.append(names)
-//        self.teamChallengeList.append(names2)
-//        self.teamChallengeList.append(sports)
-//        self.teamChallengeList.append(world)
-//        self.teamChallengeList.append(usa)
-//        self.teamChallengeList.append(dogs)
+        //        self.teamChallengeList.append(cities1)
+        //        self.teamChallengeList.append(physicalExercise1)
+        //        self.teamChallengeList.append(physicalExercise2)
+        //        self.teamChallengeList.append(physicalExercise3)
+        //        self.teamChallengeList.append(physicalExercise4)
+        //        self.teamChallengeList.append(physicalExercise5)
+        //        self.teamChallengeList.append(food)
+        //        self.teamChallengeList.append(cars)
+        //        self.teamChallengeList.append(famousPersons)
+        //        self.teamChallengeList.append(music2)
+        //        self.teamChallengeList.append(serious)
+        //        self.teamChallengeList.append(fish)
+        //        self.teamChallengeList.append(choir)
+        //        self.teamChallengeList.append(words)
+        //        self.teamChallengeList.append(language)
+        //        self.teamChallengeList.append(names)
+        //        self.teamChallengeList.append(names2)
+        //        self.teamChallengeList.append(sports)
+        //        self.teamChallengeList.append(world)
+        //        self.teamChallengeList.append(usa)
+        //        self.teamChallengeList.append(dogs)
         
         
         //Charades ENG
@@ -201,29 +238,6 @@ public class LocalDataBase {
         self.charadesArrayEng1.append(clothes)
         self.charadesArrayEng1.append(nature)
         self.charadesArrayEng1.append(drinks)
-        
-        //Charades SWE
-        self.charadesArraySwe1.append(animales1Swe)
-        self.charadesArraySwe1.append(animales2Swe)
-        self.charadesArraySwe1.append(kitchenSwe)
-        self.charadesArraySwe1.append(sports2Swe)
-        self.charadesArraySwe1.append(clothesSwe)
-        self.charadesArraySwe1.append(drinksSwe)
-        self.charadesArraySwe1.append(vehiclesSwe)
-        self.charadesArraySwe1.append(electronicsSwe)
-        self.charadesArraySwe1.append(natureSwe)
-        self.charadesArraySwe1.append(moviesSwe)
-        self.charadesArraySwe1.append(fruitsSwe)
-        self.charadesArraySwe1.append(furnituresSwe)
-        self.charadesArraySwe1.append(commicsSwe)
-        self.charadesArraySwe1.append(foodsSwe)
-        self.charadesArraySwe1.append(sports3Swe)
-        self.charadesArraySwe1.append(musicSwe)
-        self.charadesArraySwe1.append(nationalitiesSwe)
-        self.charadesArraySwe1.append(professions1Swe)
-        self.charadesArraySwe1.append(professions2Swe)
-        self.charadesArraySwe1.append(movieCharactersSwe)
-        
         
         
     }
@@ -279,41 +293,60 @@ public class LocalDataBase {
     var federer = CanYouFigureItOut(title: "Athlete", answer: "Roger Federer", firstWord: "Was born 8 August, 1981", secondWord:"Says he has three idols; Boris Becker, Stefan Edberg and Pete Sampras" , thirdWord: "Has had a Swiss Post stamp issued in his honour ", fourthWord: "Has won all four Major Tennis Tournament", fifthWord: "Is the most successful tennis player in Switzerland history")
     
     
-    var federerSwe = CanYouFigureItOut(title: "Idrottare", answer: "Roger Federer", firstWord: "Föddes 8 Augusti, 1981", secondWord:"Säger att han har tre idoler; Boris Becker, Stefan Edberg och Pete Sampras" , thirdWord: "Har fått ett schweiziskt frimärke tryckt i sin ära", fourthWord: "Har vunnit alla de stora Grand Slam turneringarna", fifthWord: "Är den mest framgångsrika tennisspelaren i Schweiz historia")
-    var stockholmSwe = CanYouFigureItOut(title: "Stad", answer: "Stockholm", firstWord: "Grundades 1252", secondWord:"Går också under namnet Nordens Venedig" , thirdWord: "Hem för Karl XVI Gustav", fourthWord: "Globen, Kaknästornet, och Vasa Museumet är kända platser i denna stad", fifthWord: "Sveriges huvudstad")
-    var obamaSwe = CanYouFigureItOut(title: "Känd person", answer: "Barack Obama", firstWord: "Har gett ut en självbiografi med titeln; 'Min far hade en dröm'", secondWord: "Har tilldelats Nobels fredspris", thirdWord: "Föddes 4 augusti 1961 på Hawaii ", fourthWord: "Är gift med Michelle och har döttrarna Malia och Sasha ", fifthWord: "Valdes 2008 in som USAs 44e president.")
-    var nyckelnTillFrihetSwe = CanYouFigureItOut(title: "Film", answer: "Nyckeln till frihet", firstWord: "Filmmusiken gjordes av Thomas Newman", secondWord: "Var inledningsvis ingen ekonomisk succé. Mycket på grund av konkurrens från filmer som Pulp Fiction och Forrest Gump.", thirdWord: " Baserad på en roman av Stephan King", fourthWord: "Filmens huvudkaraktärer spelas av Tim Robbins och Morgan Freeman", fifthWord: "Berättar historien om Andy Dufrense, som döms mot sitt nekande till livstids fängelse för mordet på sin fru och hennes älskare.")
-    var friendsSwe = CanYouFigureItOut(title: "TV-serie", answer: "Friends", firstWord: "Serien kallades från början Insomnia Cafe, innan namnet byttes", secondWord: "Serien har haft gästskådespelare som exempelvis George Clooney and Christina Applegate", thirdWord: "Serien är skapad av David Crane och Marta Kauffman", fourthWord: "En stor del av handlingen utspelar sig på cafét Central Perk", fifthWord: "Serien handlar om 6 vänner som bor i new york")
-    var uranusSwe = CanYouFigureItOut(title: "Planet", answer: "Uranus", firstWord: "Upptäcktes 1781 av William Herschel", secondWord: "Planetens diameter är ca 4 gånger större än Jordens", thirdWord: "Det tar 84 år för planeten att fullborda ett varv runt solen", fourthWord: "Planeten har i dagsläget tjugosju bekräftade månar, varav de fem största heter Miranda, Ariel, Umbriel, Titania och Oberon", fifthWord: "Är den sjunde planeten från solen och har ungefär samma storlek som Neptunus ")
-    var varldsdelSwe = CanYouFigureItOut(title: "Världsdel", answer: "Sydamerika", firstWord: "Arean på världsdelen är 17 831 956 km²", secondWord: "Det bor ca 420 miljoner människor i denna världsdel", thirdWord: "Här finns världens högsta vattenfall, Angel Fall", fourthWord: "Består av 12 länder", fifthWord: "Två kända städer i denna världsdel är Santiago och Caracas ")
-    var indonesienSwe = CanYouFigureItOut(title: "Land", answer: "Indonesien", firstWord: "Har världens största muslimska befolkning", secondWord: "Det asiatiska landet blev erkänt självständigt från Nederländerna 1949", thirdWord: "Landet består av över 13 000 öar och 33 provinser", fourthWord: "Landet gränsar till Papua Nya Guinea, Östtimor och Malaysia", fifthWord: "Huvudstaden heter Jakarta ")
-    var bornInTheUSASWe = CanYouFigureItOut(title: "Musik-album", answer: "Born in the USA", firstWord: "Musiktidskriften Rolling Stone rankade albumet som nummer 85 på sin lista The 500 Greatest Albums of All Time.", secondWord: "Detta rockalbum gavs ut 1984", thirdWord: "Titellåten handlar om Vietnamveteraner som glömts bort av samhället i USA.", fourthWord: "Kända låtar på albumet är Dancing in the dark och I Surrernder.", fifthWord: "Artisten är Bruce Springsteen och albumet heter likadant som den första singeln på skivan")
-    var cocaColaSwe = CanYouFigureItOut(title: "Företag", answer: "Coca Cola", firstWord: "Hade 2017 100 300 anställda och omsatte 41,8 miljarder dollar", secondWord: "Företaget grundades 1892 av Asa Griggs Candler", thirdWord: "Huvudkontoret ligger i Atlanta, USA ", fourthWord: "Deras slogan är 'Taste the feeling'", fifthWord: "Har förutom huvudprodukten även Fanta och Sprite i sortimentet")
-    var colosseumSwe = CanYouFigureItOut(title: "Sevärdhet", answer: "Colosseum", firstWord: "Ett talesätt hos folket i det här landet vid korsdrag inomhus är 'Stäng dörren, du är inte i ***'", secondWord: "Höjden på sevärdheten är 48 meter", thirdWord: "En sida av sevärdheten raserades vid en jordbävning år 1349", fourthWord: "Sevärdheten ligger i Rom och lät byggas av kejsare Titus Vespasianus", fifthWord: "En central plats i filmen Gladiator")
-    var palmSwe = CanYouFigureItOut(title: "Växt", answer: "Palm", firstWord: "Är en familj enhjärtbladiga växter och den enda familjen i ordningen Arecales ", secondWord: "Förekommer som vildväxande nästan enbart i världens tropiska och subtropiska områden.", thirdWord: " Från den här växten utvinns en olja som ofta kritiseras av miljöskäl, då avverkning av regnskog sker i stor skala", fourthWord: "Växten syns ofta på paradisstränder ", fifthWord: "På den här växten växer det kokosnötter")
-    var niagaraSwe = CanYouFigureItOut(title: "Natur", answer: "Niagara Fallen", firstWord: "Upptäcktes på 1600-talet av Louis Hennepin", secondWord: "Bredden på detta är 1203m", thirdWord: "Här finns ett minnesmärke över Nikola Tesla, som var den förste att utvinna elektrisk energi härifrån", fourthWord: "Består av tre fall", fifthWord: "Ett vattenfall som gränsar mellan Kanada och USA")
-    var cangaruSwe = CanYouFigureItOut(title: "Djur", answer: "Kängru", firstWord: "Djuret är växtätare och är vanligen aktiva på natten eller skymningen.", secondWord: "Pälsens färg är ofta enhetligt grå- eller brunaktig. Svansen är lång, stark och huvudsakligen hårbeklädd.", thirdWord: "Djuret förekommer i Australien och på Nya Guinea samt på kringliggande öar som Tasmanien.", fourthWord: "Deras baktassar är betydligt större än de främre. Djuret är kanske som mest känd för sitt skuttande och hoppande när de ska ta sig framåt.", fifthWord: "Är ett pungdjur. Honan föder och förvarar sina ungar i sin pung tills ungen blir ungefär ett halvår gammal")
-    var fotbollSwe = CanYouFigureItOut(title: "Sport", answer: "Fotboll", firstWord: "En känd legend inom denna idrott är Carlos Alberto", secondWord: "En känd aktiv spelare är Carli Lloyd", thirdWord: "En annan är målvakten Hugo Lloris", fourthWord: "Marta har dominerat denna sport på damsidan under många år.", fifthWord: "På herrsidan är Messi och Ronaldo de starkast lysande stjärnorna")
-    var massling = CanYouFigureItOut(title: "Sjukdom", answer: "Mässling", firstWord: "Sjukdomen orsakas av ett virus i morbillisläktet. Viruset sprids främst i droppform via luften", secondWord: "Hos vuxna är det en farlig sjukdom som obehandlad kan leda till döden", thirdWord: "Sjukdomen är den med vaccin förebyggbara sjukdom som orsakar mest dödsfall i världen. Främst i fattiga länder i Afrika. År 1980 dog 2,6 miljoner människor och 2014 dog 73 00", fourthWord: "Sjukdomen är ovanlig i Sverige tack vare den allmänna vaccinationen  som sker med en första dos vid 1,5 års ålder och en andra dos i samband med skolstarten", fifthWord: "Sjukdomen är en virussjukdom som orsakar infektioner i luftvägarna och röda hudutslag")
-    var tiger = CanYouFigureItOut(title: "Djur", answer: "Tiger", firstWord: "Djuret lever endast i Asien ", secondWord: "Den jagar ensam och äter främst medelstora djur ur familjerna svindjur och hjortdjur", thirdWord: "Djuret är det största nu levande kattdjuret.", fourthWord: "De flesta lever i fuktig tropisk och subtropisk lövskog, men finns även i tempererade löv- och barrskogar. I denna miljö utgör pälsens mönster bra kamouflage", fifthWord: "Namnet på djuret härstammar från det grekiska ordet tigris")
-    var gt = CanYouFigureItOut(title: "Drink", answer: "Gin and tonic", firstWord: "Ursprunget till drinken sägs vara att brittiska soldater i Indien fick idén att ta den mycket beskt smakande malariamedicinen utspädd med sockervatten och denna dryck i syfte att göra intaget mer njutbart", secondWord: "Mycket populärt i Spanien, där det i storstäderna inte är ovanligt med barlokaler som enbart serverar olika varianter av denna dryck.", thirdWord: "Serveras traditionellt i ett highballglas med isbitar och en skiva citron eller lime", fourthWord: "Innehåller endast två huvudingredienser som tillsammans skapar en friskt och syrlig smakförnimmelse", fifthWord: "Varianter förekommer, exempelvis Turbo G&T (eller Cold Brew G&T)")
+    let federerSwe = CanYouFigureItOut(title: "Idrottare", answer: "Roger Federer", firstWord: "Föddes 8 Augusti, 1981", secondWord:"Säger att han har tre idoler; Boris Becker, Stefan Edberg och Pete Sampras" , thirdWord: "Har fått ett schweiziskt frimärke tryckt i sin ära", fourthWord: "Har vunnit alla de stora Grand Slam turneringarna", fifthWord: "Är den mest framgångsrika tennisspelaren i Schweiz historia")
+    let stockholmSwe = CanYouFigureItOut(title: "Stad", answer: "Stockholm", firstWord: "Grundades 1252", secondWord:"Går också under namnet Nordens Venedig" , thirdWord: "Hem för Karl XVI Gustav", fourthWord: "Globen, Kaknästornet, och Vasa Museumet är kända platser i denna stad", fifthWord: "Sveriges huvudstad")
+    let obamaSwe = CanYouFigureItOut(title: "Känd person", answer: "Barack Obama", firstWord: "Har gett ut en självbiografi med titeln; 'Min far hade en dröm'", secondWord: "Har tilldelats Nobels fredspris", thirdWord: "Föddes 4 augusti 1961 på Hawaii ", fourthWord: "Är gift med Michelle och har döttrarna Malia och Sasha ", fifthWord: "Valdes 2008 in som USAs 44e president.")
+    let nyckelnTillFrihetSwe = CanYouFigureItOut(title: "Film", answer: "Nyckeln till frihet", firstWord: "Filmmusiken gjordes av Thomas Newman", secondWord: "Var inledningsvis ingen ekonomisk succé. Mycket på grund av konkurrens från filmer som Pulp Fiction och Forrest Gump.", thirdWord: " Baserad på en roman av Stephan King", fourthWord: "Filmens huvudkaraktärer spelas av Tim Robbins och Morgan Freeman", fifthWord: "Berättar historien om Andy Dufrense, som döms mot sitt nekande till livstids fängelse för mordet på sin fru och hennes älskare.")
+    let friendsSwe = CanYouFigureItOut(title: "TV-serie", answer: "Friends", firstWord: "Serien kallades från början Insomnia Cafe, innan namnet byttes", secondWord: "Serien har haft gästskådespelare som exempelvis George Clooney and Christina Applegate", thirdWord: "Serien är skapad av David Crane och Marta Kauffman", fourthWord: "En stor del av handlingen utspelar sig på cafét Central Perk", fifthWord: "Serien handlar om 6 vänner som bor i new york")
+    let uranusSwe = CanYouFigureItOut(title: "Planet", answer: "Uranus", firstWord: "Upptäcktes 1781 av William Herschel", secondWord: "Planetens diameter är ca 4 gånger större än Jordens", thirdWord: "Det tar 84 år för planeten att fullborda ett varv runt solen", fourthWord: "Planeten har i dagsläget tjugosju bekräftade månar, varav de fem största heter Miranda, Ariel, Umbriel, Titania och Oberon", fifthWord: "Är den sjunde planeten från solen och har ungefär samma storlek som Neptunus ")
+    let varldsdelSwe = CanYouFigureItOut(title: "Världsdel", answer: "Sydamerika", firstWord: "Arean på världsdelen är 17 831 956 km²", secondWord: "Det bor ca 420 miljoner människor i denna världsdel", thirdWord: "Här finns världens högsta vattenfall, Angel Fall", fourthWord: "Består av 12 länder", fifthWord: "Två kända städer i denna världsdel är Santiago och Caracas ")
+    let indonesienSwe = CanYouFigureItOut(title: "Land", answer: "Indonesien", firstWord: "Har världens största muslimska befolkning", secondWord: "Det asiatiska landet blev erkänt självständigt från Nederländerna 1949", thirdWord: "Landet består av över 13 000 öar och 33 provinser", fourthWord: "Landet gränsar till Papua Nya Guinea, Östtimor och Malaysia", fifthWord: "Huvudstaden heter Jakarta ")
+    let bornInTheUSASWe = CanYouFigureItOut(title: "Musik-album", answer: "Born in the USA", firstWord: "Musiktidskriften Rolling Stone rankade albumet som nummer 85 på sin lista The 500 Greatest Albums of All Time.", secondWord: "Detta rockalbum gavs ut 1984", thirdWord: "Titellåten handlar om Vietnamveteraner som glömts bort av samhället i USA.", fourthWord: "Kända låtar på albumet är Dancing in the dark och I Surrernder.", fifthWord: "Artisten är Bruce Springsteen och albumet heter likadant som den första singeln på skivan")
+    let cocaColaSwe = CanYouFigureItOut(title: "Företag", answer: "Coca Cola", firstWord: "Hade 2017 100 300 anställda och omsatte 41,8 miljarder dollar", secondWord: "Företaget grundades 1892 av Asa Griggs Candler", thirdWord: "Huvudkontoret ligger i Atlanta, USA ", fourthWord: "Deras slogan är 'Taste the feeling'", fifthWord: "Har förutom huvudprodukten även Fanta och Sprite i sortimentet")
+    let colosseumSwe = CanYouFigureItOut(title: "Sevärdhet", answer: "Colosseum", firstWord: "Ett talesätt hos folket i det här landet vid korsdrag inomhus är 'Stäng dörren, du är inte i ***'", secondWord: "Höjden på sevärdheten är 48 meter", thirdWord: "En sida av sevärdheten raserades vid en jordbävning år 1349", fourthWord: "Sevärdheten ligger i Rom och lät byggas av kejsare Titus Vespasianus", fifthWord: "En central plats i filmen Gladiator")
+    let palmSwe = CanYouFigureItOut(title: "Växt", answer: "Palm", firstWord: "Är en familj enhjärtbladiga växter och den enda familjen i ordningen Arecales ", secondWord: "Förekommer som vildväxande nästan enbart i världens tropiska och subtropiska områden.", thirdWord: " Från den här växten utvinns en olja som ofta kritiseras av miljöskäl, då avverkning av regnskog sker i stor skala", fourthWord: "Växten syns ofta på paradisstränder ", fifthWord: "På den här växten växer det kokosnötter")
+    let niagaraSwe = CanYouFigureItOut(title: "Natur", answer: "Niagara Fallen", firstWord: "Upptäcktes på 1600-talet av Louis Hennepin", secondWord: "Bredden på detta är 1203m", thirdWord: "Här finns ett minnesmärke över Nikola Tesla, som var den förste att utvinna elektrisk energi härifrån", fourthWord: "Består av tre fall", fifthWord: "Ett vattenfall som gränsar mellan Kanada och USA")
+    let cangaruSwe = CanYouFigureItOut(title: "Djur", answer: "Kängru", firstWord: "Djuret är växtätare och är vanligen aktiva på natten eller skymningen.", secondWord: "Pälsens färg är ofta enhetligt grå- eller brunaktig. Svansen är lång, stark och huvudsakligen hårbeklädd.", thirdWord: "Djuret förekommer i Australien och på Nya Guinea samt på kringliggande öar som Tasmanien.", fourthWord: "Deras baktassar är betydligt större än de främre. Djuret är kanske som mest känd för sitt skuttande och hoppande när de ska ta sig framåt.", fifthWord: "Är ett pungdjur. Honan föder och förvarar sina ungar i sin pung tills ungen blir ungefär ett halvår gammal")
+    let fotbollSwe = CanYouFigureItOut(title: "Sport", answer: "Fotboll", firstWord: "En känd legend inom denna idrott är Carlos Alberto", secondWord: "En känd aktiv spelare är Carli Lloyd", thirdWord: "En annan är målvakten Hugo Lloris", fourthWord: "Marta har dominerat denna sport på damsidan under många år.", fifthWord: "På herrsidan är Messi och Ronaldo de starkast lysande stjärnorna")
+    let massling = CanYouFigureItOut(title: "Sjukdom", answer: "Mässling", firstWord: "Sjukdomen orsakas av ett virus i morbillisläktet. Viruset sprids främst i droppform via luften", secondWord: "Hos vuxna är det en farlig sjukdom som obehandlad kan leda till döden", thirdWord: "Sjukdomen är den med vaccin förebyggbara sjukdom som orsakar mest dödsfall i världen. Främst i fattiga länder i Afrika. År 1980 dog 2,6 miljoner människor och 2014 dog 73 00", fourthWord: "Sjukdomen är ovanlig i Sverige tack vare den allmänna vaccinationen  som sker med en första dos vid 1,5 års ålder och en andra dos i samband med skolstarten", fifthWord: "Sjukdomen är en virussjukdom som orsakar infektioner i luftvägarna och röda hudutslag")
+    let tiger = CanYouFigureItOut(title: "Djur", answer: "Tiger", firstWord: "Djuret lever endast i Asien ", secondWord: "Den jagar ensam och äter främst medelstora djur ur familjerna svindjur och hjortdjur", thirdWord: "Djuret är det största nu levande kattdjuret.", fourthWord: "De flesta lever i fuktig tropisk och subtropisk lövskog, men finns även i tempererade löv- och barrskogar. I denna miljö utgör pälsens mönster bra kamouflage", fifthWord: "Namnet på djuret härstammar från det grekiska ordet tigris")
+    let gt = CanYouFigureItOut(title: "Drink", answer: "Gin and tonic", firstWord: "Ursprunget till drinken sägs vara att brittiska soldater i Indien fick idén att ta den mycket beskt smakande malariamedicinen utspädd med sockervatten och denna dryck i syfte att göra intaget mer njutbart", secondWord: "Mycket populärt i Spanien, där det i storstäderna inte är ovanligt med barlokaler som enbart serverar olika varianter av denna dryck.", thirdWord: "Serveras traditionellt i ett highballglas med isbitar och en skiva citron eller lime", fourthWord: "Innehåller endast två huvudingredienser som tillsammans skapar en friskt och syrlig smakförnimmelse", fifthWord: "Varianter förekommer, exempelvis Turbo G&T (eller Cold Brew G&T)")
+    let bach = CanYouFigureItOut(title: "Kompositör", answer: "Bach", firstWord: "Han har kallats för 'Den femte evangelisten'", secondWord: "Är en av barockens stora", thirdWord: "Föddes i Tyskland 1685", fourthWord: "Räknas som orgelns mästare", fifthWord: "Hans förnamn är Johann Sebastian ")
+    let beiber = CanYouFigureItOut(title: "Popsångare", answer: "Justin Bieber", firstWord: "Upptäckes av Scooter Braun, som senare blev personens manager", secondWord: "Är kanadensare", thirdWord: "Föddes 1994", fourthWord: "Har varit tillsammans med Selena Gomez", fifthWord: "Är känd för låtar som ’Favorite Girl’ och Baby’")
     
+    let merkel = CanYouFigureItOut(title: "Politiker", answer: "Angela Merkel", firstWord: "Personen har en doktorsexamen i kvantkemi", secondWord: "Hon föddes 1954", thirdWord: "Hon rankades 2011 som världens näst mäktigaste person av tidningen Forbes", fourthWord: " Är kristdemokrat", fifthWord: "Hon blev Tysklands åttonde förbundskansler")
+    let eight = CanYouFigureItOut(title: "En siffra", answer: "8", firstWord: "Syre har den här positionen i det periodiska systemet", secondWord: "Är ett japanskt och kinesiskt lyckotal och kallas pånyttfödelsens tal.", thirdWord: "Siffran heter octo på latin", fourthWord: " Skrevs som VIII i antika Rom", fifthWord: "Bokstaven H kommer på denna plats i alfabetet")
+    let koranen = CanYouFigureItOut(title: "En bok", answer: "Koranen", firstWord: "Kallas även den ädla recitationen", secondWord: "Innehåller 114 suror", thirdWord: "Skrevs på arabiska", fourthWord: "Består av profeten Muhammeds uppenbarelser", fifthWord: "Är muslimernas heliga skrift")
     
+
     
-    // Hum The song challenge(8 + 1 swe)
-    var boyBand1 = HumTheSong(title: "Boy Bands", firstWord: "Backstreet Boys - I Want It That Way", secondWord: "NSYNC - Bye Bye Bye", thirdWord: "Hanson - MMMBop", fourthWord: "Backstreet Boys - As long as you love me", fifthWord: "Mandy")
+    // Hum The song challenge(25)
+    let boyBand1 = HumTheSong(title: "Boy Bands", firstWord: "Backstreet Boys - I Want It That Way", secondWord: "NSYNC - Bye Bye Bye", thirdWord: "Hanson - MMMBop", fourthWord: "Backstreet Boys - As long as you love me", fifthWord: "Mandy")
     
-    var beatles = HumTheSong(title: "Beatles", firstWord: "Hey Jude", secondWord: "Twist and shout", thirdWord: "Let it be", fourthWord: "Come together", fifthWord: "Here comes the sun")
+    let beatles = HumTheSong(title: "Beatles", firstWord: "Hey Jude", secondWord: "Twist and shout", thirdWord: "Let it be", fourthWord: "Come together", fifthWord: "Here comes the sun")
     
-    var first80 = HumTheSong(title: "80´s", firstWord: "Toto-Africa", secondWord: "Journey - Don't stop belivin'", thirdWord: "The Police - Every breath you take.", fourthWord: "Michael Jackson - Billie Jean", fifthWord: "Dolly Parton - 9-5")
-    var second80 = HumTheSong(title: "80´s", firstWord: "Paul Simon - You can call me Al", secondWord: "Men at work - Down under", thirdWord: "Michael Jackson - Beat it", fourthWord: "Wham! - Wake me up before you go-go", fifthWord: "Scorpions - Rock you like a hurricane")
-    var disco = HumTheSong(title: "Disco-songs", firstWord: "Diana Summer - Hot stuff", secondWord: "Boney M. - Daddy Cool", thirdWord: "Sister Sledge - We Are Family", fourthWord: "Bee Gees - Stayin' Alive", fifthWord: "Pointer Sisters - I'm So Excited")
-    var hipHopRnB1 = HumTheSong(title: "Hip hop/RnB", firstWord: "R. Kelly - Worlds greatest", secondWord: "The Black Eyed Peas - Where Is The Love?", thirdWord: "Mario - Let Me Love You", fourthWord: "Usher - Yeah!", fifthWord: "Akon - Beautiful")
-    var hipHopRnB2 = HumTheSong(title: "Hip hop/RnB", firstWord: "Beyonce - Single Ladies", secondWord: "Diddy - Last Night", thirdWord: "Snoop Dogg - Young, Wild & Free", fourthWord: "Will Smith - Gettin’ Jiggy Wit It", fifthWord: "MC Hammer - U Can’t Touch This")
-    var house = HumTheSong(title: "House", firstWord: "Avicii- Wake me up", secondWord: "Swedish House  Mafia - One", thirdWord: "Kygo - Stole the show", fourthWord: "David guetta - Titanium", fifthWord: "Axwell/Ingrosso - More then you know")
-    
-    let classicRockSwe = HumTheSong(title: "Klassisk rock", firstWord: "The Clash - London Calling", secondWord: "Nirvana - Smells Like Teen Spirit", thirdWord: "The Rolling Stones - Satisfaction", fourthWord: "Bruce Springsteen - Born to Run", fifthWord: "Deep Purple - Smoke on the water")
-    //let rockAfter2000Swe = HumTheSong(title: <#T##String#>, firstWord: <#T##String#>, secondWord: <#T##String#>, thirdWord: <#T##String#>, fourthWord: <#T##String#>, fifthWord: <#T##String#>)
+    let first80 = HumTheSong(title: "80´s", firstWord: "Toto-Africa", secondWord: "Journey - Don't stop belivin'", thirdWord: "The Police - Every breath you take.", fourthWord: "Michael Jackson - Billie Jean", fifthWord: "Dolly Parton - 9-5")
+    let second80 = HumTheSong(title: "80´s", firstWord: "Paul Simon - You can call me Al", secondWord: "Men at work - Down under", thirdWord: "Michael Jackson - Beat it", fourthWord: "Wham! - Wake me up before you go-go", fifthWord: "Scorpions - Rock you like a hurricane")
+    let disco = HumTheSong(title: "Disco-songs", firstWord: "Donna Summer - Hot stuff", secondWord: "Boney M. - Daddy Cool", thirdWord: "Sister Sledge - We Are Family", fourthWord: "Bee Gees - Stayin' Alive", fifthWord: "Pointer Sisters - I'm So Excited")
+    let hipHopRnB1 = HumTheSong(title: "Hip hop/RnB", firstWord: "R. Kelly - Worlds greatest", secondWord: "The Black Eyed Peas - Where Is The Love?", thirdWord: "Mario - Let Me Love You", fourthWord: "Usher - Yeah!", fifthWord: "Akon - Beautiful")
+    let hipHopRnB2 = HumTheSong(title: "Hip hop/RnB", firstWord: "Beyonce - Single Ladies", secondWord: "Diddy - Last Night", thirdWord: "Snoop Dogg - Young, Wild & Free", fourthWord: "Will Smith - Gettin’ Jiggy Wit It", fifthWord: "MC Hammer - U Can’t Touch This")
+    let house = HumTheSong(title: "House", firstWord: "Avicii- Wake me up", secondWord: "Swedish House  Mafia - One", thirdWord: "Kygo - Stole the show", fourthWord: "David guetta - Titanium", fifthWord: "Axwell/Ingrosso - More then you know")
+    let classicRock = HumTheSong(title: "Klassisk rock", firstWord: "The Clash - London Calling", secondWord: "Nirvana - Smells Like Teen Spirit", thirdWord: "The Rolling Stones - Satisfaction", fourthWord: "Bruce Springsteen - Born to Run", fifthWord: "Deep Purple - Smoke on the water")
+    let loveballads = HumTheSong(title: "Love ballads", firstWord: "Roxette - It Must Have Been Love", secondWord: "Foreigner - I wan't to know what love is", thirdWord: "Simon & Garfunkel - Bridge Over Troubled Water", fourthWord: "Stevie Wonder - I Just Called to Say I Love You", fifthWord: "Percy Sledge - When a Man Loves a Woman")
+    let loveSongs = HumTheSong(title: "Love songs", firstWord: "Elton John - Your Song", secondWord: "Eric Carmen - All by my self", thirdWord: "Reo Speedwagon - Can’t Fight This Feeling", fourthWord: "Sonny and Cher - I Got You Babe", fifthWord: "When a Man Loves a Woman” – Percy Sledge")
+    let first70 = HumTheSong(title: "Soft 70´s", firstWord: "Marvin Gaye - Let's Get It On", secondWord: "Roberta Flack - Killing Me Softly With His Song", thirdWord: "John Lennon - Imagine", fourthWord: "Pink Floyd - Wish you were here", fifthWord: "Aerosmith - Dream on")
+    let second70 = HumTheSong(title: "Hits of the 70´s", firstWord: "Bee Gees - Night Fever", secondWord: "ABBA- Dancing Queen", thirdWord: "Wild Cherry - Play That Funky Music", fourthWord: "Queen - Bohemian Rhapsody", fifthWord: "Eagles - Hotel California")
+    let movieMusic = HumTheSong(title: "Movie Music", firstWord: "Survivor - Eye Of The Tiger ", secondWord: "Ray Parker Jr. - Ghostbusters", thirdWord: "Celine Dion - My heart will go on", fourthWord: "Aerosmith - I don't want to miss a thing", fifthWord: "Diana Ross - Ain’t No Mountain High Enough")
+    let chilldrensSongs = HumTheSong(title: "Childrens Song", firstWord: "Incy wincy spider", secondWord: "Bananas in Pyjamas", thirdWord: "Twinkle twinkle little star", fourthWord: "Demi Lovato - Let it go(frozen)", fifthWord: "Pharell Williams - Happy")
+    let country = HumTheSong(title: "Country", firstWord: "Johnny Cash - Walk the line", secondWord: "Nancy Sinatra - These Boots Are Made For Walking", thirdWord: "Dolly Parton - Jolene", fourthWord: "Johnny Cash - Ring of Fire", fifthWord: "Zac brown band - Chicken fried")
+    let oneHitWonders = HumTheSong(title: "One hit wonders", firstWord: "Vanilla ice - Ice ice baby", secondWord: "Baha men - Who let the dogs out", thirdWord: "Aha - take on me", fourthWord: "Wild cherry - Play that funky music", fifthWord: "Right Said Fred - I'm too sexy")
+    let first90s = HumTheSong(title: "90´s", firstWord: "Toni Braxton - Un-Break My Heart", secondWord: "Britney Spears - Baby One More Time’", thirdWord: "R.E.M. - Losing My Religion", fourthWord: "Destiny's child - Say my name", fifthWord: "Michael Jackson - Black or white")
+    let latinSongs = HumTheSong(title: "Latin songs", firstWord: "Luis Fonsi & Daddy Yankee Featuring Justin Bieber - Despacito" , secondWord: "Enrique Iglesias - Bailando", thirdWord: "Ritchie Valens - La Bamba", fourthWord: "Ricky Martin - Livin la Vida Loca", fifthWord: "Shakira - Suerte (Whenever, Wherever)")
+    let summerSongs = HumTheSong(title: "Summer songs", firstWord: "Bryan Adams - Summer Of '69", secondWord: "Don Henley - The Boys Of Summer", thirdWord: "Bryan Hyland - Teenie Weenie Bikini" , fourthWord: "Katy Perry feat. Snoop Dogg - California Gurls", fifthWord: "Alice Cooper - School’s Out for Summer")
+    let rap = HumTheSong(title: "Public Enemy - Fight the Power", firstWord: "N.W.A - Fuck tha Police", secondWord: "50 Cent - In Da Club", thirdWord: "Eminem - Lose Yourself", fourthWord: "Sir Mix-A-Lot - Baby Got Back", fifthWord: "Jay Z and Alicia Keys -Empire State of Mind")
+    let after2010 = HumTheSong(title: "After 2010", firstWord: "Adele - Rolling In The Deep", secondWord: "Bruno Mars - Just The Way You Are", thirdWord: "LMFAO - Sexy And I Know It", fourthWord: "Macklemore & Ryan Lewis - Thrift Shop", fifthWord: "Carly Rae Jepsen - Call Me Maybe")
+    let hardRock = HumTheSong(title: "Hard Rock", firstWord: "Guns N’ Roses – Welcome To The Jungle", secondWord: "Scorpions – Rock You Like A Hurricane", thirdWord: "Motley Crue – Dr. Feelgood", fourthWord: "Europe – The Final Countdown", fifthWord: "Iron Maiden – Run To The Hills")
+    let rockOf90s = HumTheSong(title: "Rock of the 90´s", firstWord: "Nirvana - Smells Like Teen Spirit", secondWord: "Metallica - Enter Sandman", thirdWord: "Queen - The Show Must Go On", fourthWord: "Green Day - Basket case", fifthWord: "Soundgarden - Black Hole Sun")
     
     let svenskSchlager = HumTheSong(title: "Svensk Schlager", firstWord: "Satelit", secondWord: "Waterloo", thirdWord: "Listen to your heartbeat", fourthWord: "Genom eld och vatten", fifthWord: "I cant go on")
     let melodifestivalenSwe = HumTheSong(title: "Melodifestivalsvinnare", firstWord: "Roger Pontare-Vindarna viskar mitt namn", secondWord: "Abba-Waterloo", thirdWord: "Loreen - Euphoria", fourthWord: "Måns Zelmerlöv - Heroes", fifthWord: "Charlotte Nilsson (Perrelli) - Tusen och en natt")
@@ -409,7 +442,7 @@ public class LocalDataBase {
     
     
     
-
+    
     
     
     
@@ -423,37 +456,157 @@ public class LocalDataBase {
         return Int(arc4random_uniform(UInt32(maxNumber)))
     }
     
-    public func getRandomNumberForEachList(index: Int) ->Int{
-        
-        switch (index){
-        case 0:
+    public func upDateCoreDateOnFirstLaunch(){
+        if(CoreDataHandler.fetchWithOtherWordsCount()!.count == 0){
+            let _ = CoreDataHandler.saveWithOtherWordsCount(index: 0)
+            LocalDataBase.withOtherWordsCount = 0
+        }
+        else{
+            LocalDataBase.withOtherWordsCount = Int(CoreDataHandler.fetchWithOtherWordsCount()![0].index)
             
-            return randomGenerator(max:withOtherWordsList.count)
-        case 1:
-            return randomGenerator(max:charadeList.count)
-        case 2:
-            return randomGenerator(max:teamChallengeList.count)
-        case 3:
-            return randomGenerator(max:canYouFigureItOutList.count)
-        case 4:
-            return randomGenerator(max:humTheSongList.count)
-        default:
-            return 50
+        }
+        
+        if(CoreDataHandler.fetchCharadesCount()!.count == 0){
+            let _ = CoreDataHandler.saveCharadesCount(index: 0)
+            LocalDataBase.charadesCount = 0
+        }
+        else{
+            LocalDataBase.charadesCount = Int(CoreDataHandler.fetchCharadesCount()![0].index)
+            
+        }
+        
+        if(CoreDataHandler.fetchTeamChallengeCount()!.count == 0){
+            let _ = CoreDataHandler.saveTeamChallengeCount(index: 0)
+            LocalDataBase.teamChallengeCount = 0
+        }
+        else{
+            LocalDataBase.teamChallengeCount = Int(CoreDataHandler.fetchTeamChallengeCount()![0].index)
+            
+        }
+        if(CoreDataHandler.fetchCanYouFigureItOutCount()!.count == 0){
+            let _ = CoreDataHandler.saveCanYouFigureItOutCount(index: 0)
+            LocalDataBase.canYouFigureItOutCount = 0
+        }
+        else{
+            LocalDataBase.canYouFigureItOutCount = Int(CoreDataHandler.fetchCanYouFigureItOutCount()![0].index)
+            
+        }
+        if(CoreDataHandler.fetchHumTheSongCount()!.count == 0){
+            let _ = CoreDataHandler.saveHumTheSongCount(index: 0)
+            LocalDataBase.humTheSongCount = 0
+        }
+        else{
+            LocalDataBase.humTheSongCount = Int(CoreDataHandler.fetchHumTheSongCount()![0].index)
+            
+        }
+
+    }
+    
+    
+    public func updateTheListCount(index: Int){
+        if(index == 0){
+            if(CoreDataHandler.fetchWithOtherWordsCount()!.count == 0){
+                let _ = CoreDataHandler.saveWithOtherWordsCount(index: 1)
+            }
+            else{
+                if(LocalDataBase.withOtherWordsCount<self.withOtherWordsList.count-1){
+                let _ = CoreDataHandler.upDateWithOtherWordsCount(withOtherWordsCount: CoreDataHandler.fetchWithOtherWordsCount()![0], index: LocalDataBase.withOtherWordsCount+1)
+                } else{
+                    let _ = CoreDataHandler.upDateWithOtherWordsCount(withOtherWordsCount: CoreDataHandler.fetchWithOtherWordsCount()![0], index: 0)
+                }
+                LocalDataBase.withOtherWordsCount = Int(CoreDataHandler.fetchWithOtherWordsCount()![0].index)
+            }
+        }
+            
+        else if(index == 1){
+            if(CoreDataHandler.fetchCharadesCount()!.count == 0){
+                let _ = CoreDataHandler.saveCharadesCount(index: 1)
+            }
+            else{
+                if(LocalDataBase.charadesCount<self.charadeList.count-1){
+                    let _ = CoreDataHandler.upDateCharadesCount(charadesCount: CoreDataHandler.fetchCharadesCount()![0], index: LocalDataBase.charadesCount+1)
+                } else{
+                    let _ = CoreDataHandler.upDateCharadesCount(charadesCount: CoreDataHandler.fetchCharadesCount()![0], index: 0)
+                }
+                LocalDataBase.charadesCount = Int(CoreDataHandler.fetchCharadesCount()![0].index)
+            }
+        }
+        else if(index == 2){
+            if(CoreDataHandler.fetchTeamChallengeCount()!.count == 0){
+                let _ = CoreDataHandler.saveTeamChallengeCount(index: 1)
+            }
+            else{
+                if(LocalDataBase.teamChallengeCount<self.teamChallengeList.count-1){
+                    let _ = CoreDataHandler.upDateTeamChallengeCount(teamChallengeCount: CoreDataHandler.fetchTeamChallengeCount()![0], index: LocalDataBase.teamChallengeCount+1)
+                   
+                } else{
+                    let _ = CoreDataHandler.upDateTeamChallengeCount(teamChallengeCount: CoreDataHandler.fetchTeamChallengeCount()![0], index: 0)
+                }
+                LocalDataBase.teamChallengeCount = Int(CoreDataHandler.fetchTeamChallengeCount()![0].index)
+            }
+        }
+        
+        else if(index == 3){
+            if(CoreDataHandler.fetchCanYouFigureItOutCount()!.count == 0){
+                let _ = CoreDataHandler.saveCanYouFigureItOutCount(index: 1)
+            }
+            else{
+                if(LocalDataBase.canYouFigureItOutCount<self.canYouFigureItOutList.count-1){
+                    let _ = CoreDataHandler.upDateCanYouFigureItOutCount(canYouFigureItOutCount: CoreDataHandler.fetchCanYouFigureItOutCount()![0], index: LocalDataBase.canYouFigureItOutCount+1)
+                    
+                } else{
+                    let _ = CoreDataHandler.upDateCanYouFigureItOutCount(canYouFigureItOutCount: CoreDataHandler.fetchCanYouFigureItOutCount()![0], index: 0)
+                }
+                LocalDataBase.canYouFigureItOutCount = Int(CoreDataHandler.fetchCanYouFigureItOutCount()![0].index)
+            }
+        }
+        else if(index == 4){
+            if(CoreDataHandler.fetchHumTheSongCount()!.count == 0){
+                let _ = CoreDataHandler.saveHumTheSongCount(index: 1)
+            }
+            else{
+                if(LocalDataBase.humTheSongCount<self.humTheSongList.count-1){
+                    let _ = CoreDataHandler.upDateHumTheSongCount(humTheSongCount: CoreDataHandler.fetchHumTheSongCount()![0], index: LocalDataBase.humTheSongCount+1)
+                    
+                } else{
+                    let _ = CoreDataHandler.upDateHumTheSongCount(humTheSongCount: CoreDataHandler.fetchHumTheSongCount()![0], index: 0)
+                }
+                LocalDataBase.humTheSongCount = Int(CoreDataHandler.fetchHumTheSongCount()![0].index)
+            }
         }
     }
     
-    public func getRandomSubjectFrom(list: Int, index: Int)-> String{
+    
+    public func getIndexForEachList(index: Int) ->Int{
+        
+        switch (index){
+        case 0:
+            return LocalDataBase.withOtherWordsCount
+        case 1:
+            return LocalDataBase.charadesCount
+        case 2:
+            return LocalDataBase.teamChallengeCount
+        case 3:
+            return LocalDataBase.canYouFigureItOutCount
+        case 4:
+            return LocalDataBase.humTheSongCount
+        default:
+            return 0
+        }
+    }
+    
+    public func getSubjectFrom(list: Int)-> String{
         switch(list){
         case 0:
-            return withOtherWordsList[index].title
+            return withOtherWordsList[LocalDataBase.withOtherWordsCount].title
         case 1:
-            return charadeList[index].title
+            return charadeList[LocalDataBase.charadesCount].title
         case 2:
-            return teamChallengeList[index].title
+            return teamChallengeList[LocalDataBase.teamChallengeCount].title
         case 3:
-            return canYouFigureItOutList[index].subject
+            return canYouFigureItOutList[LocalDataBase.canYouFigureItOutCount].subject
         case 4:
-            return humTheSongList[index].title
+            return humTheSongList[LocalDataBase.humTheSongCount].title
         default:
             return ""
         }
@@ -475,41 +628,46 @@ public class LocalDataBase {
         
         if (nrOfRounds == 1){
             let tmpString = NSLocalizedString("first_team_to_play", comment: "")
-            
             string = String(format: tmpString, team.name)
-            //"OK, \(team.name)! You get to go first! Press Start or shake the screen to begin playing!"
         }
         else if(currentPosition == 1){
-            string = "\(team.name), you are doing great! Let's keep up the good work!"
+            let tmpString = NSLocalizedString("if_team_is_first", comment: "")
+            string = String(format: tmpString, team.name)
         }
         else if(currentPosition == sortedTeamArray.count){
-            string = "\(team.name), come on now! You need these points"
+            let tmpString = NSLocalizedString("if_team_is_last", comment: "")
+            string = String(format: tmpString, team.name)
         }
         else {
-            string = "\(team.name), you are up!"
+            let tmpString = NSLocalizedString("if_position_unknown", comment: "")
+            string = String(format: tmpString, team.name)
         }
         return string
-        
     }
-    
     
     public func setTextViewInPopUp(team: Team, gameNumber: Int, title: String)->String{
         var string = ""
         
         if (gameNumber == 0){
-            string = "\(team.players[randomGenerator(max: team.players.count)].name), it's your time to shine! \n\nAfter pressing Start, you have 45 seconds to describe five words to your team. You get one point for each correct answer. Be sure not to display the screen for your fellow players. Good luck!"
+            let tmpString = NSLocalizedString("if_game_is_withOtherWords", comment: "")
+            string = String(format: tmpString, team.players[randomGenerator(max: team.players.count)].name)
         }
         else if (gameNumber == 1){
-            string = "\(team.players[randomGenerator(max: team.players.count)].name), you are up!\n\n Explain the following five words with gestures"
+            let tmpString = NSLocalizedString("if_game_is_charades", comment: "")
+            string = String(format: tmpString, team.players[randomGenerator(max: team.players.count)].name)
         }
         else if (gameNumber == 2){
-            string = "\(team.name), let's hope you are ready for a team challenge. \n\nAfter you have pressed the Start Button, you will have 60 seconds to complete the task. Go for it!"
+            let tmpString = NSLocalizedString("if_game_is_teamChallenge", comment: "")
+            string = String(format: tmpString, team.name)
         }
         else if (gameNumber == 3){
-            string = "\(team.name), when you have pressed the Start button, try to find the answer we are looking for. If you don't know the right answer, ask for another clue. The sooner you guess, the more points you might get. But be careful, you could end up with no points at all..."
+            let tmpString = NSLocalizedString("if_game_is_canYouFigureItOut", comment: "")
+            string = String(format: tmpString, team.name)
+            
         }
         else if (gameNumber == 4){
-            string = "\(team.players[randomGenerator(max: team.players.count)].name)"
+            let tmpString = NSLocalizedString("if_game_is_humTheSong", comment: "")
+            string = String(format: tmpString, team.players[randomGenerator(max: team.players.count)].name)
         }
         return string
     }
@@ -519,43 +677,92 @@ public class LocalDataBase {
         var string = ""
         if (game == 0) {
             if (points == 5){
-                string = "Amazing! That was a perfect round. You guys really know your words!"
+                string = NSLocalizedString("if_wordPoints_is_5", comment: "")
             }
-            if (points == 0){
-                string = "Thats a swing and a miss! We all know that you are better than that!"
+            else if (points == 4){
+                string = NSLocalizedString("if_wordPoints_is_4", comment: "")
+            }
+            else if (points == 3){
+                string = NSLocalizedString("if_wordPoints_is_3", comment: "")
+            }
+            else if (points == 2){
+                string = NSLocalizedString("if_wordPoints_is_2", comment: "")
+            }
+            else if (points == 1){
+                string = NSLocalizedString("if_wordPoints_is_1", comment: "")
+            }
+            else if (points == 0){
+                string = NSLocalizedString("if_wordPoints_is_0", comment: "")
             }
             
         }
         else if (game == 1){
             if (points == 5){
-                string = "Wow! That's impressive! 5 points is now added to your Team."
+                string = NSLocalizedString("if_charades_is_5", comment: "")
             }
-            if (points == 0){
-                string = "Admit it. That was a disappointment. Come on now!"
+            else if (points == 4){
+                string = NSLocalizedString("if_charades_is_4", comment: "")
             }
+            else if (points == 3){
+                string = NSLocalizedString("if_charades_is_3", comment: "")
+            }
+            else if (points == 2){
+                string = NSLocalizedString("if_charades_is_2", comment: "")
+            }
+            else if (points == 1){
+                string = NSLocalizedString("if_charades_is_1", comment: "")
+            }
+            else if (points == 0){
+                string = NSLocalizedString("if_charades_is_0", comment: "")
+            }
+            
         }
         else if (game == 2){
             if (points == 5){
-                string = "Fantastic work! You guys have great teamwork. Keep it up!"
+                string = NSLocalizedString("if_tc_is_5", comment: "")
             }
             if (points == 0){
-                string = "Okay, you can not succeed every time. Lets get back up on the horse!"
+                string = NSLocalizedString("if_tc_is_0", comment: "")
             }
         }
         else if (game == 3){
             if (points == 5){
-                string = "Superb! You are bringing all five points back home!"
+                string = NSLocalizedString("if_cyfio_is_5", comment: "")
             }
-            if (points == 0){
-                string = "Well at least you tried. Better luck next time!"
+            else if (points == 4){
+                string = NSLocalizedString("if_cyfio_is_4", comment: "")
+            }
+            else if (points == 3){
+                string = NSLocalizedString("if_cyfio_is_3", comment: "")
+            }
+            else if (points == 2){
+                string = NSLocalizedString("if_cyfio_is_2", comment: "")
+            }
+            else if (points == 1){
+                string = NSLocalizedString("if_cyfio_is_1", comment: "")
+            }
+            else if (points == 0){
+                string = NSLocalizedString("if_cyfio_is_0", comment: "")
             }
         }
         else if (game == 4){
             if (points == 5){
-                string = "Unbelievable! Even John Lennon would be impressed by that performance!"
+                string = NSLocalizedString("if_hum_is_5", comment: "")
             }
-            if (points == 0){
-                string = "That was not what we hoped for. This is a difficult game, but you are better than this!"
+            else if (points == 4){
+                string = NSLocalizedString("if_hum_is_4", comment: "")
+            }
+            else if (points == 3){
+                string = NSLocalizedString("if_hum_is_3", comment: "")
+            }
+            else if (points == 2){
+                string = NSLocalizedString("if_hum_is_2", comment: "")
+            }
+            else if (points == 1){
+                string = NSLocalizedString("if_hum_is_1", comment: "")
+            }
+            else if (points == 0){
+                string = NSLocalizedString("if_hum_is_0", comment: "")
             }
             
         }

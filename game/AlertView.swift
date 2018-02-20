@@ -20,11 +20,14 @@ class AlertView: UIViewController {
         super.viewDidLoad()
         if let gameNumber = gameNumber{
             if (gameNumber == 2){
-                textView.text = "Did you make it?"
+                textView.text = NSLocalizedString("alertViewQuestion", comment: "")
+                
             }
             else if (gameNumber == 3){
                 if let answer = answer{
-                        textView.text = "The right answer is \(answer). If you got it you get \(score) points. \n\n Did you get the right answer?"
+                    let tmpString = NSLocalizedString("alertViewAnswer", comment: "")
+                    textView.text = String(format: tmpString, answer, String(score))
+                    
                 }
             }
         }

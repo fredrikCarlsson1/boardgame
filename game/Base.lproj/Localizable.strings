@@ -1,4 +1,133 @@
 
-"first_team_to_play" = "OK, %@ You get to go first! Press Start or shake the screen to begin playing!";
+
 
 "missing_info_in_alert" = "Missing information";
+
+"team_names" = "Team %d";
+
+"team" = "Team";
+
+"select_at_least_2_teams" = "Select at least 2 teams";
+
+"select_at_least_2_players" = "Add at least 2 players to every team to begin playing";
+
+
+//Game titles
+"withOtherWords" = "With other Words";
+"charades" = "Charades";
+"teamChallenge" = "Team Challenge";
+"canYouFigureItOut" = "Can you figure it out?";
+"humTheSong" = "Hum the Song";
+
+
+//Labeltexts under startbutton
+"first_team_to_play" = "OK, %@ You get to go first! Press Start or shake the screen to begin playing!";
+"if_team_is_first" = "%@, you are doing great! Let's keep up the good work!";
+"if_team_is_last" = "%@, come on now! You need these points";
+"if_position_unknown" = "%@, you are up!";
+
+//TextView in popUpView
+"if_game_is_withOtherWords" = "%@, it's your time to shine! \n\nAfter pressing Start Game, you will have 30 seconds to describe five words to your team. You get one point for each correct answer. Be sure not to display the screen for your fellow players. Good luck!";
+"if_game_is_charades" =  "%@, you are up!\n\n Hide the screen for your team and explain the following five words for them with gestures...";
+"if_game_is_teamChallenge" = "%@, let's hope you are ready for a team challenge. \n\nAfter you have pressed the Start Button, you will have 45 seconds to complete the task. Go for it!";
+"if_game_is_canYouFigureItOut" = "%@, gather around the screen! \n\nWhen you have pressed the Start button, try to find the answer we are looking for. If you don't know the right answer, ask for another clue. The sooner you guess, the more points you might get. But be careful, you could end up with no points at all...";
+"if_game_is_humTheSong" = "%@, let's test your music skills. \n\nYour goal is to get yourteammates to guess the right song titles, only by humming the following hits. Be sure not to show them the screen after pressing the Start button. Good luck!";
+
+
+//TextView in modalView
+"if_wordPoints_is_5" = "Amazing! That was a perfect round. You guys really know your words!";
+"if_wordPoints_is_4" = "Not bad... Not bad at all";
+"if_wordPoints_is_3" = "That's it. Good job";
+"if_wordPoints_is_2" = "2 points is decent. You will do better next time";
+"if_wordPoints_is_1" = "Nah, this is not okay";
+"if_wordPoints_is_0"= "Thats a swing and a miss! We all know that you are better than that!";
+
+"if_charades_is_5" = "Wow! That's impressive! 5 points is now added to your Team.";
+"if_charades_is_4" = "4 points in 45 seconds, well done!";
+"if_charades_is_3" = "There you go!";
+"if_charades_is_2" = "We have seen better performances";
+"if_charades_is_1" = "Admit it. That was a disappointment. Come on now!";
+"if_charades_is_0" = "No no no!";
+
+"if_tc_is_5" = "Fantastic work! You guys have great teamwork. Keep it up!";
+"if_tc_is_0" = "Okay, you can not succeed every time. Lets get back up on the horse!";
+
+"if_cyfio_is_5" = "Superb! You are bringing all five points back home!";
+"if_cyfio_is_4" = "Woh! Impressive";
+"if_cyfio_is_3" = "Three points is not bad. Good for you guys";
+"if_cyfio_is_2" = "Well done, team";
+"if_cyfio_is_1" = "Hmm...";
+"if_cyfio_is_0" = "Well at least you tried. Better luck next time!";
+
+"if_hum_is_5" = "Unbelievable! Even John Lennon would be impressed by that performance!";
+"if_hum_is_4" = "Ahhh, your little hummingbird! 4 points!";
+"if_hum_is_3" = "That was beutiful!";
+"if_hum_is_2" = "Good job! 2 points for you...";
+"if_hum_is_1" = "You will do better next time!";
+"if_hum_is_0" = "That was not what we hoped for. This is a difficult game, but you are better than this!";
+
+"titlePlaceholder" = "Title on category";
+"word1Placeholder" = "Word 1";
+"word2Placeholder" = "Word 2";
+"word3Placeholder" = "Word 3";
+"word4Placeholder" = "Word 4";
+"word5Placeholder" = "Word 5";
+"hint1Placeholder" = "Hint 1";
+"hint2Placeholder" = "Hint 2";
+"hint3Placeholder" = "Hint 3";
+"hint4Placeholder" = "Hint 4";
+"hint5Placeholder" = "Hint 5";
+"song1Placeholder" = "Song 1";
+"song2Placeholder" = "Song 2";
+"song3Placeholder" = "Song 3";
+"song4Placeholder" = "Song 4";
+"song5Placeholder" = "Song 5";
+"challengePlaceholder" = "Challenge";
+"answePlaceholder" = "Answer";
+
+"points" = "points";
+
+"continueOrEdit" = "Go back and edit your score or proceed to the next team";
+
+"newGameHelpText" = " - Select desired number of teams.  \n - Add at least two players to each team by pressing the team's game pice and then selecting players for the specific team";
+
+"alertViewAnswer" = "The right answer is %@. If you got it you get %@ points. \n\n Did you get the right answer?";
+
+
+
+"alertViewQuestion" = "Did you make it?";
+
+
+
+"shortGameInstructions" = "GAME IN BRIEF: \ nAs the name points out, there are five games in one. The team will be tested in: \n- With other words \n- Charades \n- Hum the song \n- Can you figure it out? \n- Team challenge \nOn each teams turn, one of these five games will be randomly selected. The maximum score per round is 5 points, regardless of which of the games you get. The first team to reach 30 points will win. \n \nIf you are unsure of the rules during the game, just look for the '?' icon for detailed instructions. \n \n ";
+
+"nrOfPlayersAndTeams" = "NUMBER OF PLAYERS: \n4 or more. \n \nNUMBER OF TEAMS: \n2-5 teams where each team needs at least 2 players \n \n";
+
+"startTheGameInstructions" = "THE START OF THE GAME:\ntext \n\n";
+
+"withOtherWordsInstructions" = "WITH OTHER WORDS: \nIn this game, one of the team members will be randomized as 'speaker'. This person should describe five words in a particular topic for his teammates through synonyms and descriptions. It is not allowed to translate the words into another language or to spell them out. If the 'speaker' happens to say the word or part of a word, then the word is dead and you can move on to the next one. It does not matter which order you choose from the five words. \n \nIn the game, the entire team will find out the current topic that the words will be about. But when the start button is pressed, only the 'speaker' from the team gets to see the screen. \n \nYou have 30 seconds to handle as many of the five words as possible. At each correct answer, the 'speaker' clicks the checkbox next to the word. \n \n";
+
+"charadesInstructions" = "CHARADES:\nIn this game one of the team members will silently illustrate five words within a particular category, using gestures and body language only. \n \nThe team gets to know what theme applies before the game starts but after the start button is pressed, only the person gesturing can see the screen. \n \nYou have 45 seconds to handle as many of the five words as possible. With each correct answer, the one that explains checks in the checkbox next to the word. There is no requirement in which order you take the words\n\n";
+
+"teamChallengeInstructions" = "TEAM CHALLENGE:\nIn this game, the team will perform a challenge of 45 seconds together or individually. You will find out the theme in advance, so that you know what kind of challenge you will get. When you press the start button, time begins so everyone in the team must be prepared and quickly read the challenge on the screen. \n\nAfter the time has elapsed, you will be asked if you passed the game or not. If you succeed you get five points. If you fail you will get zero points.\n\nIn this games there is no facit because there are so many different correct answer options. If you are unsure if you answered correctly, you can google the right answers.\n\n";
+
+"canYouFigureItOutInstructions" = "CAN YOU FIGURE IT OUT:\In this game everyone in the team gets to see the screen. You get to know the theme and will find the right answer by five different clues. You have two choices during the game. Either to take a new clue, which reduces the possible scoring of points with one point. Or press 'Guess'. When you do this you must first speak the answer out loud so the other teams can hear you. If your answer matches the correct answer, you will earn points depending on your score level. If you answered incorrectly, you will receive zero points. \n\n";
+
+"humTheSongInstructions" = "HUM THE SONG:\nIn this game, the team's music skills are tested. A team member is chosen to hum five different songs within a particular genre. The rest of the team knows in advance what genre to make the game a bit easier.\n\nWhen the start button is pressed, the person who is going to hum the songs should be the only one to see the screen. Now that person will do his best to get the rest of the team to hear what the songs are. It is not allowed to pronounce words neither speaking nor singing. \nNOTE: It's enough to guess the song title. You do not need the get the artist right too.\n\nThere is no requirement in which order you hum the songs. The timer is set to one minute. \n\n";
+
+
+"edit" = "Edit";
+"done" = "Done";
+
+"firstClue" = "First clue:";
+"secondClue" = "Second clue:";
+"thirdClue" = "Third clue:";
+"fourthClue" = "Fourth clue:";
+"fifthClue" = "Fifth clue:";
+
+
+"gameOver1" = "God job";
+
+"gameOver2" = "and %@! You were simply the best today! Let´s hope your opponents improves until next time";
+
+

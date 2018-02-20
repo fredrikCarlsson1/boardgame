@@ -32,16 +32,25 @@ class StartingPage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         closeMenu()
-        startButton.pulsateSlow()
+        LocalDataBase().upDateCoreDateOnFirstLaunch()
         
+       
         
+        let langStr = Locale.current.languageCode
+        print(langStr!)
+ 
         startButton.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
         startButton.layer.shadowOffset = CGSize(width:0, height:2.75)
         startButton.layer.shadowRadius = 1.75
         startButton.layer.shadowOpacity = 0.45
+     
+    }
     
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startButton.pulsateSlow()
     }
     
     @IBAction func startBut(_ sender: UIButton) {
@@ -125,6 +134,11 @@ class StartingPage: UIViewController {
         performSegue(withIdentifier: "showPlayerListSegue", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? Rules{
+            destination.firstViewString = "shortGameInstructions"
+        }
+    }
     
     
     

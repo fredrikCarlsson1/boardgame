@@ -18,25 +18,25 @@ class TeamChallengePopUp: UIViewController {
     var tapGesture = UITapGestureRecognizer()
     var teamID: Int?
     var game: Int?
-    var titleNumber: Int?
     var timer = Timer()
-    var seconds = 46
+    var seconds = 45
     var soundPlayer = AVAudioPlayer()
-    var audioArray = ["airHorn"]
+    var audioArray = ["end_bell"]
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         closeMenu()
+        timeLabel.text = String(45)
         timer.fire()
         timeLabel.layer.masksToBounds = true
         timeLabel.layer.cornerRadius = 25
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(WordsCharadesHum.startTimer), userInfo: nil, repeats: true)
-        teamChallengeLabel.text = "Team Challenge"
-        if let titleNr = titleNumber{
-            subjectLabel.text = LocalDataBase().teamChallengeList[titleNr].title
-            textView.text = LocalDataBase().teamChallengeList[titleNr].challenge
+        teamChallengeLabel.text = NSLocalizedString("teamChallenge", comment: "")
+        if let game = game{
+            subjectLabel.text = LocalDataBase().getSubjectFrom(list: game)
+            textView.text = LocalDataBase().teamChallengeList[LocalDataBase().getIndexForEachList(index: game)].challenge
         }
         
     }
@@ -103,6 +103,7 @@ class TeamChallengePopUp: UIViewController {
     }
     
     func playMusic(){
+       if(LocalDataBase.soundOn == true){
         do{
             soundPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[0], ofType: "mp3")!))
             soundPlayer.prepareToPlay()
@@ -111,6 +112,7 @@ class TeamChallengePopUp: UIViewController {
             print(error)
         }
         soundPlayer.play()
+        }
     }
     
     
@@ -132,6 +134,9 @@ class TeamChallengePopUp: UIViewController {
                 destination.teamID = team
             }
             destination.gameNumber = 2
+        }
+        if let destination = segue.destination as? Rules{
+            destination.firstViewString = "teamChallenge"
         }
     }
 }

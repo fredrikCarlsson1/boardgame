@@ -7,29 +7,47 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ModalViewPopUp: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textView: UITextView!
+    
+    @IBOutlet weak var continueTextView: UITextView!
     var teamID: Int?
     var points: Int?
     var time: String?
     var game: Int?
+    var soundPlayer = AVAudioPlayer()
+    var audioArray = ["0points", "1point", "Ahhh", "3points", "4points", "5points"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        continueTextView.text = NSLocalizedString("continueOrEdit", comment: "")
         
-        if let gameNr = game{
-            if (gameNr == 0){
-        }
-            if let game = game{
-                if let points = points{
-                    label.text = "\(points) points"
-                    textView.text = LocalDataBase().setTextViewInModalView(points: points, game: game)
-                }
+        if let game = game{
+            LocalDataBase().updateTheListCount(index: game)
+            if let points = points{
+                label.text = "\(points) " + NSLocalizedString("points", comment: "")
+                textView.text = LocalDataBase().setTextViewInModalView(points: points, game: game)
+                
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let points = points{
+            playMusic(points: points)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if(LocalDataBase.soundOn == true){
+            soundPlayer.stop()
+        }
+    }
+    
     
     @IBAction func continueButton(_ sender: UIButton) {
         if let team = teamID{
@@ -40,11 +58,24 @@ class ModalViewPopUp: UIViewController {
                 LocalDataBase.teamArray[getNextTeam(teamID: team)].isUp = true
             }
         }
-        if (checkIfTeamsWin(points: 40)){
+        if (checkIfTeamsWin(points: 29)){
             performSegue(withIdentifier: "gameOverSegue", sender: self)
         }
         else{
-          performSegue(withIdentifier: "backToStartSegue", sender: self)
+            performSegue(withIdentifier: "backToStartSegue", sender: self)
+        }
+    }
+    
+    func playMusic(points: Int){
+        if(LocalDataBase.soundOn == true){
+            do{
+                soundPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[points], ofType: "mp3")!))
+                soundPlayer.prepareToPlay()
+            }
+            catch{
+                print(error)
+            }
+            soundPlayer.play()
         }
     }
     
