@@ -113,19 +113,8 @@ class WordsCharadesHum: UIViewController {
         
         timeLabel.text = String(seconds)
         
-        //UI ------------
-        gameView.layer.cornerRadius = 20
-        gameView.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
-        gameView.layer.shadowOffset = CGSize(width:0, height:2.75)
-        gameView.layer.shadowRadius = 1.75
-        gameView.layer.shadowOpacity = 0.45
-        
-        
     }
-    
-    
 
-    
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         
         UIView.animate(withDuration: 0.3, animations: {
@@ -289,13 +278,24 @@ class WordsCharadesHum: UIViewController {
     
     @objc func startTimer() {
         seconds=seconds-1
-        timeLabel.text = String(seconds)
+        
+        if (seconds > 0){
+           timeLabel.text = String(seconds) 
+        }
+        else{
+            timeLabel.text = "0"
+        }
         
         if (seconds == 0){
             playMusic()
+   
+        }
+        if (seconds == -2){
+            if(LocalDataBase.soundOn == true){
+            soundPlayer.stop()
+            }
             timer.invalidate()
             performSegue(withIdentifier: "wordsCharHumToModalSegue", sender: self)
-            
         }
     }
     

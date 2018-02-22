@@ -58,7 +58,6 @@ class Rules: UIViewController {
         
         var tmpString = ""
         for string in stringTupleArray {
-            print (string.key)
             if let secondString = firstViewString{
                
                 if(string.key != secondString){

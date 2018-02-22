@@ -15,7 +15,6 @@ public class Player: NSObject, NSCoding{
         static let Wins = "wins"
         static let PlayerID = "playerID"
         static let Team = "team"
-        
     }
   
     public var name = ""
@@ -55,11 +54,5 @@ public class Player: NSObject, NSCoding{
         aCoder.encode(self.playerID, forKey: Keys.PlayerID)
         aCoder.encode(self.team, forKey: Keys.Team)
     }
-    
 
-    
-    
-//    public func getName()-> String{
-//        return self.name
-//    }
 }

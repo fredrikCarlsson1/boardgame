@@ -48,9 +48,5 @@ public class Team {
     func addPoints(_ points: Int){
         self.points = self.points+points
     }
-    
-    
-    
-    
-    
+  
 }

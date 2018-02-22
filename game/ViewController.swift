@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelView: UIView!
     
     var currentSong = 0
-    var audioArray = ["sample", "gum"]
+    
     var imageArray = [UIImage]()
     var labelArray = [UIImage]()
     var timer = Timer()
@@ -49,7 +49,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        LocalDataBase.cardDeck = LocalDataBase.tempCardDeck
         closeMenu()
         imageArray = [#imageLiteral(resourceName: "citat"),#imageLiteral(resourceName: "tumme"),#imageLiteral(resourceName: "lag"),#imageLiteral(resourceName: "stege"),#imageLiteral(resourceName: "not")]
         labelArray = [#imageLiteral(resourceName: "yellow"),#imageLiteral(resourceName: "pink"),#imageLiteral(resourceName: "blue"),#imageLiteral(resourceName: "purple"),#imageLiteral(resourceName: "green")]
@@ -63,7 +62,6 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
         
         let sortedByPoints = LocalDataBase().getSortedTeams()
         team1.setBackgroundImage(#imageLiteral(resourceName: "Team_work_icon_purple"), for: .normal)
@@ -192,18 +190,16 @@ class ViewController: UIViewController {
         
         var buttonArray = [team1, team2, team3, team4, team5]
         let teams = LocalDataBase.teamArray.count
-       // let color1 = UIColor(hexString: "#b31217")
+       
 
         for team in LocalDataBase().getSortedTeams(){
             if (team.isUp){
                 teamID = team.id
-               // buttonArray[team.id].backgroundColor = color1
                 buttonArray[team.id].pulsateTeam()
             }
         }
         
         //Place teamImages on screen in order by points
-        
         if(teams == 2){
  
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[0].id], at: 0)
@@ -236,7 +232,10 @@ class ViewController: UIViewController {
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[3].id], at: 3)
             stackView.insertArrangedSubview(buttonArray[sortedByPoints[4].id], at: 4)
         }
+
     }
+    
+    //Without this code, the teamName and teamScore wont update if showTeams Update
     override func viewWillDisappear(_ animated: Bool) {
         myLabel1.text = ""
         myLabel2.text = ""
@@ -274,9 +273,6 @@ class ViewController: UIViewController {
         })
     }
 
-    
-    
-    
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             textView.isHidden = true
@@ -285,6 +281,7 @@ class ViewController: UIViewController {
         }
     }
    
+    //Draw text to Points label
     func textToImage(drawText text: String, inImage image: UIImage, atPoint point: CGPoint) -> UIImage {
         UIGraphicsBeginImageContext(image.size)
         image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
@@ -301,7 +298,7 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         return result!
     }
-    
+    // Draw text to Game label
     func textToImageLabel(drawText text: NSString, inImage image: UIImage) -> UIImage {
         UIGraphicsBeginImageContext(image.size)
         image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
@@ -318,7 +315,7 @@ class ViewController: UIViewController {
         UIGraphicsEndImageContext()
         return result!
     }
-    
+    //Draw text to teamLabel
     func textToImageTeamLabel(drawText text: NSString, inImage image: UIImage) -> UIImage {
         UIGraphicsBeginImageContext(image.size)
         image.draw(in: CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height))
@@ -336,9 +333,9 @@ class ViewController: UIViewController {
         return result!
     }
     
-    
+    // Goes of after pressing start-button
     @objc func clock() {
-        currentSong = 0
+        
         button.isEnabled = false
         team1.isEnabled = false
         team2.isEnabled = false
@@ -346,9 +343,8 @@ class ViewController: UIViewController {
         team4.isEnabled = false
         team5.isEnabled = false
         menuButton.isEnabled = false
+      
         
-        
-        playMusic()
         let random = Int(arc4random_uniform(UInt32(LocalDataBase.keysOfGamesArray.count)))
         
         if(random != randomNr){
@@ -368,9 +364,7 @@ class ViewController: UIViewController {
         
         if (seconds == 0){
             button.pulsateSelected()
-            if(LocalDataBase.soundOn == true){
-            audioPlayer.stop()
-            }
+            
             gameNr = randomNr
             
             let labelImageView = UIImageView(frame: CGRect(x: -10, y: 10, width: 220, height: 54))
@@ -405,13 +399,15 @@ class ViewController: UIViewController {
             if(LocalDataBase.soundOn == true){
                 audioPlayer.stop()
             }
+            timer.invalidate()
             performSegue(withIdentifier: "popUpSegue", sender: self)
         }
     }
+    
     func playMusic(){
         if(LocalDataBase.soundOn == true){
         do{
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[currentSong], ofType: "mp3")!))
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "gum", ofType: "mp3")!))
             audioPlayer.prepareToPlay()
         }
         catch{
@@ -463,14 +459,21 @@ class ViewController: UIViewController {
                 self.settingsButton.transform = .identity
                 self.scoreButton.transform = .identity
                 self.helpButton.transform = .identity
-                
             }
         })
     }
     
     @IBAction func startButton(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.3, animations: {
+            if(self.menuButton.transform != .identity){
+                self.menuButton.transform = .identity
+                self.closeMenu()
+            }
+        })
+        LocalDataBase.cardDeck = LocalDataBase.tempCardDeck
+        LocalDataBase().updateTheListCount()
+
         textView.isHidden = true
-        closeMenu()
         timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(ViewController.clock), userInfo: nil, repeats: true)
         timer.fire()
     }

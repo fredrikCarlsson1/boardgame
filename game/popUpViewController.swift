@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AVFoundation
+
 
 class popUpViewController: UIViewController {
     
@@ -25,11 +25,7 @@ class popUpViewController: UIViewController {
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var menuButton: FloatingActionButton!
-    
-    
 
-    
-    var dataBase = LocalDataBase()
     var gameNumber: Int?
     var teamID: Int?
     var score = 0
@@ -41,14 +37,7 @@ class popUpViewController: UIViewController {
         super.viewDidLoad()
         
         // ------UI---------
-        
-        mainView.layer.cornerRadius = 20
-        popUpView.layer.cornerRadius = 20
-        popUpView.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
-        popUpView.layer.shadowOffset = CGSize(width:0, height:2.75)
-        popUpView.layer.shadowRadius = 1.75
-        popUpView.layer.shadowOpacity = 0.45
-    
+
        
         closeMenu()
         buttonPressedView.layer.cornerRadius = 150

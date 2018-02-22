@@ -130,4 +130,6 @@
 
 "gameOver2" = "and %@! You were simply the best today! Let´s hope your opponents improves until next time";
 
+"settingsAlert" = "You need to select at least one deck of cards!";
+
 

@@ -107,8 +107,7 @@ class showTeamsViewController: UIViewController, UITableViewDelegate, UITableVie
                 if(scoreTextView.text != ""){
                     let newScore = processData(data: Int(scoreTextView.text!))
                     LocalDataBase.teamArray[team].points = newScore
-                    scoreLabel.text = "\(newScore ) " + NSLocalizedString("points", comment: "")
-                    
+                    scoreLabel.text = "\(newScore ) " + NSLocalizedString("points", comment: "")                    
                 }
             }
             teamNameTextView.isHidden = true

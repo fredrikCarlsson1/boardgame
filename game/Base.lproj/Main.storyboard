@@ -121,10 +121,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMk-tq-btS">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5s3-rG-aLh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="bYn-5l-jzb">
@@ -192,7 +192,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjf-2p-bea">
-                                <rect key="frame" x="20" y="104" width="335" height="24"/>
+                                <rect key="frame" x="20" y="148" width="335" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -793,9 +793,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kmr-rs-ppc">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J2b-36-ULP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
@@ -948,8 +948,8 @@
                             <constraint firstItem="Kmr-rs-ppc" firstAttribute="leading" secondItem="V4o-m5-4Kq" secondAttribute="leading" id="3GV-s6-U1T"/>
                             <constraint firstItem="V4o-m5-4Kq" firstAttribute="bottom" secondItem="V4R-hk-WsH" secondAttribute="bottom" constant="40" id="BsU-8N-6Ra"/>
                             <constraint firstItem="z9o-pU-muh" firstAttribute="top" secondItem="Zav-jc-aRG" secondAttribute="top" id="J2F-QV-5ME"/>
-                            <constraint firstItem="Kmr-rs-ppc" firstAttribute="top" secondItem="V4o-m5-4Kq" secondAttribute="top" id="T1P-yf-goh"/>
                             <constraint firstItem="V4R-hk-WsH" firstAttribute="leading" secondItem="V4o-m5-4Kq" secondAttribute="leading" constant="25" id="TSM-Ck-dLT"/>
+                            <constraint firstItem="Kmr-rs-ppc" firstAttribute="top" secondItem="Zav-jc-aRG" secondAttribute="top" id="bYe-qk-eBV"/>
                             <constraint firstItem="z9o-pU-muh" firstAttribute="leading" secondItem="V4o-m5-4Kq" secondAttribute="leading" id="d4I-FV-bpG"/>
                             <constraint firstAttribute="bottom" secondItem="z9o-pU-muh" secondAttribute="bottom" id="f95-In-1Wl"/>
                             <constraint firstItem="V4o-m5-4Kq" firstAttribute="trailing" secondItem="V4R-hk-WsH" secondAttribute="trailing" constant="25" id="h63-eX-5WY"/>
@@ -983,15 +983,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u1d-2x-6jT">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CsE-zP-cIb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="768"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzO-6x-cnb">
-                                <rect key="frame" x="0.0" y="44" width="375" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <connections>
                                     <action selector="exitBackground:" destination="MCn-wl-1ps" eventType="touchUpInside" id="4sV-PM-h90"/>
                                 </connections>
@@ -1136,15 +1136,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WzO-6x-cnb" secondAttribute="bottom" id="09s-dX-Yj6"/>
-                            <constraint firstItem="WzO-6x-cnb" firstAttribute="top" secondItem="sbe-zE-3v4" secondAttribute="topMargin" id="2cn-IJ-1ix"/>
                             <constraint firstItem="zkE-BB-yql" firstAttribute="trailing" secondItem="r8b-pj-5jl" secondAttribute="trailing" constant="25" id="8hZ-aI-fLA"/>
                             <constraint firstItem="zkE-BB-yql" firstAttribute="trailing" secondItem="u1d-2x-6jT" secondAttribute="trailing" id="DZr-h8-BiW"/>
+                            <constraint firstItem="WzO-6x-cnb" firstAttribute="top" secondItem="sbe-zE-3v4" secondAttribute="top" id="GWK-Kc-SOP"/>
                             <constraint firstItem="u1d-2x-6jT" firstAttribute="top" secondItem="sbe-zE-3v4" secondAttribute="topMargin" id="Gpb-wm-JiD"/>
                             <constraint firstItem="r8b-pj-5jl" firstAttribute="leading" secondItem="zkE-BB-yql" secondAttribute="leading" constant="25" id="INA-iT-7bf"/>
-                            <constraint firstItem="zkE-BB-yql" firstAttribute="bottom" secondItem="u1d-2x-6jT" secondAttribute="bottom" id="IfF-kz-3Fx"/>
                             <constraint firstItem="zkE-BB-yql" firstAttribute="trailing" secondItem="WzO-6x-cnb" secondAttribute="trailing" id="JRv-on-MeR"/>
                             <constraint firstItem="r8b-pj-5jl" firstAttribute="top" secondItem="zkE-BB-yql" secondAttribute="top" constant="60" id="L4X-o4-HFk"/>
                             <constraint firstItem="zkE-BB-yql" firstAttribute="bottom" secondItem="r8b-pj-5jl" secondAttribute="bottom" constant="80" id="ZY6-R0-d6T"/>
+                            <constraint firstAttribute="bottom" secondItem="u1d-2x-6jT" secondAttribute="bottom" id="ckc-Ke-Bzt"/>
                             <constraint firstItem="u1d-2x-6jT" firstAttribute="leading" secondItem="zkE-BB-yql" secondAttribute="leading" id="gnh-rm-mO4"/>
                             <constraint firstItem="WzO-6x-cnb" firstAttribute="leading" secondItem="zkE-BB-yql" secondAttribute="leading" id="n1d-zY-hwT"/>
                         </constraints>
@@ -1154,6 +1154,7 @@
                         <outlet property="nameLabel" destination="K4D-3K-D7o" id="NyB-i3-5qi"/>
                         <outlet property="nrOfGamesLabel" destination="2Oh-yf-TIW" id="wBC-D8-xr8"/>
                         <outlet property="nrOfWinsLabel" destination="Fxd-1e-OBL" id="OcP-8D-4mm"/>
+                        <outlet property="procentWinsLabel" destination="hOn-iy-Kuj" id="UgB-bC-UbY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opC-YV-mBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1737,7 +1738,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB7-YW-mfe">
                                         <rect key="frame" x="10" y="55" width="305" height="475"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscienad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscienad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -2836,6 +2837,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="JZ2-Kg-NTP"/>
                     <connections>
                         <outlet property="button" destination="ZSa-9d-Eke" id="meK-xd-Rol"/>
                         <outlet property="exitButton" destination="8nx-CW-Pep" id="OOd-jI-QQZ"/>
@@ -2954,6 +2956,18 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -3773,7 +3787,7 @@
                         <outlet property="continueTextView" destination="4ZH-34-wgQ" id="cod-Rx-3uH"/>
                         <outlet property="label" destination="ZDL-Rm-4XL" id="u4A-w4-VP8"/>
                         <outlet property="textView" destination="JR7-pl-rAn" id="NJH-1E-Vqy"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToStartSegue" id="udK-lT-9wo"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="backToStartSegue" id="udK-lT-9wo"/>
                         <segue destination="9wq-UW-XVP" kind="presentation" identifier="gameOverSegue" id="hm1-YO-3Qh"/>
                     </connections>
                 </viewController>
@@ -3922,7 +3936,7 @@
                         <outlet property="teamResultsView" destination="JcR-0U-rOy" id="qGy-O3-87h"/>
                         <outlet property="textView" destination="xPs-oH-FgF" id="9IF-br-f1L"/>
                         <outlet property="winningTeamLabel" destination="oYO-n5-XnT" id="GE4-NX-cje"/>
-                        <segue destination="g0K-9s-pDL" kind="show" identifier="gameOverToStartSegue" id="pen-4C-oo9"/>
+                        <segue destination="g0K-9s-pDL" kind="showDetail" identifier="gameOverToStartSegue" animates="NO" action="showViewController:sender:" id="pen-4C-oo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAi-t6-WP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4114,18 +4128,18 @@
         <image name="settingsIcon" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dkc-1X-WKy"/>
+        <segue reference="3DG-yb-tk8"/>
         <segue reference="YLn-0I-Tfj"/>
         <segue reference="Djc-Wi-OvF"/>
         <segue reference="yOD-TH-dZm"/>
-        <segue reference="AYc-5u-aj5"/>
-        <segue reference="ZK6-OS-AHi"/>
-        <segue reference="nrO-2i-s1E"/>
+        <segue reference="LlC-yD-RfN"/>
+        <segue reference="zGg-lc-udr"/>
+        <segue reference="AZc-JU-z8P"/>
         <segue reference="vno-uc-d3q"/>
         <segue reference="UFG-EW-Nmf"/>
         <segue reference="ESM-6l-NRY"/>
         <segue reference="3m7-5a-3Dm"/>
-        <segue reference="TbL-wf-gBU"/>
+        <segue reference="0fN-mS-EHZ"/>
         <segue reference="wik-15-Xe7"/>
     </inferredMetricsTieBreakers>
 </document>

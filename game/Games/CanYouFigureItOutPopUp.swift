@@ -15,7 +15,6 @@ class CanYouFigureItOutPopUp: UIViewController {
     var titleNr = LocalDataBase.canYouFigureItOutCount
     var answer: String?
     var hintNumber = 5
-    var timer = Timer()
     var tapGesture = UITapGestureRecognizer()
     
     
@@ -74,7 +73,6 @@ class CanYouFigureItOutPopUp: UIViewController {
     
     @IBAction func guessButton(_ sender: UIButton) {
         answer = LocalDataBase().canYouFigureItOutList[titleNr].answer
-        timer.invalidate()
         performSegue(withIdentifier: "figureToAlertSegue", sender: self)
       
     }

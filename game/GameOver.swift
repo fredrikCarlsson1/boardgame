@@ -70,6 +70,13 @@ class GameOver: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if(LocalDataBase.soundOn == true){
+            soundPlayer.stop()
+        }
+    }
+    
+    
     func getIndexForColor()->Int{
         if(i == colorArray.count-1){
             i = 0
@@ -80,14 +87,14 @@ class GameOver: UIViewController {
         return i
     }
     
-        func animateBackGroundColor(){
-            
-            UIView.transition(with: self.winningTeamLabel, duration: 0.5, options: [.transitionCrossDissolve, .allowUserInteraction], animations: {
-                self.label.textColor = self.colorArray[self.getIndexForColor()]
-            }){ (success) in
-                self.animateBackGroundColor()
-            }
-        }
+//        func animateBackGroundColor(){
+//            
+//            UIView.transition(with: self.winningTeamLabel, duration: 0.5, options: [.transitionCrossDissolve, .allowUserInteraction], animations: {
+//                self.label.textColor = self.colorArray[self.getIndexForColor()]
+//            }){ (success) in
+//                self.animateBackGroundColor()
+//            }
+//        }
     
     override func viewDidAppear(_ animated: Bool) {
         var i = 0
@@ -102,8 +109,18 @@ class GameOver: UIViewController {
             
             i = i+1
         }
-        animateBackGroundColor()
+        //animateBackGroundColor()
         
+    }
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        nukeAllAnimations()
+//    }
+    
+    func nukeAllAnimations() {
+        self.view.subviews.forEach({$0.layer.removeAllAnimations()})
+        self.view.layer.removeAllAnimations()
+        self.view.layoutIfNeeded()
     }
     
     func playMusic(){

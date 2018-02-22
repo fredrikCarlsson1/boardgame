@@ -103,25 +103,37 @@ class TeamChallengePopUp: UIViewController {
     }
     
     func playMusic(){
-       if(LocalDataBase.soundOn == true){
-        do{
-            soundPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[0], ofType: "mp3")!))
-            soundPlayer.prepareToPlay()
-        }
-        catch{
-            print(error)
-        }
-        soundPlayer.play()
+        if(LocalDataBase.soundOn == true){
+            do{
+                soundPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: audioArray[0], ofType: "mp3")!))
+                soundPlayer.prepareToPlay()
+            }
+            catch{
+                print(error)
+            }
+            soundPlayer.play()
         }
     }
     
     
     @objc func startTimer() {
         seconds=seconds-1
-        timeLabel.text = String(seconds)
+        if (seconds > 0){
+            timeLabel.text = String(seconds)
+        }
+        else{
+            timeLabel.text = "0"
+        }
         
         if (seconds == 0){
             playMusic()
+            
+        }
+        if (seconds == -3){
+            if(LocalDataBase.soundOn == true){
+                
+                soundPlayer.stop()
+            }
             timer.invalidate()
             performSegue(withIdentifier: "challengeToAlertSegue", sender: self)
         }

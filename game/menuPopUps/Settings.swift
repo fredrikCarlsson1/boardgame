@@ -68,16 +68,11 @@ class Settings: UIViewController {
             
         }
         else{
-            if(LocalDataBase.tempCardDeck.count != 1){
                 if let index = LocalDataBase.tempCardDeck.index(where: { $0 == 1 }) {
                     LocalDataBase.tempCardDeck.remove(at: index)
                     
-                }
             }
-            else{
-                checkBox1.on = true
-                createAlert(message: "You need to select at least one deck of cards")
-            }
+
         }
         
     }
@@ -88,15 +83,10 @@ class Settings: UIViewController {
             
         }
         else{
-            if(LocalDataBase.tempCardDeck.count != 1){
+            
                 if let index = LocalDataBase.tempCardDeck.index(where: { $0 == 2 }) {
                     LocalDataBase.tempCardDeck.remove(at: index)
                 }
-            }
-            else{
-                checkBox2.on = true
-                createAlert(message: "You need to select at least one deck of cards")
-            }
         }
     }
     
@@ -106,16 +96,11 @@ class Settings: UIViewController {
             
         }
         else{
-            checkBox3.on = true
-            if(LocalDataBase.tempCardDeck.count != 1){
                 if let index = LocalDataBase.tempCardDeck.index(where: { $0 == 3 }) {
                     LocalDataBase.tempCardDeck.remove(at: index)
                 }
             }
-            else{
-                createAlert(message: "You need to select at least one deck of cards")
-            }
-        }
+
     }
     
     func createAlert(message: String){
@@ -136,16 +121,32 @@ class Settings: UIViewController {
     }
     
     @IBAction func dismissBackgroundButton(_ sender: UIButton) {
+        if(LocalDataBase.tempCardDeck.count == 0){
+            createAlert(message: NSLocalizedString("settingsAlert", comment: ""))
+        }
+        else{
         dismiss(animated: true, completion: nil)
+        }
     }
     
     
     @IBAction func doneButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        if(LocalDataBase.tempCardDeck.count == 0){
+            createAlert(message: NSLocalizedString("settingsAlert", comment: ""))
+        }
+        else{
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func closeButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        
+        if(LocalDataBase.tempCardDeck.count == 0){
+            createAlert(message: NSLocalizedString("settingsAlert", comment: ""))
+        }
+        else{
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     
