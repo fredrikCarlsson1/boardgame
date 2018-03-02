@@ -16,6 +16,7 @@ class Settings: UIViewController {
     
     @IBOutlet weak var checkBox3: BEMCheckBox!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -125,6 +126,11 @@ class Settings: UIViewController {
             createAlert(message: NSLocalizedString("settingsAlert", comment: ""))
         }
         else{
+            let _ = CoreDataHandler.cleanDeleteCardDecksNumbers()
+            for card in LocalDataBase.tempCardDeck{
+                var _ = CoreDataHandler.saveCardDeckNumbers(index: card)
+            }
+
         dismiss(animated: true, completion: nil)
         }
     }
@@ -135,16 +141,26 @@ class Settings: UIViewController {
             createAlert(message: NSLocalizedString("settingsAlert", comment: ""))
         }
         else{
+            let _ = CoreDataHandler.cleanDeleteCardDecksNumbers()
+            for card in LocalDataBase.tempCardDeck{
+                var _ = CoreDataHandler.saveCardDeckNumbers(index: card)
+            }
+
             dismiss(animated: true, completion: nil)
         }
     }
-    
+
     @IBAction func closeButton(_ sender: UIButton) {
         
         if(LocalDataBase.tempCardDeck.count == 0){
             createAlert(message: NSLocalizedString("settingsAlert", comment: ""))
         }
         else{
+            let _ = CoreDataHandler.cleanDeleteCardDecksNumbers()
+            for card in LocalDataBase.tempCardDeck{
+                var _ = CoreDataHandler.saveCardDeckNumbers(index: card)
+            }
+
             dismiss(animated: true, completion: nil)
         }
     }

@@ -117,7 +117,7 @@ class CoreDataHandler: NSObject {
     
     
     
-   //////////////////////////////////////////
+    //////////////////////////////////////////
     
     
     class func saveWithOtherWordsCount(index: Int)->Bool{
@@ -137,9 +137,9 @@ class CoreDataHandler: NSObject {
     
     class func upDateWithOtherWordsCount(withOtherWordsCount: WithOtherWordsCount, index: Int ) -> Bool{
         let context = getContext()
-    
+        
         withOtherWordsCount.setValue(index, forKey: "index")
-
+        
         do{
             try context.save()
             return true
@@ -336,7 +336,7 @@ class CoreDataHandler: NSObject {
     
     
     
-  //////////////////////////////
+    //////////////////////////////
     
     
     
@@ -450,7 +450,7 @@ class CoreDataHandler: NSObject {
     }
     
     
-
+    
     
     
     
@@ -511,7 +511,7 @@ class CoreDataHandler: NSObject {
         }
     }
     
-
+    
     
     //Delete
     class func deleteWithOtherWords(withOtherWords: WithOtherWordsCoreData) -> Bool{
@@ -600,10 +600,52 @@ class CoreDataHandler: NSObject {
     }
     
     
+    
+    
+    
+    class func saveCardDeckNumbers(index: Int)->Bool{
+        let context = getContext()
+        let entity = NSEntityDescription.entity(forEntityName: "CardDecksInSettings", in: context)
+        let manageObject = NSManagedObject(entity: entity!, insertInto: context)
+        
+        manageObject.setValue(index, forKey: "numbers")
+        
+        do {
+            try context.save()
+            return true
+        }catch{
+            return false
+        }
+    }
+    
+    
+    
+    class func fetchCardDecksInSettings() -> [CardDecksInSettings]?{
+        let context = getContext()
+        var cardDecks: [CardDecksInSettings]? = nil
+        do{
+            cardDecks = try context.fetch(CardDecksInSettings.fetchRequest())
+            return cardDecks
+        }catch{
+            return cardDecks
+        }
+    }
+    
+    class func cleanDeleteCardDecksNumbers()-> Bool{
+        let context = getContext()
+        let delete = NSBatchDeleteRequest(fetchRequest: CardDecksInSettings.fetchRequest())
+        
+        do{
+            try context.execute(delete)
+            return true
+        } catch{
+            return false
+        }
+    }
+    
+    
+    
 }
-
-
-
 
 
 

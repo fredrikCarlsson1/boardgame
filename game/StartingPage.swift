@@ -19,23 +19,23 @@ class StartingPage: UIViewController {
     @IBOutlet weak var menuButton: FloatingActionButton!
     
     
+    @IBOutlet weak var getMoreCardsButtonOutlet: UIButton!
+    
+    
     var tapGesture = UITapGestureRecognizer()
-    var colorArray: [(color1: UIColor, color2: UIColor)] = []
-    
-
-    
-    let color1 = UIColor(hexString: "#A73737")
-    let color2 = UIColor(hexString: "#7A2828")
-    
-    
-    var colorIndex = 0
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         if(CoreDataHandler.fetchCardDecksInSettings()?.count != 0){
+           LocalDataBase.tempCardDeck.removeAll()
+            for deck in CoreDataHandler.fetchCardDecksInSettings()!{
+                LocalDataBase.tempCardDeck.append(Int(deck.numbers))
+            }
+        }
+    
         closeMenu()
         LocalDataBase().upDateCoreDateOnFirstLaunch()
-       
+        
         startButton.layer.shadowColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha:1.0).cgColor
         startButton.layer.shadowOffset = CGSize(width:0, height:2.75)
         startButton.layer.shadowRadius = 1.75
@@ -46,26 +46,13 @@ class StartingPage: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startButton.pulsateSlow()
+        
     }
     
     @IBAction func startBut(_ sender: UIButton) {
         performSegue(withIdentifier: "startToAddPlayerSegue", sender: self)
     }
-    
-    
-    
-    func animateBackGroundColor(){
-        colorIndex = colorIndex + 1
-        if (colorIndex == colorArray.count-1){
-            colorIndex = 0
-        }
-        
-        UIView.transition(with: self.uiView, duration: 3, options: [.transitionCrossDissolve, .allowUserInteraction], animations: {
-            self.uiView.firstColor = self.colorArray[self.colorIndex].color1; self.uiView.secondColor = self.colorArray[self.colorIndex].color2
-        }){ (success) in
-            self.animateBackGroundColor()
-        }
-    }
+
     
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.3, animations: {

@@ -27,7 +27,7 @@ class ModalViewPopUp: UIViewController {
         continueTextView.text = NSLocalizedString("continueOrEdit", comment: "")
         
         if let game = game{
-            LocalDataBase().updateTheListCount()
+            LocalDataBase().updateTheListCount(index: game)
             if let points = points{
                 label.text = "\(points) " + NSLocalizedString("points", comment: "")
                 textView.text = LocalDataBase().setTextViewInModalView(points: points, game: game)

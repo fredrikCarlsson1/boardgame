@@ -471,7 +471,9 @@ class ViewController: UIViewController {
             }
         })
         LocalDataBase.cardDeck = LocalDataBase.tempCardDeck
-        LocalDataBase().updateTheListCount()
+        LocalDataBase().checkIfCountIsMoreThenListSize()
+      
+        
 
         textView.isHidden = true
         timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(ViewController.clock), userInfo: nil, repeats: true)

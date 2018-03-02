@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04679F480CC56961763E19E65658903D /* PaymentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677D7921CCDCAEB30DE5141D7F5DC573 /* PaymentsController.swift */; };
+		0759D3D10D3B6E6ED23E57E2387D8D91 /* Pods-gameTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ABC47762CD8546DDC0F4CEA521DB43 /* Pods-gameTests-dummy.m */; };
+		12BE12B7A629269ABEE72A4E3FE94E39 /* SwiftyStoreKit+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F2E7D57558BA496C21E6F54F77D31A /* SwiftyStoreKit+Types.swift */; };
+		1D85396E2379C0DD4F0577301375CBEA /* InAppProductQueryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970E75E3F3FCA86160A2868A4C029E12 /* InAppProductQueryRequest.swift */; };
+		35BD329CD71C30061A9599ED2399FFE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		3BEC35438677CF292B1E99A84DB5B107 /* OS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41758814C86D4897B2ECDDC4126781D2 /* OS.swift */; };
+		3DE50EF726B0F4B60C3E0D236CE24C47 /* SwiftyStoreKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFF746A0169E1462653306FF5499AA20 /* SwiftyStoreKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		607248224F8EE2A44DD220D77D293174 /* PaymentQueueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17DBB88BBAE67668C2A34663253840D /* PaymentQueueController.swift */; };
+		62522BF7E7AD48796F8FF008BC259425 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		6B918D93DDBB5B9803A0DEB51D45D643 /* InAppReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63841D4E48B64306BE426C08EFDA7FE /* InAppReceipt.swift */; };
+		7C6CF4711F6FE4DB1555D8FC4D0D7F11 /* InAppReceiptVerificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E7EB005286DCE4B3A2034F44594C97 /* InAppReceiptVerificator.swift */; };
+		7DD20F18D5007C0638C6AF3353FC1FFA /* CompleteTransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39A2043A9DBCEBE4A1434BF9A8B2352 /* CompleteTransactionsController.swift */; };
+		87D3829570765A44EDF2888A7B227CD7 /* Pods-game-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FA658B444AAB6B82098B8FD1EB0AA0 /* Pods-game-dummy.m */; };
+		901F809D62302CD2D5CDC95C8313BD75 /* InAppReceiptRefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD213509A71A76069D023746E2DF420 /* InAppReceiptRefreshRequest.swift */; };
+		9DA9D3C21448462534D365BF8539E78C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		ABC80E3B600483CC0F287D9161B84B27 /* SwiftyStoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F2AFA22815BE47C2C552DA7FA9566 /* SwiftyStoreKit.swift */; };
+		B8C438B9CC8B9B8A4639BA7AE4268B23 /* Pods-gameTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 321C28BB8FC849DA8E9E0004177398A8 /* Pods-gameTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C202AB852BDCF8BD36547417AF20CCFB /* RestorePurchasesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5F5D8284FA3686B43521150110DA14 /* RestorePurchasesController.swift */; };
+		C7CA3072598E39819F2753FD225EEF6C /* ProductsInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91348E55F4E7BD0FC38DE5165FAE759A /* ProductsInfoController.swift */; };
+		E631D76A4B4787D9AF95DA73CF112207 /* SKProduct+LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C4E53637A8ED3464C6AA0C71F4DBF /* SKProduct+LocalizedPrice.swift */; };
+		EEB55361C7887D1CBDEDC4BE879E69DA /* AppleReceiptValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B831058BE4012CFB763CF1148D017B /* AppleReceiptValidator.swift */; };
+		FAFD5DA8C2C253BC77FA1A919418AE30 /* SwiftyStoreKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C00C7AA1ED2316CEC4D7A429B8FAB97B /* SwiftyStoreKit-dummy.m */; };
+		FD56C58657E792C668557DEF97862B51 /* Pods-game-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7BB4FE7499A4A7B4437F363DD770F00 /* Pods-game-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8975E274EC59CB5A370DE89FEE73D70A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BDC78EEB10BBD740ECEA1197EAD484B;
+			remoteInfo = SwiftyStoreKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0638C61CEB9384878BDEA469296841E7 /* SwiftyStoreKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-prefix.pch"; sourceTree = "<group>"; };
+		0AD213509A71A76069D023746E2DF420 /* InAppReceiptRefreshRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptRefreshRequest.swift; path = SwiftyStoreKit/InAppReceiptRefreshRequest.swift; sourceTree = "<group>"; };
+		0E0421B72B21CDB6692BDBA43B350485 /* Pods-gameTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gameTests-frameworks.sh"; sourceTree = "<group>"; };
+		15ABC47762CD8546DDC0F4CEA521DB43 /* Pods-gameTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-gameTests-dummy.m"; sourceTree = "<group>"; };
+		1D5F5D8284FA3686B43521150110DA14 /* RestorePurchasesController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RestorePurchasesController.swift; path = SwiftyStoreKit/RestorePurchasesController.swift; sourceTree = "<group>"; };
+		276879B55A7910227D53A4B630A2FD51 /* Pods-gameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gameTests.release.xcconfig"; sourceTree = "<group>"; };
+		28BFD87066C4FDF14EDDBE070C463D87 /* Pods-gameTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-gameTests-resources.sh"; sourceTree = "<group>"; };
+		28F2E7D57558BA496C21E6F54F77D31A /* SwiftyStoreKit+Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyStoreKit+Types.swift"; path = "SwiftyStoreKit/SwiftyStoreKit+Types.swift"; sourceTree = "<group>"; };
+		2E1008C3160C86AB23ECB44DA7C481B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F3A8ED76D7D3181EA55F21EEEE1251A /* Pods-game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-game.release.xcconfig"; sourceTree = "<group>"; };
+		321C28BB8FC849DA8E9E0004177398A8 /* Pods-gameTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-gameTests-umbrella.h"; sourceTree = "<group>"; };
+		41758814C86D4897B2ECDDC4126781D2 /* OS.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OS.swift; path = SwiftyStoreKit/OS.swift; sourceTree = "<group>"; };
+		4411C0F0BCE921CED132A75749399DFD /* Pods-game-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-game-acknowledgements.markdown"; sourceTree = "<group>"; };
+		45A4E640BAA0C42EE1D7BABEC6958EFC /* Pods_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_game.framework; path = "Pods-game.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E7EB005286DCE4B3A2034F44594C97 /* InAppReceiptVerificator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceiptVerificator.swift; path = SwiftyStoreKit/InAppReceiptVerificator.swift; sourceTree = "<group>"; };
+		573CDA3860A9B7406A71DE5E569DDA52 /* Pods-game-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-game-resources.sh"; sourceTree = "<group>"; };
+		61DB6CE38E339317EBE413370E9CE3C9 /* SwiftyStoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyStoreKit.modulemap; sourceTree = "<group>"; };
+		624F4D71E5B459EAB736B215BA544728 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6274AC55C426D9DB39F2FD3EEAB0FCEA /* Pods-gameTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-gameTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		632654C1007D8FEACA4BADB25F5C7979 /* Pods-game.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-game.modulemap"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		677D7921CCDCAEB30DE5141D7F5DC573 /* PaymentsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentsController.swift; path = SwiftyStoreKit/PaymentsController.swift; sourceTree = "<group>"; };
+		817C4E53637A8ED3464C6AA0C71F4DBF /* SKProduct+LocalizedPrice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SKProduct+LocalizedPrice.swift"; path = "SwiftyStoreKit/SKProduct+LocalizedPrice.swift"; sourceTree = "<group>"; };
+		91348E55F4E7BD0FC38DE5165FAE759A /* ProductsInfoController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProductsInfoController.swift; path = SwiftyStoreKit/ProductsInfoController.swift; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		970E75E3F3FCA86160A2868A4C029E12 /* InAppProductQueryRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppProductQueryRequest.swift; path = SwiftyStoreKit/InAppProductQueryRequest.swift; sourceTree = "<group>"; };
+		A17DBB88BBAE67668C2A34663253840D /* PaymentQueueController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentQueueController.swift; path = SwiftyStoreKit/PaymentQueueController.swift; sourceTree = "<group>"; };
+		A3B831058BE4012CFB763CF1148D017B /* AppleReceiptValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppleReceiptValidator.swift; path = SwiftyStoreKit/AppleReceiptValidator.swift; sourceTree = "<group>"; };
+		AD7EA865738EA8CEFAEB28381746D7EE /* Pods_gameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_gameTests.framework; path = "Pods-gameTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B683461411265E9F5CB45E7AA9345936 /* Pods-gameTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-gameTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BE57D8CA9BB73F3BA4B5BDB0522C5704 /* SwiftyStoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyStoreKit.framework; path = SwiftyStoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00C7AA1ED2316CEC4D7A429B8FAB97B /* SwiftyStoreKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyStoreKit-dummy.m"; sourceTree = "<group>"; };
+		C0EEC2CAD12C4F1D4A7153BF0F72D07E /* Pods-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-game.debug.xcconfig"; sourceTree = "<group>"; };
+		C7BB4FE7499A4A7B4437F363DD770F00 /* Pods-game-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-game-umbrella.h"; sourceTree = "<group>"; };
+		CD77E249D86A5FC8C37B0CBB491816C8 /* Pods-game-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-game-frameworks.sh"; sourceTree = "<group>"; };
+		D2B79D7A9D4DECC77F21BD22822BE6CC /* Pods-gameTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-gameTests.modulemap"; sourceTree = "<group>"; };
+		D73EF5037C49CF055B62680FD1690454 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8FA658B444AAB6B82098B8FD1EB0AA0 /* Pods-game-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-game-dummy.m"; sourceTree = "<group>"; };
+		E69F311E811EAC96E65EED4436F0733B /* Pods-gameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-gameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E6CA684D081E5B3143B1881228378B6F /* Pods-game-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-game-acknowledgements.plist"; sourceTree = "<group>"; };
+		F39A2043A9DBCEBE4A1434BF9A8B2352 /* CompleteTransactionsController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompleteTransactionsController.swift; path = SwiftyStoreKit/CompleteTransactionsController.swift; sourceTree = "<group>"; };
+		F39F2AFA22815BE47C2C552DA7FA9566 /* SwiftyStoreKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyStoreKit.swift; path = SwiftyStoreKit/SwiftyStoreKit.swift; sourceTree = "<group>"; };
+		F63841D4E48B64306BE426C08EFDA7FE /* InAppReceipt.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InAppReceipt.swift; path = SwiftyStoreKit/InAppReceipt.swift; sourceTree = "<group>"; };
+		FB1417C09A86283B626375E73D404EB7 /* SwiftyStoreKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyStoreKit.xcconfig; sourceTree = "<group>"; };
+		FFF746A0169E1462653306FF5499AA20 /* SwiftyStoreKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyStoreKit-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EB9527D6D05EEB94B97CD77CBD79740 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DA9D3C21448462534D365BF8539E78C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74AE6EF4632CF0A552B5501512850E77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35BD329CD71C30061A9599ED2399FFE9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E06B497E75C0A4FE8EE8082031A6DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62522BF7E7AD48796F8FF008BC259425 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		148B71EC2DC945743603E9FB7026BAB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45A4E640BAA0C42EE1D7BABEC6958EFC /* Pods_game.framework */,
+				AD7EA865738EA8CEFAEB28381746D7EE /* Pods_gameTests.framework */,
+				BE57D8CA9BB73F3BA4B5BDB0522C5704 /* SwiftyStoreKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6584775C5953664CF7D7B58B55D55643 /* SwiftyStoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				A3B831058BE4012CFB763CF1148D017B /* AppleReceiptValidator.swift */,
+				F39A2043A9DBCEBE4A1434BF9A8B2352 /* CompleteTransactionsController.swift */,
+				970E75E3F3FCA86160A2868A4C029E12 /* InAppProductQueryRequest.swift */,
+				F63841D4E48B64306BE426C08EFDA7FE /* InAppReceipt.swift */,
+				0AD213509A71A76069D023746E2DF420 /* InAppReceiptRefreshRequest.swift */,
+				55E7EB005286DCE4B3A2034F44594C97 /* InAppReceiptVerificator.swift */,
+				41758814C86D4897B2ECDDC4126781D2 /* OS.swift */,
+				A17DBB88BBAE67668C2A34663253840D /* PaymentQueueController.swift */,
+				677D7921CCDCAEB30DE5141D7F5DC573 /* PaymentsController.swift */,
+				91348E55F4E7BD0FC38DE5165FAE759A /* ProductsInfoController.swift */,
+				1D5F5D8284FA3686B43521150110DA14 /* RestorePurchasesController.swift */,
+				817C4E53637A8ED3464C6AA0C71F4DBF /* SKProduct+LocalizedPrice.swift */,
+				F39F2AFA22815BE47C2C552DA7FA9566 /* SwiftyStoreKit.swift */,
+				28F2E7D57558BA496C21E6F54F77D31A /* SwiftyStoreKit+Types.swift */,
+				8C1F6B0B280DD537F0CEC98F86DA0B4A /* Support Files */,
+			);
+			name = SwiftyStoreKit;
+			path = SwiftyStoreKit;
+			sourceTree = "<group>";
+		};
+		68D5982D130820E6EAA0785C5D73234D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6584775C5953664CF7D7B58B55D55643 /* SwiftyStoreKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6DE34CA5585390DCDBCDCF0687B40E73 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9D44A97441E582A9AEC246119C8F9C6 /* Pods-game */,
+				85B618B37FE6B76E60AF4E68FFE5F394 /* Pods-gameTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				68D5982D130820E6EAA0785C5D73234D /* Pods */,
+				148B71EC2DC945743603E9FB7026BAB3 /* Products */,
+				6DE34CA5585390DCDBCDCF0687B40E73 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		85B618B37FE6B76E60AF4E68FFE5F394 /* Pods-gameTests */ = {
+			isa = PBXGroup;
+			children = (
+				D73EF5037C49CF055B62680FD1690454 /* Info.plist */,
+				D2B79D7A9D4DECC77F21BD22822BE6CC /* Pods-gameTests.modulemap */,
+				6274AC55C426D9DB39F2FD3EEAB0FCEA /* Pods-gameTests-acknowledgements.markdown */,
+				B683461411265E9F5CB45E7AA9345936 /* Pods-gameTests-acknowledgements.plist */,
+				15ABC47762CD8546DDC0F4CEA521DB43 /* Pods-gameTests-dummy.m */,
+				0E0421B72B21CDB6692BDBA43B350485 /* Pods-gameTests-frameworks.sh */,
+				28BFD87066C4FDF14EDDBE070C463D87 /* Pods-gameTests-resources.sh */,
+				321C28BB8FC849DA8E9E0004177398A8 /* Pods-gameTests-umbrella.h */,
+				E69F311E811EAC96E65EED4436F0733B /* Pods-gameTests.debug.xcconfig */,
+				276879B55A7910227D53A4B630A2FD51 /* Pods-gameTests.release.xcconfig */,
+			);
+			name = "Pods-gameTests";
+			path = "Target Support Files/Pods-gameTests";
+			sourceTree = "<group>";
+		};
+		8C1F6B0B280DD537F0CEC98F86DA0B4A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E1008C3160C86AB23ECB44DA7C481B3 /* Info.plist */,
+				61DB6CE38E339317EBE413370E9CE3C9 /* SwiftyStoreKit.modulemap */,
+				FB1417C09A86283B626375E73D404EB7 /* SwiftyStoreKit.xcconfig */,
+				C00C7AA1ED2316CEC4D7A429B8FAB97B /* SwiftyStoreKit-dummy.m */,
+				0638C61CEB9384878BDEA469296841E7 /* SwiftyStoreKit-prefix.pch */,
+				FFF746A0169E1462653306FF5499AA20 /* SwiftyStoreKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyStoreKit";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E9D44A97441E582A9AEC246119C8F9C6 /* Pods-game */ = {
+			isa = PBXGroup;
+			children = (
+				624F4D71E5B459EAB736B215BA544728 /* Info.plist */,
+				632654C1007D8FEACA4BADB25F5C7979 /* Pods-game.modulemap */,
+				4411C0F0BCE921CED132A75749399DFD /* Pods-game-acknowledgements.markdown */,
+				E6CA684D081E5B3143B1881228378B6F /* Pods-game-acknowledgements.plist */,
+				D8FA658B444AAB6B82098B8FD1EB0AA0 /* Pods-game-dummy.m */,
+				CD77E249D86A5FC8C37B0CBB491816C8 /* Pods-game-frameworks.sh */,
+				573CDA3860A9B7406A71DE5E569DDA52 /* Pods-game-resources.sh */,
+				C7BB4FE7499A4A7B4437F363DD770F00 /* Pods-game-umbrella.h */,
+				C0EEC2CAD12C4F1D4A7153BF0F72D07E /* Pods-game.debug.xcconfig */,
+				2F3A8ED76D7D3181EA55F21EEEE1251A /* Pods-game.release.xcconfig */,
+			);
+			name = "Pods-game";
+			path = "Target Support Files/Pods-game";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1A4859D7A45C7ABCFD243BA30E8A323D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DE50EF726B0F4B60C3E0D236CE24C47 /* SwiftyStoreKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845FDB2902CC8E8619C7D6F61320017C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8C438B9CC8B9B8A4639BA7AE4268B23 /* Pods-gameTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5095BC9256079F5AAFD0F15124437DE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD56C58657E792C668557DEF97862B51 /* Pods-game-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1BDC78EEB10BBD740ECEA1197EAD484B /* SwiftyStoreKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4323A7D8D938CE094BD04BF6A8620602 /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */;
+			buildPhases = (
+				2D2D426DFE872FFB0CABE462FB58432F /* Sources */,
+				74AE6EF4632CF0A552B5501512850E77 /* Frameworks */,
+				1A4859D7A45C7ABCFD243BA30E8A323D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyStoreKit;
+			productName = SwiftyStoreKit;
+			productReference = BE57D8CA9BB73F3BA4B5BDB0522C5704 /* SwiftyStoreKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F51A847D1D1533F6BB7DD0845CF69990 /* Pods-gameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BEB08C19AD5A25BDA0C4DB16B8AF48 /* Build configuration list for PBXNativeTarget "Pods-gameTests" */;
+			buildPhases = (
+				74B7C462E3239E0A8D61004301F54AAA /* Sources */,
+				9E06B497E75C0A4FE8EE8082031A6DC7 /* Frameworks */,
+				845FDB2902CC8E8619C7D6F61320017C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-gameTests";
+			productName = "Pods-gameTests";
+			productReference = AD7EA865738EA8CEFAEB28381746D7EE /* Pods_gameTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F8BC01D4B186F951F5E55D1ED5892054 /* Pods-game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46001AF21E2B81677FE21A35895F9460 /* Build configuration list for PBXNativeTarget "Pods-game" */;
+			buildPhases = (
+				771E8E685C087BB70A6EA9ACF3F527F9 /* Sources */,
+				4EB9527D6D05EEB94B97CD77CBD79740 /* Frameworks */,
+				C5095BC9256079F5AAFD0F15124437DE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7744185D74B77B407F373BD5420FD34 /* PBXTargetDependency */,
+			);
+			name = "Pods-game";
+			productName = "Pods-game";
+			productReference = 45A4E640BAA0C42EE1D7BABEC6958EFC /* Pods_game.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 148B71EC2DC945743603E9FB7026BAB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8BC01D4B186F951F5E55D1ED5892054 /* Pods-game */,
+				F51A847D1D1533F6BB7DD0845CF69990 /* Pods-gameTests */,
+				1BDC78EEB10BBD740ECEA1197EAD484B /* SwiftyStoreKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D2D426DFE872FFB0CABE462FB58432F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEB55361C7887D1CBDEDC4BE879E69DA /* AppleReceiptValidator.swift in Sources */,
+				7DD20F18D5007C0638C6AF3353FC1FFA /* CompleteTransactionsController.swift in Sources */,
+				1D85396E2379C0DD4F0577301375CBEA /* InAppProductQueryRequest.swift in Sources */,
+				6B918D93DDBB5B9803A0DEB51D45D643 /* InAppReceipt.swift in Sources */,
+				901F809D62302CD2D5CDC95C8313BD75 /* InAppReceiptRefreshRequest.swift in Sources */,
+				7C6CF4711F6FE4DB1555D8FC4D0D7F11 /* InAppReceiptVerificator.swift in Sources */,
+				3BEC35438677CF292B1E99A84DB5B107 /* OS.swift in Sources */,
+				607248224F8EE2A44DD220D77D293174 /* PaymentQueueController.swift in Sources */,
+				04679F480CC56961763E19E65658903D /* PaymentsController.swift in Sources */,
+				C7CA3072598E39819F2753FD225EEF6C /* ProductsInfoController.swift in Sources */,
+				C202AB852BDCF8BD36547417AF20CCFB /* RestorePurchasesController.swift in Sources */,
+				E631D76A4B4787D9AF95DA73CF112207 /* SKProduct+LocalizedPrice.swift in Sources */,
+				12BE12B7A629269ABEE72A4E3FE94E39 /* SwiftyStoreKit+Types.swift in Sources */,
+				FAFD5DA8C2C253BC77FA1A919418AE30 /* SwiftyStoreKit-dummy.m in Sources */,
+				ABC80E3B600483CC0F287D9161B84B27 /* SwiftyStoreKit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74B7C462E3239E0A8D61004301F54AAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0759D3D10D3B6E6ED23E57E2387D8D91 /* Pods-gameTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		771E8E685C087BB70A6EA9ACF3F527F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87D3829570765A44EDF2888A7B227CD7 /* Pods-game-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7744185D74B77B407F373BD5420FD34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyStoreKit;
+			target = 1BDC78EEB10BBD740ECEA1197EAD484B /* SwiftyStoreKit */;
+			targetProxy = 8975E274EC59CB5A370DE89FEE73D70A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0753BC210AC3B5DD115783412E6E10C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB1417C09A86283B626375E73D404EB7 /* SwiftyStoreKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyStoreKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit.modulemap";
+				PRODUCT_NAME = SwiftyStoreKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		49B5A78DBE571998053070754D3695E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		6BD4D9E7883CF7FE01F5BBB2E9EC6FC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 276879B55A7910227D53A4B630A2FD51 /* Pods-gameTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-gameTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-gameTests/Pods-gameTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_gameTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D3EB1E4383085F59CD27DB50CD985D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0EEC2CAD12C4F1D4A7153BF0F72D07E /* Pods-game.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-game/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-game/Pods-game.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_game;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AB82E233E542A81E3AE4FD10EC908178 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3A8ED76D7D3181EA55F21EEEE1251A /* Pods-game.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-game/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-game/Pods-game.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_game;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD369323FD85CB26347C0D75C75D837F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		E98FE1839C426205ECD30C7AA504ABA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB1417C09A86283B626375E73D404EB7 /* SwiftyStoreKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyStoreKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyStoreKit/SwiftyStoreKit.modulemap";
+				PRODUCT_NAME = SwiftyStoreKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EBAC4409A7AE13B4BAB61F5D0181C4D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69F311E811EAC96E65EED4436F0733B /* Pods-gameTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-gameTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-gameTests/Pods-gameTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_gameTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD369323FD85CB26347C0D75C75D837F /* Debug */,
+				49B5A78DBE571998053070754D3695E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4323A7D8D938CE094BD04BF6A8620602 /* Build configuration list for PBXNativeTarget "SwiftyStoreKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E98FE1839C426205ECD30C7AA504ABA0 /* Debug */,
+				0753BC210AC3B5DD115783412E6E10C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46001AF21E2B81677FE21A35895F9460 /* Build configuration list for PBXNativeTarget "Pods-game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3EB1E4383085F59CD27DB50CD985D7 /* Debug */,
+				AB82E233E542A81E3AE4FD10EC908178 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BEB08C19AD5A25BDA0C4DB16B8AF48 /* Build configuration list for PBXNativeTarget "Pods-gameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBAC4409A7AE13B4BAB61F5D0181C4D8 /* Debug */,
+				6BD4D9E7883CF7FE01F5BBB2E9EC6FC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
