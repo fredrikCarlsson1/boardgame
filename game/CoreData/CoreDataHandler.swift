@@ -645,6 +645,40 @@ class CoreDataHandler: NSObject {
     
     
     
+    ///////////////
+    
+    class func saveInAppPurchase()->Bool{
+        let context = getContext()
+
+            print("0")
+        let entity = NSEntityDescription.entity(forEntityName: "UpdadedDeck", in: context)
+        let manageObject = NSManagedObject(entity: entity!, insertInto: context)
+        
+        manageObject.setValue(true, forKey: "purchased")
+        
+        do {
+            try context.save()
+            return true
+        }catch{
+            return false
+        }
+
+    }
+
+    
+    class func fetchInAppPurchsed() -> [UpdadedDeck]?{
+        let context = getContext()
+        var inAppPurchase: [UpdadedDeck]? = nil
+        do{
+            inAppPurchase = try context.fetch(UpdadedDeck.fetchRequest())
+            return inAppPurchase
+        }catch{
+            return inAppPurchase
+        }
+    }
+    
+    
+    
 }
 
 

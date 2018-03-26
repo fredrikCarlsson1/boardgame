@@ -26,6 +26,7 @@ class StartingPage: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+
          if(CoreDataHandler.fetchCardDecksInSettings()?.count != 0){
            LocalDataBase.tempCardDeck.removeAll()
             for deck in CoreDataHandler.fetchCardDecksInSettings()!{

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3591AE9D892E9216AADA6607 /* Pods_gameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5577E33CF241330E9ECA5EA /* Pods_gameTests.framework */; };
 		5C03F9AD20495455000DFD08 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C03F9AC20495455000DFD08 /* StoreKit.framework */; };
+		5C03F9AF20498C3B000DFD08 /* AlertViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C03F9AE20498C3B000DFD08 /* AlertViewExtension.swift */; };
 		5C0A306E2007EEB70038F309 /* airHorn.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 5C0A306D2007EEB70038F309 /* airHorn.mp3 */; };
 		5C0A309C2008C3010038F309 /* Charades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A309B2008C3010038F309 /* Charades.swift */; };
 		5C0A309E2008C8070038F309 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A309D2008C8070038F309 /* Player.swift */; };
@@ -97,6 +98,7 @@
 		446580ADC47D5BBF4D741D24 /* Pods-game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-game/Pods-game.debug.xcconfig"; sourceTree = "<group>"; };
 		563635776A3F48ACFAFF7D67 /* Pods_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C03F9AC20495455000DFD08 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5C03F9AE20498C3B000DFD08 /* AlertViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewExtension.swift; sourceTree = "<group>"; };
 		5C0A306D2007EEB70038F309 /* airHorn.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airHorn.mp3; sourceTree = "<group>"; };
 		5C0A309B2008C3010038F309 /* Charades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charades.swift; sourceTree = "<group>"; };
 		5C0A309D2008C8070038F309 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				5C0A309F2008C8160038F309 /* Team.swift */,
 				5C0A309D2008C8070038F309 /* Player.swift */,
 				5C0A30C0200BC8830038F309 /* CheckBoxHeader.h */,
+				5C03F9AE20498C3B000DFD08 /* AlertViewExtension.swift */,
 				5C809117203B5776003867F4 /* Fonts */,
 				5C6B1E562020912F00ED3239 /* GameClasses */,
 				5C0A30C9200E59200038F309 /* DesignableX */,
@@ -692,6 +695,7 @@
 				5C0A30D4200E59200038F309 /* UIViewXRadialGradient.swift in Sources */,
 				5C0A30DC200E59200038F309 /* UIVisualEffectViewX.swift in Sources */,
 				5C6B1E612023ABAA00ED3239 /* boldStringExtension.swift in Sources */,
+				5C03F9AF20498C3B000DFD08 /* AlertViewExtension.swift in Sources */,
 				5CCE0D3F20053371008654BC /* UIButtonExtension.swift in Sources */,
 				5C6B1E53201FCA8B00ED3239 /* Rules.swift in Sources */,
 				5CCE0D44200539BD008654BC /* popUpViewController.swift in Sources */,

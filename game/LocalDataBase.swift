@@ -511,7 +511,7 @@ public class LocalDataBase {
             }
             if(LocalDataBase.cardDeck.contains(2)){
                 
-                //WithOther words ENG(35)
+                //WithOther words ENG(40)
                 self.withOtherWordsList.append(famousWomenOver50)
                 self.withOtherWordsList.append(inTheGroceryStore)
                 self.withOtherWordsList.append(historicalPersons)
@@ -548,6 +548,12 @@ public class LocalDataBase {
                 self.withOtherWordsList.append(vacation)
                 self.withOtherWordsList.append(candy)
                 self.withOtherWordsList.append(vegan)
+                
+                self.withOtherWordsList.append(americanSingers)
+                self.withOtherWordsList.append(tvShowsWords)
+                self.withOtherWordsList.append(beautifulNature)
+                self.withOtherWordsList.append(personally)
+                self.withOtherWordsList.append(spices)
                 
                 
                 //TeamChallenge (40)
@@ -683,7 +689,7 @@ public class LocalDataBase {
                 self.charadeList.append(extremSports)
                 
               
-                //HumTheSong(39)
+                //HumTheSong(40)
                 self.humTheSongList.append(first90s)
                 self.humTheSongList.append(latinSongs)
                 self.humTheSongList.append(summerSongs)
@@ -726,6 +732,7 @@ public class LocalDataBase {
                 self.humTheSongList.append(femaleArtist)
                 self.humTheSongList.append(songsAboutFoodAndDrinks)
                 self.humTheSongList.append(y2013)
+                self.humTheSongList.append(y2009)
                 
                 
             }
@@ -990,7 +997,11 @@ public class LocalDataBase {
     let candy = withOtherWords(title: "Candy", firstWord: "Scittles", secondWord: "Snickers", thirdWord: "Gummy bear", fourthWord: "M&M's", fifthWord: "Butterfinger")
     let vegan = withOtherWords(title: "Vegan", firstWord: "Soy milk", secondWord: "Zucchini", thirdWord: "Quorn", fourthWord: "Beans", fifthWord: "Paprika")
     
-    
+    let americanSingers = withOtherWords(title: "American singers", firstWord: "Willie Nelson", secondWord: "Frank Sinatra", thirdWord: "Eminem", fourthWord: "Elvis Presley", fifthWord: "Nat King Cole")
+    let tvShowsWords = withOtherWords(title: "TV-shows", firstWord: "Narcos", secondWord: "The big bang theory", thirdWord: "Lost", fourthWord: "Prison break", fifthWord: "Modern family")
+    let beautifulNature = withOtherWords(title: "Beautiful nature", firstWord: "Rainbow", secondWord: "Horizon", thirdWord: "Northern Lights", fourthWord: "Sunrise", fifthWord: "Shooting star")
+    let personally = withOtherWords(title: "Personally", firstWord: "Phone number", secondWord: "Passport", thirdWord: "Finger prints", fourthWord: "Bank account", fifthWord: "DNA")
+    let spices = withOtherWords(title: "Spices", firstWord: "Basil", secondWord: "Garlic powder", thirdWord: "Cinnamon", fourthWord: "Black pepper", fifthWord: "Spice chili")
     
     
     // Can you figure it out? (55 Swe + 1 tmp)
@@ -1117,7 +1128,7 @@ public class LocalDataBase {
     let coffee = CanYouFigureItOut(title: "Beverage", answer: "Coffee", firstWord: "Finns and Swedes are the nationalities who drink the most of this beverage", secondWord: "This beverage originates in Ethiopia", thirdWord: "The beverage is the world's second most traded after oil", fourthWord: "The beverage is made by grinding this kind of bean and mixing it with warm water", fifthWord: "This black beverage usually contains caffeine and does not rarely mix with milk")
     
     
-    // Hum The song ENG(54 + 1 tmp)
+    // Hum The song ENG(55 + 1 tmp)
     let tmpHumTheSong = HumTheSong(title: "Missing card", firstWord: "No", secondWord: "Hum the song", thirdWord: "card", fourthWord: "in", fifthWord: "own deck")
     let boyBand1 = HumTheSong(title: "Boy Bands", firstWord: "Backst... - I Want It That Way", secondWord: "NSYNC - Bye Bye Bye", thirdWord: "Hanson - MMMBop", fourthWord: "Backst... - As long as you love me", fifthWord: "Westlife - Mandy")
     let beatles = HumTheSong(title: "Beatles", firstWord: "Hey Jude", secondWord: "Twist and shout", thirdWord: "Let it be", fourthWord: "Come together", fifthWord: "Here comes the sun")
@@ -1163,7 +1174,7 @@ public class LocalDataBase {
     let ukSingers = HumTheSong(title: "Songs from the UK", firstWord: "D M R - Come on Eileen", secondWord: "Bon...- Total eclipse of my heart", thirdWord: "Culture c. - Karma chameleon", fourthWord: "Whites. - Here i go again", fifthWord: "James B - You´re beautiful")
     let euroDance90 = HumTheSong(title: "Euro dance", firstWord: "Culture Beat - Mr Vain", secondWord: "Dr.Alban- Sing Hallulujah!", thirdWord: "Scatman John - Scatman", fourthWord: "Rednex - Cotton Eye Joe", fifthWord: "Reel 2 R.-I Like To Move It")
     let euroVision = HumTheSong(title: "Eurovision", firstWord: "ABBA -Waterloo", secondWord: "Alexander Rybak – Fairytale", thirdWord: "Helena Pap. – My number 1", fourthWord: "Olsen.– Fly On The Wings Of Love", fifthWord: "Lordi – Hard Rock Hallelujah")
-    // 12 more
+    
     
     let americanSoloSingers = HumTheSong(title: "American solo singers", firstWord: "Frank S.- Fly me too the moon", secondWord: "Michael J. - Beat it", thirdWord: "Elvis - Jailhouse rock", fourthWord: "Stevie W - For once in my life", fifthWord: "Willie N.- On the road again")
     let americanBands = HumTheSong(title: "American Bands", firstWord: "Nirvana- Smells like teen sp..", secondWord: "Pear Jam- Alive", thirdWord: "Foo fighters-Learn to fly", fourthWord: "REM-Losing my religion", fifthWord: "Green Day- Good Riddance")
@@ -1176,6 +1187,7 @@ public class LocalDataBase {
     let y2014 = HumTheSong(title: "2014", firstWord: "Pharrell Williams- Happy", secondWord: "Passenger- Let Her Go", thirdWord: "Aloe Blacc- The Man", fourthWord: "Avicii- Hey Brother", fifthWord: "Sia- Chandelier")
     let femaleArtist = HumTheSong(title: "Female singers", firstWord: "Ariana Grande- Santa tell me", secondWord: "Rihanna - Umbrella", thirdWord: "Beyonce - Halo", fourthWord: "Lady Gaga- Paparazzi ", fifthWord: "Britney S.- Oops I did it again")
     let songsAboutFoodAndDrinks = HumTheSong(title: "Songs about food/drinks", firstWord: "Aaron carter - I want Candy", secondWord: "The Chordetts - Lollipop", thirdWord: "Ub40 - Red red wine", fourthWord: "50 cent- Candy shop", fifthWord: "Zac Brown Band- Chicken fried")
+    let y2009 = HumTheSong(title: "2009", firstWord: "Black E...- Boom Boom Pow", secondWord: "Lady Gaga- Poker Face", thirdWord: "Kings Of L.- Use Somebody", fourthWord: "Drake- Best I Ever Had", fifthWord: "Katy Perry- Hot N Cold")
     
     
     //HUM THE SONG SWE(55)
